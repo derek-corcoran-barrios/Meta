@@ -1,0 +1,177 @@
+---
+title: "Community Analysis Hymenoptera"
+author: "Anson Main and Derek Corcoran"
+date: "October 5, 2016"
+output:
+  pdf_document:
+    fig_caption: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(ggplot2)
+library(vegan)
+library(stargazer)
+library(dplyr)
+library(knitr)
+library(glmulti)
+library(lme4)
+library(MuMIn)
+library(texreg)
+```
+
+#Data
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+BeeDiversity <- read.csv("~/Metanalysis/SiteMeasures_New.csv")
+BeesOnly <- BeeDiversity[,18:84]
+row.names(BeesOnly) <- make.names(BeeDiversity$FieldID, unique = TRUE)
+
+BeeDiversity$FieldID <- substr(BeeDiversity$FieldID, 0 ,2)
+BeesManagement <-BeeDiversity[,1:17]
+BeesManagement$ID <- paste(BeesManagement$FieldID, BeesManagement$Jdate, "")
+
+
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Anosim analisis between Treated and Untreated Fields"}
+Bees.dist <- vegdist(BeesOnly)
+Bees.ano <- anosim(Bees.dist, BeesManagement$Treatment)
+plot(Bees.ano)
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Anosim analisis between different management areas"}
+Bees.ano2 <- anosim(Bees.dist, BeesManagement$ID)
+plot(Bees.ano2)
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, results='hide'}
+example_NMDS=metaMDS(BeesOnly,k=2,trymax=100)
+```
+
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+
+
+data.scores <- as.data.frame(scores(example_NMDS))  #Using the scores function from vegan to extract the site scores and convert to a data.frame
+data.scores$site <- rownames(data.scores)  # create a column of site names, from the rownames of data.scores
+data.scores <- cbind(data.scores, BeesManagement)  #  add the grp variable created earlier
+```
+##NMDS Treated Untreated
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+grp.T <- data.scores[data.scores$Treatment == "treated", ][chull(data.scores[data.scores$Treatment == "treated", c("NMDS1", "NMDS2")]), ]  # hull values for grp Treatment
+grp.U <- data.scores[data.scores$Treatment == "untreated", ][chull(data.scores[data.scores$Treatment == "untreated", c("NMDS1", "NMDS2")]), ]  # hull values for grp B
+
+hull.data <- rbind(grp.T, grp.U)  #combine grp.a and grp.b
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Multidimensional Scaling Showing the Overlap of communities between treated and untreated areas"}
+
+ggplot()+  geom_polygon(data=hull.data,aes(x=NMDS1,y=NMDS2,fill=Treatment,group=Treatment),alpha=0.30) + # add the convex hulls
+geom_point(data=data.scores,aes(x=NMDS1,y=NMDS2,shape=FieldID,colour=Crop),size=4) + 
+coord_equal() +
+theme_bw() + 
+theme(axis.text.x = element_blank(),  # remove x-axis text
+       axis.text.y = element_blank(), # remove y-axis text
+       axis.ticks = element_blank(),  # remove axis ticks
+       axis.title.x = element_text(size=18), # remove x-axis labels
+       axis.title.y = element_text(size=18), # remove y-axis labels
+       panel.background = element_blank(), 
+       panel.grid.major = element_blank(),  #remove major-grid labels
+      panel.grid.minor = element_blank(),  #remove minor-grid labels
+       plot.background = element_blank())
+ 
+```
+
+
+##NMDS Management Areas
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+grp.AT <- data.scores[data.scores$FieldID == "AT", ][chull(data.scores[data.scores$FieldID == "AT", c("NMDS1", "NMDS2")]), ]  # hull values for grp Treatment
+grp.FG <- data.scores[data.scores$FieldID == "FG", ][chull(data.scores[data.scores$FieldID == "FG", c("NMDS1", "NMDS2")]), ]  # hull values for grp B
+grp.IH <- data.scores[data.scores$FieldID == "IH", ][chull(data.scores[data.scores$FieldID == "IH", c("NMDS1", "NMDS2")]), ]  # hull values for grp Treatment
+grp.WC <- data.scores[data.scores$FieldID == "WC", ][chull(data.scores[data.scores$FieldID == "WC", c("NMDS1", "NMDS2")]), ]  # hull values for grp B
+
+site.hull.data <- rbind(grp.AT, grp.FG, grp.IH, grp.WC)  #combine grp.a and grp.b
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Multidimensional Scaling Showing the Overlap of communities between Management Areas"}
+
+ggplot()+  geom_polygon(data=site.hull.data,aes(x=NMDS1,y=NMDS2,fill=FieldID,group=FieldID),alpha=0.30) + # add the convex hulls
+geom_point(data=data.scores,aes(x=NMDS1,y=NMDS2,shape=Treatment,colour=Crop),size=4) + 
+coord_equal() + 
+  theme_bw() + 
+theme(axis.text.x = element_blank(),  # remove x-axis text
+        axis.text.y = element_blank(), # remove y-axis text
+        axis.ticks = element_blank(),  # remove axis ticks
+        axis.title.x = element_text(size=18), # remove x-axis labels
+        axis.title.y = element_text(size=18), # remove y-axis labels
+        panel.background = element_blank(), 
+        panel.grid.major = element_blank(),  #remove major-grid labels
+        panel.grid.minor = element_blank(),  #remove minor-grid labels
+        plot.background = element_blank())
+
+```
+
+#Alpha diversity
+
+```{r, echo=FALSE, fig.cap= "Alpha diversity grouped by site and Treatment"}
+BeesOnly[BeesOnly== 0]<- NA
+Alpharesults <- cbind(BeesManagement,exp(rowSums(log(BeesOnly), na.rm = TRUE)/rowSums(ifelse(is.na(BeesOnly), 0 , 1))))
+colnames(Alpharesults) <- c(colnames(Alpharesults)[1:18],"Geometric")
+ggplot(Alpharesults, aes(x = ID, y = Geometric))+ geom_boxplot(aes(color = Treatment))
+
+Alphasummary <- group_by(Alpharesults, ID, Treatment)
+Alphasummary <- summarize(Alphasummary, Median = median(Geometric),Mean = mean(Geometric), SD = sd(Geometric))
+
+kable(Alphasummary)
+```
+
+```{r, echo=FALSE, fig.cap= "Alpha diversity grouped by site and Treatment"}
+dodge <- position_dodge(width=0.9)
+
+ggplot(Alphasummary, aes(x = ID, y = Median)) + geom_bar(position = "dodge",stat = "identity", aes(fill = Treatment))
+```
+
+```{r, echo=FALSE}
+library(lubridate)
+Alpharesults$CollectTime <- as.numeric(hm(Alpharesults$CollectTime))
+Alpharesults$WindSpd <- as.numeric(Alpharesults$WindSpd)
+Alpharesults$Temp <- as.numeric(Alpharesults$Temp)
+Alpharesults$Humidity <- as.numeric(Alpharesults$Humidity)
+```
+
+
+```{r, echo=FALSE, cache=TRUE, results='hide'}
+Alpharesults <- filter(Alpharesults, Crop != "sunflowers")
+glmalpha <- glm(Geometric~., data = Alpharesults[,-18])
+options(na.action = "na.fail")
+glmalpha<- dredge(glmalpha)
+```
+
+
+```{r, echo=FALSE, cache=FALSE, results='asis'}
+texreg(extract(subset(glmalpha, delta <= 2, recalc.weights = TRUE)))
+```
+
+```{r, echo=FALSE, cache=TRUE, results='hide', warning=FALSE, message=FALSE}
+Alpharesults[,4:17] <- scale(Alpharesults[,4:17])
+lme.model2  =  lmer(Geometric~ Treatment + FieldArea + MargArea + AvgMgWidth + CtoMEdge + DistNearTr+ I(Jdate^2) + DaysSinceP + PercMgMow + AvgFlCover + NumSpBloom + CollectTime + Temp + Humidity + WindSpd + (1|FieldID) + (1|Crop), data = Alpharesults)
+options(na.action = "na.fail")
+set.lme <-dredge(lme.model2)
+```
+
+```{r, echo=FALSE, cache=TRUE, results='asis'}
+htmlreg(extract(subset(set.lme, delta <= 2, recalc.weights = TRUE)), file = "lme.doc", digits = 3)
+```
+
+
+```{r}
+ggplot(Alpharesults, aes(x = Jdate, y = Geometric)) + geom_point(aes(color=Treatment, shape = FieldID))
+```

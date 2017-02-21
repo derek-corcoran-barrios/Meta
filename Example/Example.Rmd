@@ -1,0 +1,67 @@
+---
+author:
+  - name: Main author
+    affiliation: University of life and more
+    address: >
+      First line
+      Second line
+    email: me@university.edu
+    url: http://rstudio.com
+  - name: second author
+    affiliation: University of life and more
+  - name: Third Author
+    affiliation: University of life and more
+  - name: Fourth Author
+    affiliation: University of life and more
+title:
+  formatted: "super interesting r package called \\pkg{TheSuperPackage}"
+  short:     "\\pkg{TheSuperPackage}: This is exiting"
+abstract: >
+  We present a package that will solve your life
+keywords:
+  # at least one keyword must be supplied
+  formatted: [ "\\pkg{TheSuperPackage}", Life, "\\proglang{R}"]
+  plain:     [keywords, not capitalized, life]
+preamble: >
+  \usepackage{amsmath}
+biblio-style: jss
+output:
+  rticles::jss_article:
+    fig_caption: true
+    citation_package: natbib
+bibliography: Derek.bib
+---
+
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(rticles)
+library(rmarkdown)
+library(yaml)
+```
+
+```{r, echo=FALSE, warning=FALSE}
+library(knitr)
+opts_chunk$set(prompt=TRUE)
+options(replace.assign=TRUE, width=90, prompt="R> ")
+```
+
+# Introduction
+
+This template demonstrates some of the basic latex you'll need to know to create a JSS article.
+
+## Code formatting
+
+Don't use markdown, instead use the more precise latex commands:
+
+* \proglang{Java}
+* \pkg{plyr}
+* \code{print("abc")}
+
+# R code
+
+Can be inserted in regular R markdown blocks.
+
+```{r}
+x <- 1:10
+x
+```

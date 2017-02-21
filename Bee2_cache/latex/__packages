@@ -1,0 +1,15 @@
+base
+ggplot2
+permute
+lattice
+vegan
+stargazer
+dplyr
+knitr
+rJava
+glmulti
+Matrix
+lme4
+MuMIn
+texreg
+lubridate

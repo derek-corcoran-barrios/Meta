@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "#load main package for metanalysis\n\n\nMaster.spreadsheet <- read.csv(\"~/Metanalysis/Master spreadsheet.csv\")\n\n\nlibrary(meta)\n\n###########Examples\n\nAbundance <- dplyr::filter(Master.spreadsheet, Fitness.measure == \"abundance\")\n\n\n\nTreatment <- dplyr::filter(Abundance, AI != \"control\")\nControl <-  dplyr::filter(Abundance, AI == \"control\")\n\ncolnames(Treatment) <- paste(\"T\", colnames(Treatment), sep = \"_\")\n\nAbundance <- cbind(Control, Treatment[,c(9:13,15, 19, 20, 21)])\n\nlibrary(meta)\nm <- metacont(n.e = T_Individuals..n., mean.e = T_Mean , sd.e = T_SE , n.c = Individuals..n., mean.c = Mean, sd.c = SE, studlab= Authors,data=Abundance, sm=\"SMD\", comb.random = TRUE, comb.fixed = FALSE)\nforest(m, xlab=\"Abundance\", comb.random = TRUE, comb.fixed = FALSE)\n\nfunnel(m)\n\nReproduction <- dplyr::filter(Master.spreadsheet, Fitness.measure == \"reproduction\")\nTreatment <- dplyr::filter(Reproduction, AI != \"control\")\nControl <-  dplyr::filter(Reproduction, AI == \"control\")\n\ncolnames(Treatment) <- paste(\"T\", colnames(Treatment), sep = \"_\")\n############\n\nlibrary(meta)\n\n\ndata2 <- read.csv(\"~/Metanalysis/examples/dataset02.csv\")\n\nm <- metacont(Ne, Me, Se, Nc, Mc, Sc, sm=\"SMD\", data=data2)\nforest(m, xlab=\"Mean abundance per effort\")\n",
+    "created" : 1473949083500.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1650198156",
+    "id" : "CDF0203F",
+    "lastKnownWriteTime" : 1487019885,
+    "last_content_update" : 1487019885850,
+    "path" : "~/Metanalysis/Metafor.R",
+    "project_path" : "Metafor.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

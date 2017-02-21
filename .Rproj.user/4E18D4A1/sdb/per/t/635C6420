@@ -1,0 +1,28 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1487701691360.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "635C6420",
+    "lastKnownWriteTime" : 7308604914264011873,
+    "last_content_update" : 1487701691360,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "rtk1epd93x",
+        "caption" : "Abundance",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=Abundance&cache_key=rtk1epd93x",
+        "displayedObservations" : 87,
+        "environment" : "",
+        "object" : "Abundance",
+        "totalObservations" : 87,
+        "variables" : 58
+    },
+    "relative_order" : 19,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

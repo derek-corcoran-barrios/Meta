@@ -1,0 +1,28 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1476132474813.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "471FA3D6",
+    "lastKnownWriteTime" : 7308604914264011873,
+    "last_content_update" : 1476132474813,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "ybycuhjwfu",
+        "caption" : "pollinators_covars",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=pollinators_covars&cache_key=ybycuhjwfu",
+        "displayedObservations" : 513,
+        "environment" : "",
+        "object" : "pollinators_covars",
+        "totalObservations" : 513,
+        "variables" : 30
+    },
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

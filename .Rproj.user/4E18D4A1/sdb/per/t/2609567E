@@ -1,0 +1,28 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1486059420352.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "2609567E",
+    "lastKnownWriteTime" : 2314913091258228768,
+    "last_content_update" : 1486059420352,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "7j3m74lpke",
+        "caption" : "Treatment",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=Treatment&cache_key=7j3m74lpke",
+        "displayedObservations" : 22,
+        "environment" : "",
+        "object" : "Treatment",
+        "totalObservations" : 22,
+        "variables" : 27
+    },
+    "relative_order" : 10,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

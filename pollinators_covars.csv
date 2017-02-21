@@ -1,0 +1,514 @@
+ConsArea,FieldID,Crop,Treatment,Jdate,Species,SpcCount,TotAbund,Nesting,Sociality,FloralPreference,Family,PollenCarrying,MaxFlight Dist.,Elevation,FieldArea,MargArea,AvgMgWidth,CtoMEdge,DistNearTr,DaysSinceP,PercMgMow,AvgFlCover,NumSpBloom,CollectTime,Ctime,Temp,Humidity,WindSpd,Date
+Atlanta,ATT1,soybeans,treated,174,Agapostemon virescens,1,35,Ground,Communal,Generalist,Halictidae,Leg scopa,500,305,0.34,0.42,10,0.7,200,14,0,53,4,12:00,12.00,31.8,61,11.3,6/6/2016
+Atlanta,ATT1,soybeans,treated,174,Augochlora pura,2,35,Rotten logs,Solitary,Generalist,Halictidae,Leg scopa,210,305,0.34,0.42,10,0.7,200,14,0,53,4,12:00,12.00,31.8,61,11.3,6/6/2016
+Atlanta,ATT1,soybeans,treated,174,Augochloropsis fulgida,1,35,Ground,Solitary,Generalist,Halictidae,Leg scopa,300,305,0.34,0.42,10,0.7,200,14,0,53,4,12:00,12.00,31.8,61,11.3,6/6/2016
+Atlanta,ATT1,soybeans,treated,174,Bombus auricomus,3,35,Ground Surface,Eusocial,Generalist,Apidae,Corbicular basket,7500,305,0.34,0.42,10,0.7,200,14,0,53,4,12:00,12.00,31.8,61,11.3,6/6/2016
+Atlanta,ATT1,soybeans,treated,174,Bombus griseocollis,3,35,Ground,Eusocial,Generalist,Apidae,Corbicular basket,7500,305,0.34,0.42,10,0.7,200,14,0,53,4,12:00,12.00,31.8,61,11.3,6/6/2016
+Atlanta,ATT1,soybeans,treated,174,Bombus pennsylvanicus,5,35,Aboveground,Eusocial,Generalist,Apidae,Corbicular basket,7500,305,0.34,0.42,10,0.7,200,14,0,53,4,12:00,12.00,31.8,61,11.3,6/6/2016
+Atlanta,ATT1,soybeans,treated,174,Colletes albescens,1,35,Ground,Solitary,Specialist,Colletidae,Ingestion,2000,305,0.34,0.42,10,0.7,200,14,0,53,4,12:00,12.00,31.8,61,11.3,6/6/2016
+Atlanta,ATT1,soybeans,treated,174,Eucera hamata,5,35,Ground,Solitary,Generalist,Apidae,Leg scopa,1000,305,0.34,0.42,10,0.7,200,14,0,53,4,12:00,12.00,31.8,61,11.3,6/6/2016
+Atlanta,ATT1,soybeans,treated,174,Halictus confusus,2,35,Ground,Eusocial,Generalist,Halictidae,Leg scopa,130,305,0.34,0.42,10,0.7,200,14,0,53,4,12:00,12.00,31.8,61,11.3,6/6/2016
+Atlanta,ATT1,soybeans,treated,174,Halictus ligatus,1,35,Ground,Eusocial,Generalist,Halictidae,Leg scopa,182,305,0.34,0.42,10,0.7,200,14,0,53,4,12:00,12.00,31.8,61,11.3,6/6/2016
+Atlanta,ATT1,soybeans,treated,174,Halictus rubicundus,3,35,Ground,Eusocial,Generalist,Halictidae,Leg scopa,182,305,0.34,0.42,10,0.7,200,14,0,53,4,12:00,12.00,31.8,61,11.3,6/6/2016
+Atlanta,ATT1,soybeans,treated,174,Hylaeus modestus,1,35,Wood,Solitary,Generalist,Colletidae,Ingestion,250,305,0.34,0.42,10,0.7,200,14,0,53,4,12:00,12.00,31.8,61,11.3,6/6/2016
+Atlanta,ATT1,soybeans,treated,174,Lasioglossum (Dialictus) sp.,4,35,Varies,Varies,Generalist,Halictidae,Leg scopa,410,305,0.34,0.42,10,0.7,200,14,0,53,4,12:00,12.00,31.8,61,11.3,6/6/2016
+Atlanta,ATT1,soybeans,treated,174,Melissodes agilis,1,35,Ground,Solitary,Generalist,Apidae,Leg scopa,600,305,0.34,0.42,10,0.7,200,14,0,53,4,12:00,12.00,31.8,61,11.3,6/6/2016
+Atlanta,ATT1,soybeans,treated,174,Melissodes denticulata,1,35,Ground,Solitary,Generalist,Apidae,Leg scopa,600,305,0.34,0.42,10,0.7,200,14,0,53,4,12:00,12.00,31.8,61,11.3,6/6/2016
+Atlanta,ATT1,soybeans,treated,174,Osmia simillima,1,35,Wood,Solitary,Generalist,Megachilidae,Abdominal scopa,500,305,0.34,0.42,10,0.7,200,14,0,53,4,12:00,12.00,31.8,61,11.3,6/6/2016
+Atlanta,ATT1,soybeans,treated,200,Bombus auricomus,1,52,Ground surface,Eusocial,Generalist,Apidae,Corbicular basket,7500,305,0.34,0.42,10,0.7,200,40,0,57,8,10:31,10.31,27.8,66.1,1.5,6/6/2016
+Atlanta,ATT1,soybeans,treated,200,Bombus griseocollis,1,52,Ground,Eusocial,Generalist,Apidae,Corbicular basket,7500,305,0.34,0.42,10,0.7,200,40,0,57,8,10:31,10.31,27.8,66.1,1.5,6/6/2016
+Atlanta,ATT1,soybeans,treated,200,Bombus pennsylvanicus,3,52,Aboveground,Eusocial,Generalist,Apidae,Corbicular basket,7500,305,0.34,0.42,10,0.7,200,40,0,57,8,10:31,10.31,27.8,66.1,1.5,6/6/2016
+Atlanta,ATT1,soybeans,treated,200,Halictus rubicundus,1,52,Ground,Eusocial,Generalist,Halictidae,Leg scopa,182,305,0.34,0.42,10,0.7,200,40,0,57,8,10:31,10.31,27.8,66.1,1.5,6/6/2016
+Atlanta,ATT1,soybeans,treated,200,Lasioglossum (Dialictus) sp.,38,52,Varies,Varies,Generalist,Halictidae,Leg scopa,410,305,0.34,0.42,10,0.7,200,40,0,57,8,10:31,10.31,27.8,66.1,1.5,6/6/2016
+Atlanta,ATT1,soybeans,treated,200,Melissodes bimaculata,2,52,Ground,Solitary,Generalist,Apidae,Leg scopa,600,305,0.34,0.42,10,0.7,200,40,0,57,8,10:31,10.31,27.8,66.1,1.5,6/6/2016
+Atlanta,ATT1,soybeans,treated,200,Melissodes communis,2,52,Ground,Solitary,Generalist,Apidae,Leg scopa,600,305,0.34,0.42,10,0.7,200,40,0,57,8,10:31,10.31,27.8,66.1,1.5,6/6/2016
+Atlanta,ATT1,soybeans,treated,200,Melissodes comptoides,3,52,Ground,Solitary,Generalist,Apidae,Leg scopa,600,305,0.34,0.42,10,0.7,200,40,0,57,8,10:31,10.31,27.8,66.1,1.5,6/6/2016
+Atlanta,ATT1,soybeans,treated,200,Melissodes denticulata,1,52,Ground,Solitary,Specialist,Apidae,Leg scopa,600,305,0.34,0.42,10,0.7,200,40,0,57,8,10:31,10.31,27.8,66.1,1.5,6/6/2016
+Atlanta,ATT2,soybeans,treated,174,Agapostemon virescens,1,65,Ground,Communal,Generalist,Halictidae,Leg scopa,500,285,1.78,0.29,7.2,1.2,616,14,0,52,6,11:00,11.00,30.6,61.4,4.7,6/9/2016
+Atlanta,ATT2,soybeans,treated,174,Augochlora pura,23,65,Rotten logs,Solitary,Generalist,Halictidae,Leg scopa,210,285,1.78,0.29,7.2,1.2,616,14,0,52,6,11:00,11.00,30.6,61.4,4.7,6/9/2016
+Atlanta,ATT2,soybeans,treated,174,Augochlorella aurata,2,65,Ground,Eusocial,Generalist,Halictidae,Leg scopa,210,285,1.78,0.29,7.2,1.2,616,14,0,52,6,11:00,11.00,30.6,61.4,4.7,6/9/2016
+Atlanta,ATT2,soybeans,treated,174,Augochloropsis fulgida,1,65,Ground,Solitary,Generalist,Halictidae,Leg scopa,300,285,1.78,0.29,7.2,1.2,616,14,0,52,6,11:00,11.00,30.6,61.4,4.7,6/9/2016
+Atlanta,ATT2,soybeans,treated,174,Augochloropsis metallica,9,65,Ground,Solitary,Generalist,Halictidae,Leg scopa,300,285,1.78,0.29,7.2,1.2,616,14,0,52,6,11:00,11.00,30.6,61.4,4.7,6/9/2016
+Atlanta,ATT2,soybeans,treated,174,Ceratina mikmaqi,1,65,Stems/Pith,Subsocial,Generalist,Apidae,Weak Leg scopa,80,285,1.78,0.29,7.2,1.2,616,14,0,52,6,11:00,11.00,30.6,61.4,4.7,6/9/2016
+Atlanta,ATT2,soybeans,treated,174,Eucera rosae,3,65,Ground,Solitary,Generalist,Apidae,Leg scopa,1000,285,1.78,0.29,7.2,1.2,616,14,0,52,6,11:00,11.00,30.6,61.4,4.7,6/9/2016
+Atlanta,ATT2,soybeans,treated,174,Halictus ligatus,3,65,Ground,Eusocial,Generalist,Halictidae,Leg scopa,182,285,1.78,0.29,7.2,1.2,616,14,0,52,6,11:00,11.00,30.6,61.4,4.7,6/9/2016
+Atlanta,ATT2,soybeans,treated,174,Heriades variolosa,1,65,Insect holes,Solitary,Generalist,Megachilidae,Abdominal scopa,200,285,1.78,0.29,7.2,1.2,616,14,0,52,6,11:00,11.00,30.6,61.4,4.7,6/9/2016
+Atlanta,ATT2,soybeans,treated,174,Lasioglossum (Dialictus) sp.,9,65,Varies,Varies,Generalist,Halictidae,Leg scopa,410,285,1.78,0.29,7.2,1.2,616,14,0,52,6,11:00,11.00,30.6,61.4,4.7,6/9/2016
+Atlanta,ATT2,soybeans,treated,174,Megachile centuncularis,1,65,Cavity nester,Solitary,Generalist,Megachilidae,Abdominal scopa,457,285,1.78,0.29,7.2,1.2,616,14,0,52,6,11:00,11.00,30.6,61.4,4.7,6/9/2016
+Atlanta,ATT2,soybeans,treated,174,Melissodes agilis,1,65,Ground,Solitary,Generalist,Apidae,Leg scopa,600,285,1.78,0.29,7.2,1.2,616,14,0,52,6,11:00,11.00,30.6,61.4,4.7,6/9/2016
+Atlanta,ATT2,soybeans,treated,174,Melissodes tepaneca,4,65,Ground,Solitary,Generalist,Apidae,Leg scopa,600,285,1.78,0.29,7.2,1.2,616,14,0,52,6,11:00,11.00,30.6,61.4,4.7,6/9/2016
+Atlanta,ATT2,soybeans,treated,174,Melissodes trinodis,3,65,Ground,Solitary,Specialist,Apidae,Leg scopa,600,285,1.78,0.29,7.2,1.2,616,14,0,52,6,11:00,11.00,30.6,61.4,4.7,6/9/2016
+Atlanta,ATT2,soybeans,treated,174,Melitoma taurea,1,65,River cuts,Solitary,Specialist,Apidae,Leg scopa,500,285,1.78,0.29,7.2,1.2,616,14,0,52,6,11:00,11.00,30.6,61.4,4.7,6/9/2016
+Atlanta,ATT2,soybeans,treated,174,Protandrena sp.,2,65,Ground,Solitary,Generalist,Andrenidae,Leg scopa,500,285,1.78,0.29,7.2,1.2,616,14,0,52,6,11:00,11.00,30.6,61.4,4.7,6/9/2016
+Atlanta,ATT2,soybeans,treated,200,Augochlora pura,7,46,Rotten logs,Solitary,Generalist,Halictidae,Leg scopa,210,285,1.78,0.29,7.2,1.2,616,40,0,38,5,9:26,9.26,26.2,69.2,0,6/9/2016
+Atlanta,ATT2,soybeans,treated,200,Augochlorella aurata,2,46,Ground,Eusocial,Generalist,Halictidae,Leg scopa,210,285,1.78,0.29,7.2,1.2,616,40,0,38,5,9:26,9.26,26.2,69.2,0,6/9/2016
+Atlanta,ATT2,soybeans,treated,200,Bombus impatiens,1,46,Ground,Eusocial,Generalist,Apidae,Corbicular basket,7500,285,1.78,0.29,7.2,1.2,616,40,0,38,5,9:26,9.26,26.2,69.2,0,6/9/2016
+Atlanta,ATT2,soybeans,treated,200,Bombus pennsylvanicus,1,46,Aboveground,Eusocial,Generalist,Apidae,Corbicular basket,7500,285,1.78,0.29,7.2,1.2,616,40,0,38,5,9:26,9.26,26.2,69.2,0,6/9/2016
+Atlanta,ATT2,soybeans,treated,200,Ceratina calcarata,2,46,Stems/pith,Subsocial,Generalist,Apidae,Weak leg scopa,80,285,1.78,0.29,7.2,1.2,616,40,0,38,5,9:26,9.26,26.2,69.2,0,6/9/2016
+Atlanta,ATT2,soybeans,treated,200,Ceratina strenua,1,46,Stems/pith,Subsocial,Generalist,Apidae,Weak leg scopa,80,285,1.78,0.29,7.2,1.2,616,40,0,38,5,9:26,9.26,26.2,69.2,0,6/9/2016
+Atlanta,ATT2,soybeans,treated,200,Halictus ligatus,1,46,Ground,Eusocial,Generalist,Halictidae,Leg scopa,182,285,1.78,0.29,7.2,1.2,616,40,0,38,5,9:26,9.26,26.2,69.2,0,6/9/2016
+Atlanta,ATT2,soybeans,treated,200,Halictus parallelus,1,46,Ground,Eusocial,Generalist,Halictidae,Leg scopa,182,285,1.78,0.29,7.2,1.2,616,40,0,38,5,9:26,9.26,26.2,69.2,0,6/9/2016
+Atlanta,ATT2,soybeans,treated,200,Lasioglossum (Dialictus) sp.,8,46,Varies,Varies,Generalist,Halictidae,Leg scopa,410,285,1.78,0.29,7.2,1.2,616,40,0,38,5,9:26,9.26,26.2,69.2,0,6/9/2016
+Atlanta,ATT2,soybeans,treated,200,Melissodes bimaculata,8,46,Ground,Solitary,Generalist,Apidae,Leg scopa,600,285,1.78,0.29,7.2,1.2,616,40,0,38,5,9:26,9.26,26.2,69.2,0,6/9/2016
+Atlanta,ATT2,soybeans,treated,200,Melissodes comptoides,5,46,Ground,Solitary,Generalist,Apidae,Leg scopa,600,285,1.78,0.29,7.2,1.2,616,40,0,38,5,9:26,9.26,26.2,69.2,0,6/9/2016
+Atlanta,ATT2,soybeans,treated,200,Melissodes tepaneca,4,46,Ground,Solitary,Generalist,Apidae,Leg scopa,600,285,1.78,0.29,7.2,1.2,616,40,0,38,5,9:26,9.26,26.2,69.2,0,6/9/2016
+Atlanta,ATT2,soybeans,treated,200,Melissodes trinodis,3,46,Ground,Solitary,Specialist,Apidae,Leg scopa,600,285,1.78,0.29,7.2,1.2,616,40,0,38,5,9:26,9.26,26.2,69.2,0,6/9/2016
+Atlanta,ATT2,soybeans,treated,200,Triepeolus distinctus,1,46,Cleptoparasitic,Solitary,Generalist,Apidae,Ingestion,1000,285,1.78,0.29,7.2,1.2,616,40,0,38,5,9:26,9.26,26.2,69.2,0,6/9/2016
+Atlanta,ATT2,soybeans,treated,200,Xenoglossa kansensis,1,46,Ground,Aggregation,Specialist,Apidae,Leg scopa,500,285,1.78,0.29,7.2,1.2,616,40,0,38,5,9:26,9.26,26.2,69.2,0,6/9/2016
+Atlanta,ATT3,soybeans,treated,174,Agapostemon virescens,1,35,Ground,Communal,Generalist,Halictidae,Leg scopa,500,301,0.73,0.62,15,0,142,14,0,72,7,9:00,9.00,28.5,67.7,8,6/9/2016
+Atlanta,ATT3,soybeans,treated,174,Augochlora pura,3,35,Rotten logs,Solitary,Generalist,Halictidae,Leg scopa,210,301,0.73,0.62,15,0,142,14,0,72,7,9:00,9.00,28.5,67.7,8,6/9/2016
+Atlanta,ATT3,soybeans,treated,174,Augochloropsis fulgida,2,35,Ground,Solitary,Generalist,Halictidae,Leg scopa,300,301,0.73,0.62,15,0,142,14,0,72,7,9:00,9.00,28.5,67.7,8,6/9/2016
+Atlanta,ATT3,soybeans,treated,174,Augochloropsis metallica,5,35,Ground,Solitary,Generalist,Halictidae,Leg scopa,300,301,0.73,0.62,15,0,142,14,0,72,7,9:00,9.00,28.5,67.7,8,6/9/2016
+Atlanta,ATT3,soybeans,treated,174,Bombus auricomus,2,35,Ground Surface,Eusocial,Generalist,Apidae,Corbicular basket,7500,301,0.73,0.62,15,0,142,14,0,72,7,9:00,9.00,28.5,67.7,8,6/9/2016
+Atlanta,ATT3,soybeans,treated,174,Bombus vagans,1,35,Ground,Eusocial,Generalist,Apidae,Corbicular basket,7500,301,0.73,0.62,15,0,142,14,0,72,7,9:00,9.00,28.5,67.7,8,6/9/2016
+Atlanta,ATT3,soybeans,treated,174,Halictus confusus,1,35,Ground,Eusocial,Generalist,Halictidae,Leg scopa,130,301,0.73,0.62,15,0,142,14,0,72,7,9:00,9.00,28.5,67.7,8,6/9/2016
+Atlanta,ATT3,soybeans,treated,174,Halictus ligatus,3,35,Ground,Eusocial,Generalist,Halictidae,Leg scopa,182,301,0.73,0.62,15,0,142,14,0,72,7,9:00,9.00,28.5,67.7,8,6/9/2016
+Atlanta,ATT3,soybeans,treated,174,Halictus parallelus,2,35,Ground,Eusocial,Generalist,Halictidae,Leg scopa,182,301,0.73,0.62,15,0,142,14,0,72,7,9:00,9.00,28.5,67.7,8,6/9/2016
+Atlanta,ATT3,soybeans,treated,174,Halictus rubicundus,5,35,Ground,Eusocial,Generalist,Halictidae,Leg scopa,182,301,0.73,0.62,15,0,142,14,0,72,7,9:00,9.00,28.5,67.7,8,6/9/2016
+Atlanta,ATT3,soybeans,treated,174,Halictus tripartitus,2,35,Ground,Eusocial,Generalist,Halictidae,Leg scopa,182,301,0.73,0.62,15,0,142,14,0,72,7,9:00,9.00,28.5,67.7,8,6/9/2016
+Atlanta,ATT3,soybeans,treated,174,Lasioglossum (Dialictus) sp.,4,35,Varies,Varies,Generalist,Halictidae,Leg scopa,410,301,0.73,0.62,15,0,142,14,0,72,7,9:00,9.00,28.5,67.7,8,6/9/2016
+Atlanta,ATT3,soybeans,treated,174,Megachile addenda,1,35,Aboveground,Solitary,Generalist,Megachilidae,Abdominal scopa,457,301,0.73,0.62,15,0,142,14,0,72,7,9:00,9.00,28.5,67.7,8,6/9/2016
+Atlanta,ATT3,soybeans,treated,174,Melissodes agilis,1,35,Ground,Solitary,Generalist,Apidae,Leg scopa,600,301,0.73,0.62,15,0,142,14,0,72,7,9:00,9.00,28.5,67.7,8,6/9/2016
+Atlanta,ATT3,soybeans,treated,174,Protandrena sp.,2,35,Ground,Solitary,Generalist,Andrenidae,Leg scopa,500,301,0.73,0.62,15,0,142,14,0,72,7,9:00,9.00,28.5,67.7,8,6/21/2016
+Atlanta,ATT3,soybeans,treated,200,Augochlora pura,3,44,Rotten logs,Solitary,Generalist,Halictidae,Leg scopa,210,301,0.73,0.62,15,0,142,40,0,42,5,7:05,7.05,22.3,90.6,0.2,6/21/2016
+Atlanta,ATT3,soybeans,treated,200,Bombus auricomus,1,44,Ground Surface,Eusocial,Generalist,Apidae,Corbicular basket,7500,301,0.73,0.62,15,0,142,40,0,42,5,7:05,7.05,22.3,90.6,0.2,6/21/2016
+Atlanta,ATT3,soybeans,treated,200,Bombus bimaculatus,2,44,Ground,Eusocial,Generalist,Apidae,Corbicular basket,7500,301,0.73,0.62,15,0,142,40,0,42,5,7:05,7.05,22.3,90.6,0.2,6/21/2016
+Atlanta,ATT3,soybeans,treated,200,Bombus pennsylvanicus,1,44,Aboveground,Eusocial,Generalist,Apidae,Corbicular basket,7500,301,0.73,0.62,15,0,142,40,0,42,5,7:05,7.05,22.3,90.6,0.2,6/21/2016
+Atlanta,ATT3,soybeans,treated,200,Ceratina mikmaqi,1,44,Stems/Pith,Subsocial,Generalist,Apidae,Weak Leg scopa,80,301,0.73,0.62,15,0,142,40,0,42,5,7:05,7.05,22.3,90.6,0.2,6/21/2016
+Atlanta,ATT3,soybeans,treated,200,Halictus parallelus,2,44,Ground,Eusocial,Generalist,Halictidae,Leg scopa,182,301,0.73,0.62,15,0,142,40,0,42,5,7:05,7.05,22.3,90.6,0.2,6/21/2016
+Atlanta,ATT3,soybeans,treated,200,Halictus rubicundus,13,44,Ground,Eusocial,Generalist,Halictidae,Leg scopa,182,301,0.73,0.62,15,0,142,40,0,42,5,7:05,7.05,22.3,90.6,0.2,6/21/2016
+Atlanta,ATT3,soybeans,treated,200,Lasioglossum (Dialictus) sp.,2,44,Varies,Varies,Generalist,Halictidae,Leg scopa,410,301,0.73,0.62,15,0,142,40,0,42,5,7:05,7.05,22.3,90.6,0.2,6/21/2016
+Atlanta,ATT3,soybeans,treated,200,Melissodes agilis,5,44,Ground,Solitary,Generalist,Apidae,Leg scopa,600,301,0.73,0.62,15,0,142,40,0,42,5,7:05,7.05,22.3,90.6,0.2,6/21/2016
+Atlanta,ATT3,soybeans,treated,200,Melissodes bimaculata,4,44,Ground,Solitary,Generalist,Apidae,Leg scopa,600,301,0.73,0.62,15,0,142,40,0,42,5,7:05,7.05,22.3,90.6,0.2,6/21/2016
+Atlanta,ATT3,soybeans,treated,200,Melissodes denticulata,2,44,Ground,Solitary,Specialist,Apidae,Leg scopa,600,301,0.73,0.62,15,0,142,40,0,42,5,7:05,7.05,22.3,90.6,0.2,6/21/2016
+Atlanta,ATT3,soybeans,treated,200,Melissodes tepaneca,1,44,Ground,Solitary,Generalist,Apidae,Leg scopa,600,301,0.73,0.62,15,0,142,40,0,42,5,7:05,7.05,22.3,90.6,0.2,6/21/2016
+Atlanta,ATT3,soybeans,treated,200,Melissodes trinodis,2,44,Ground,Solitary,Specialist,Apidae,Leg scopa,600,301,0.73,0.62,15,0,142,40,0,42,5,7:05,7.05,22.3,90.6,0.2,6/21/2016
+Atlanta,ATT3,soybeans,treated,200,Ptilothrix bombiformis,1,44,Ground,Aggregations,Specialist,Apidae,Leg scopa,500,301,0.73,0.62,15,0,142,40,0,42,5,7:05,7.05,22.3,90.6,0.2,6/21/2016
+Atlanta,ATT3,soybeans,treated,200,Triepeolus helianthi,1,44,Cleptoparasitic,Solitary,Generalist,Apidae,Ingestion,1000,301,0.73,0.62,15,0,142,40,0,42,5,7:05,7.05,22.3,90.6,0.2,6/21/2016
+Atlanta,ATT3,soybeans,treated,200,Triepeolus lunatus,1,44,Cleptoparasitic,Solitary,Generalist,Apidae,Ingestion,1000,301,0.73,0.62,15,0,142,40,0,42,5,7:05,7.05,22.3,90.6,0.2,6/21/2016
+Atlanta,ATT3,soybeans,treated,200,Xylocopa virginica,2,44,Wood,Solitary,Generalist,Apidae,Leg scopa,21000,301,0.73,0.62,15,0,142,40,0,42,5,7:05,7.05,22.3,90.6,0.2,6/21/2016
+Atlanta,ATT4,soybeans,treated,174,Augochlora pura,2,32,Rotten logs,Solitary,Generalist,Halictidae,Leg scopa,210,299,0.77,0.31,20,0,142,14,0,47,4,9:55,9.55,29.2,65.5,9.3,6/21/2016
+Atlanta,ATT4,soybeans,treated,174,Augochloropsis fulgida,2,32,Ground,Solitary,Generalist,Halictidae,Leg scopa,300,299,0.77,0.31,20,0,142,14,0,47,4,9:55,9.55,29.2,65.5,9.3,6/21/2016
+Atlanta,ATT4,soybeans,treated,174,Augochloropsis metallica,1,32,Ground,Solitary,Generalist,Halictidae,Leg scopa,300,299,0.77,0.31,20,0,142,14,0,47,4,9:55,9.55,29.2,65.5,9.3,6/21/2016
+Atlanta,ATT4,soybeans,treated,174,Bombus griseocollis,3,32,Ground,Eusocial,Generalist,Apidae,Corbicular basket,7500,299,0.77,0.31,20,0,142,14,0,47,4,9:55,9.55,29.2,65.5,9.3,6/21/2016
+Atlanta,ATT4,soybeans,treated,174,Halictus parallelus,3,32,Ground,Eusocial,Generalist,Halictidae,Leg scopa,182,299,0.77,0.31,20,0,142,14,0,47,4,9:55,9.55,29.2,65.5,9.3,6/21/2016
+Atlanta,ATT4,soybeans,treated,174,Halictus rubicundus,10,32,Ground,Eusocial,Generalist,Halictidae,Leg scopa,182,299,0.77,0.31,20,0,142,14,0,47,4,9:55,9.55,29.2,65.5,9.3,6/21/2016
+Atlanta,ATT4,soybeans,treated,174,Lasioglossum (Dialictus) sp.,4,32,Varies,Varies,Generalist,Halictidae,Leg scopa,410,299,0.77,0.31,20,0,142,14,0,47,4,9:55,9.55,29.2,65.5,9.3,6/21/2016
+Atlanta,ATT4,soybeans,treated,174,Megachile addenda,1,32,Aboveground,Solitary,Generalist,Megachilidae,Abdominal scopa,457,299,0.77,0.31,20,0,142,14,0,47,4,9:55,9.55,29.2,65.5,9.3,6/21/2016
+Atlanta,ATT4,soybeans,treated,174,Melissodes agilis,2,32,Ground,Solitary,Generalist,Apidae,Leg scopa,600,299,0.77,0.31,20,0,142,14,0,47,4,9:55,9.55,29.2,65.5,9.3,6/21/2016
+Atlanta,ATT4,soybeans,treated,174,Melissodes bimaculata,1,32,Ground,Solitary,Generalist,Apidae,Leg scopa,600,299,0.77,0.31,20,0,142,14,0,47,4,9:55,9.55,29.2,65.5,9.3,6/21/2016
+Atlanta,ATT4,soybeans,treated,174,Melissodes communis,1,32,Ground,Solitary,Generalist,Apidae,Leg scopa,600,299,0.77,0.31,20,0,142,14,0,47,4,9:55,9.55,29.2,65.5,9.3,6/21/2016
+Atlanta,ATT4,soybeans,treated,174,Xylocopa virginica,2,32,Wood,Solitary,Generalist,Apidae,Leg scopa,21000,299,0.77,0.31,20,0,142,14,0,47,4,9:55,9.55,29.2,65.5,9.3,6/21/2016
+Atlanta,ATT4,soybeans,treated,200,Anthophora walshii,1,38,Ground,Solitary,Generalist,Apidae,Leg scopa,500,299,0.77,0.31,20,0,142,40,0,28,3,8:16,8.16,25,73.4,0.8,6/21/2016
+Atlanta,ATT4,soybeans,treated,200,Augochlora pura,5,38,Rotten logs,Solitary,Generalist,Halictidae,Leg scopa,210,299,0.77,0.31,20,0,142,40,0,28,3,8:16,8.16,25,73.4,0.8,6/21/2016
+Atlanta,ATT4,soybeans,treated,200,Augochlorella aurata,1,38,Ground,Eusocial,Generalist,Halictidae,Leg scopa,210,299,0.77,0.31,20,0,142,40,0,28,3,8:16,8.16,25,73.4,0.8,6/21/2016
+Atlanta,ATT4,soybeans,treated,200,Augochloropsis metallica,1,38,Ground,Solitary,Generalist,Halictidae,Leg scopa,300,299,0.77,0.31,20,0,142,40,0,28,3,8:16,8.16,25,73.4,0.8,6/21/2016
+Atlanta,ATT4,soybeans,treated,200,Halictus parallelus,2,38,Ground,Eusocial,Generalist,Halictidae,Leg scopa,182,299,0.77,0.31,20,0,142,40,0,28,3,8:16,8.16,25,73.4,0.8,6/21/2016
+Atlanta,ATT4,soybeans,treated,200,Halictus rubicundus,2,38,Ground,Eusocial,Generalist,Halictidae,Leg scopa,182,299,0.77,0.31,20,0,142,40,0,28,3,8:16,8.16,25,73.4,0.8,6/21/2016
+Atlanta,ATT4,soybeans,treated,200,Lasioglossum (Dialictus) sp.,5,38,Varies,Varies,Generalist,Halictidae,Leg scopa,410,299,0.77,0.31,20,0,142,40,0,28,3,8:16,8.16,25,73.4,0.8,6/21/2016
+Atlanta,ATT4,soybeans,treated,200,Megachile relativa,1,38,Aboveground,Solitary,Generalist,Megachilidae,Abdominal scopa,457,299,0.77,0.31,20,0,142,40,0,28,3,8:16,8.16,25,73.4,0.8,6/21/2016
+Atlanta,ATT4,soybeans,treated,200,Melissodes agilis,3,38,Ground,Solitary,Generalist,Apidae,Leg scopa,600,299,0.77,0.31,20,0,142,40,0,28,3,8:16,8.16,25,73.4,0.8,6/21/2016
+Atlanta,ATT4,soybeans,treated,200,Melissodes bimaculata,3,38,Ground,Solitary,Generalist,Apidae,Leg scopa,600,299,0.77,0.31,20,0,142,40,0,28,3,8:16,8.16,25,73.4,0.8,6/22/2016
+Atlanta,ATT4,soybeans,treated,200,Melissodes communis,2,38,Ground,Solitary,Generalist,Apidae,Leg scopa,600,299,0.77,0.31,20,0,142,40,0,28,3,8:16,8.16,25,73.4,0.8,6/22/2016
+Atlanta,ATT4,soybeans,treated,200,Melissodes comptoides,2,38,Ground,Solitary,Generalist,Apidae,Leg scopa,600,299,0.77,0.31,20,0,142,40,0,28,3,8:16,8.16,25,73.4,0.8,6/22/2016
+Atlanta,ATT4,soybeans,treated,200,Melissodes denticulata,5,38,Ground,Solitary,Specialist,Apidae,Leg scopa,600,299,0.77,0.31,20,0,142,40,0,28,3,8:16,8.16,25,73.4,0.8,6/22/2016
+Atlanta,ATT4,soybeans,treated,200,Melissodes tepaneca,2,38,Ground,Solitary,Generalist,Apidae,Leg scopa,600,299,0.77,0.31,20,0,142,40,0,28,3,8:16,8.16,25,73.4,0.8,6/22/2016
+Atlanta,ATT4,soybeans,treated,200,Ptilothrix bombiformis,1,38,Ground,Aggregations,Specialist,Apidae,Leg scopa,500,299,0.77,0.31,20,0,142,40,0,28,3,8:16,8.16,25,73.4,0.8,6/22/2016
+Atlanta,ATT4,soybeans,treated,200,Svastra obliqua,1,38,Ground,Communal,Specialist,Apidae,Leg scopa,1000,299,0.77,0.31,20,0,142,40,0,28,3,8:16,8.16,25,73.4,0.8,6/22/2016
+Atlanta,ATT4,soybeans,treated,200,Triepeolus lunatus,1,38,Cleptoparasitic,Solitary,Generalist,Apidae,Ingestion,1000,299,0.77,0.31,20,0,142,40,0,28,3,8:16,8.16,25,73.4,0.8,6/22/2016
+Atlanta,ATUT1,oldfield,untreated,174,Agapostemon virescens,10,48,Ground,Communal,Generalist,Halictidae,Leg scopa,500,286,2,0.82,40,0,657,0,0,60,7,14:00,14.00,32.8,58.2,14.1,6/22/2016
+Atlanta,ATUT1,oldfield,untreated,174,Augochlora pura,1,48,Rotten logs,Solitary,Generalist,Halictidae,Leg scopa,210,286,2,0.82,40,0,657,0,0,60,7,14:00,14.00,32.8,58.2,14.1,6/22/2016
+Atlanta,ATUT1,oldfield,untreated,174,Augochloropsis fulgida,2,48,Ground,Solitary,Generalist,Halictidae,Leg scopa,300,286,2,0.82,40,0,657,0,0,60,7,14:00,14.00,32.8,58.2,14.1,6/22/2016
+Atlanta,ATUT1,oldfield,untreated,174,Bombus auricomus,3,48,Ground Surface,Eusocial,Generalist,Apidae,Corbicular basket,7500,286,2,0.82,40,0,657,0,0,60,7,14:00,14.00,32.8,58.2,14.1,6/22/2016
+Atlanta,ATUT1,oldfield,untreated,174,Bombus fervidus,1,48,Aboveground,Eusocial,Generalist,Apidae,Corbicular basket,7500,286,2,0.82,40,0,657,0,0,60,7,14:00,14.00,32.8,58.2,14.1,6/22/2016
+Atlanta,ATUT1,oldfield,untreated,174,Bombus pennsylvanicus,3,48,Aboveground,Eusocial,Generalist,Apidae,Corbicular basket,7500,286,2,0.82,40,0,657,0,0,60,7,14:00,14.00,32.8,58.2,14.1,6/22/2016
+Atlanta,ATUT1,oldfield,untreated,174,Eucera hamata,1,48,Ground,Solitary,Generalist,Apidae,Leg scopa,1000,286,2,0.82,40,0,657,0,0,60,7,14:00,14.00,32.8,58.2,14.1,6/22/2016
+Atlanta,ATUT1,oldfield,untreated,174,Halictus ligatus,2,48,Ground,Eusocial,Generalist,Halictidae,Leg scopa,182,286,2,0.82,40,0,657,0,0,60,7,14:00,14.00,32.8,58.2,14.1,6/22/2016
+Atlanta,ATUT1,oldfield,untreated,174,Halictus parallelus,3,48,Ground,Eusocial,Generalist,Halictidae,Leg scopa,182,286,2,0.82,40,0,657,0,0,60,7,14:00,14.00,32.8,58.2,14.1,6/22/2016
+Atlanta,ATUT1,oldfield,untreated,174,Halictus rubicundus,2,48,Ground,Eusocial,Generalist,Halictidae,Leg scopa,182,286,2,0.82,40,0,657,0,0,60,7,14:00,14.00,32.8,58.2,14.1,6/22/2016
+Atlanta,ATUT1,oldfield,untreated,174,Lasioglossum (Dialictus) sp.,17,48,Varies,Varies,Generalist,Halictidae,Leg scopa,410,286,2,0.82,40,0,657,0,0,60,7,14:00,14.00,32.8,58.2,14.1,6/22/2016
+Atlanta,ATUT1,oldfield,untreated,174,Melissodes tepaneca,2,48,Ground,Solitary,Generalist,Apidae,Leg scopa,600,286,2,0.82,40,0,657,0,0,60,7,14:00,14.00,32.8,58.2,14.1,6/22/2016
+Atlanta,ATUT1,oldfield,untreated,174,Nomada cressonii,1,48,Cleptoparasitic,Solitary,Generalist,Apidae,Ingestion,200,286,2,0.82,40,0,657,0,0,60,7,14:00,14.00,32.8,58.2,14.1,6/22/2016
+Atlanta,ATUT1,oldfield,untreated,200,Augochlora pura,3,28,Rotten logs,Solitary,Generalist,Halictidae,Leg scopa,210,286,0.14,0.13,10.5,0,174,0,0,73,8,11:20,11.20,26.6,69.2,4.5,6/22/2016
+Atlanta,ATUT1,oldfield,untreated,200,Augochloropsis metallica,1,28,Ground,Solitary,Generalist,Halictidae,Leg scopa,300,286,0.14,0.13,10.5,0,174,0,0,73,8,11:20,11.20,26.6,69.2,4.5,6/22/2016
+Atlanta,ATUT1,oldfield,untreated,200,Bombus auricomus,1,28,Ground Surface,Eusocial,Generalist,Apidae,Corbicular basket,7500,286,0.14,0.13,10.5,0,174,0,0,73,8,11:20,11.20,26.6,69.2,4.5,6/22/2016
+Atlanta,ATUT1,oldfield,untreated,200,Bombus griseocollis,1,28,Ground,Eusocial,Generalist,Apidae,Corbicular basket,7500,286,0.14,0.13,10.5,0,174,0,0,73,8,11:20,11.20,26.6,69.2,4.5,6/22/2016
+Atlanta,ATUT1,oldfield,untreated,200,Bombus pennsylvanicus,1,28,Aboveground,Eusocial,Generalist,Apidae,Corbicular basket,7500,286,0.14,0.13,10.5,0,174,0,0,73,8,11:20,11.20,26.6,69.2,4.5,6/22/2016
+Atlanta,ATUT1,oldfield,untreated,200,Ceratina calcarata,1,28,Stems/Pith,Subsocial,Generalist,Apidae,Weak Leg scopa,80,286,0.14,0.13,10.5,0,174,0,0,73,8,11:20,11.20,26.6,69.2,4.5,6/22/2016
+Atlanta,ATUT1,oldfield,untreated,200,Ceratina mikmaqi,1,28,Stems/Pith,Subsocial,Generalist,Apidae,Weak Leg scopa,80,286,0.14,0.13,10.5,0,174,0,0,73,8,11:20,11.20,26.6,69.2,4.5,6/22/2016
+Atlanta,ATUT1,oldfield,untreated,200,Halictus ligatus,2,28,Ground,Eusocial,Generalist,Halictidae,Leg scopa,182,286,0.14,0.13,10.5,0,174,0,0,73,8,11:20,11.20,26.6,69.2,4.5,6/22/2016
+Atlanta,ATUT1,oldfield,untreated,200,Halictus parallelus,2,28,Ground,Eusocial,Generalist,Halictidae,Leg scopa,182,286,0.14,0.13,10.5,0,174,0,0,73,8,11:20,11.20,26.6,69.2,4.5,6/22/2016
+Atlanta,ATUT1,oldfield,untreated,200,Halictus rubicundus,2,28,Ground,Eusocial,Generalist,Halictidae,Leg scopa,182,286,0.14,0.13,10.5,0,174,0,0,73,8,11:20,11.20,26.6,69.2,4.5,6/22/2016
+Atlanta,ATUT1,oldfield,untreated,200,Lasioglossum (Dialictus) sp.,5,28,Varies,Varies,Generalist,Halictidae,Leg scopa,410,286,0.14,0.13,10.5,0,174,0,0,73,8,11:20,11.20,26.6,69.2,4.5,6/22/2016
+Atlanta,ATUT1,oldfield,untreated,200,Megachile brevis,1,28,Aboveground,Solitary,Generalist,Megachilidae,Abdominal scopa,457,286,0.14,0.13,10.5,0,174,0,0,73,8,11:20,11.20,26.6,69.2,4.5,6/22/2016
+Atlanta,ATUT1,oldfield,untreated,200,Melissodes comptoides,2,28,Ground,Solitary,Generalist,Apidae,Leg scopa,600,286,0.14,0.13,10.5,0,174,0,0,73,8,11:20,11.20,26.6,69.2,4.5,6/22/2016
+Atlanta,ATUT1,oldfield,untreated,200,Melissodes denticulata,2,28,Ground,Solitary,Specialist,Apidae,Leg scopa,600,286,0.14,0.13,10.5,0,174,0,0,73,8,11:20,11.20,26.6,69.2,4.5,6/22/2016
+Atlanta,ATUT1,oldfield,untreated,200,Melissodes tepaneca,1,28,Ground,Solitary,Generalist,Apidae,Leg scopa,600,286,0.14,0.13,10.5,0,174,0,0,73,8,11:20,11.20,26.6,69.2,4.5,6/22/2016
+Atlanta,ATUT1,oldfield,untreated,200,Svastra obliqua,1,28,Ground,Communal,Specialist,Apidae,Leg scopa,1000,286,0.14,0.13,10.5,0,174,0,0,73,8,11:20,11.20,26.6,69.2,4.5,6/22/2016
+Atlanta,ATUT1,oldfield,untreated,200,Triepeolus lunatus,1,28,Cleptoparasitic,Solitary,Generalist,Apidae,Ingestion,1000,286,0.14,0.13,10.5,0,174,0,0,73,8,11:20,11.20,26.6,69.2,4.5,6/22/2016
+Atlanta,ATUT2,oldfield,untreated,174,Augochlora pura,1,24,Rotten logs,Solitary,Generalist,Halictidae,Leg scopa,210,306,0.14,0.13,10.5,0,174,0,0,75,8,12:40,12.40,32,62.5,21.3,6/22/2016
+Atlanta,ATUT2,oldfield,untreated,174,Augochloropsis fulgida,1,24,Ground,Solitary,Generalist,Halictidae,Leg scopa,300,306,0.14,0.13,10.5,0,174,0,0,75,8,12:40,12.40,32,62.5,21.3,6/22/2016
+Atlanta,ATUT2,oldfield,untreated,174,Bombus auricomus,1,24,Ground Surface,Eusocial,Generalist,Apidae,Corbicular basket,7500,306,0.14,0.13,10.5,0,174,0,0,75,8,12:40,12.40,32,62.5,21.3,6/22/2016
+Atlanta,ATUT2,oldfield,untreated,174,Bombus bimaculatus,1,24,Ground,Eusocial,Generalist,Apidae,Corbicular basket,7500,306,0.14,0.13,10.5,0,174,0,0,75,8,12:40,12.40,32,62.5,21.3,6/22/2016
+Atlanta,ATUT2,oldfield,untreated,174,Bombus griseocollis,4,24,Ground,Eusocial,Generalist,Apidae,Corbicular basket,7500,306,0.14,0.13,10.5,0,174,0,0,75,8,12:40,12.40,32,62.5,21.3,6/22/2016
+Atlanta,ATUT2,oldfield,untreated,174,Bombus impatiens,1,24,Ground,Eusocial,Generalist,Apidae,Corbicular basket,7500,306,0.14,0.13,10.5,0,174,0,0,75,8,12:40,12.40,32,62.5,21.3,6/22/2016
+Atlanta,ATUT2,oldfield,untreated,174,Bombus vagans,1,24,Ground,Eusocial,Generalist,Apidae,Corbicular basket,7500,306,0.14,0.13,10.5,0,174,0,0,75,8,12:40,12.40,32,62.5,21.3,6/22/2016
+Atlanta,ATUT2,oldfield,untreated,174,Eucera hamata,2,24,Ground,Solitary,Generalist,Apidae,Leg scopa,1000,306,0.14,0.13,10.5,0,174,0,0,75,8,12:40,12.40,32,62.5,21.3,6/22/2016
+Atlanta,ATUT2,oldfield,untreated,174,Lasioglossum (Dialictus) sp.,6,24,Varies,Varies,Generalist,Halictidae,Leg scopa,410,306,0.14,0.13,10.5,0,174,0,0,75,8,12:40,12.40,32,62.5,21.3,6/22/2016
+Atlanta,ATUT2,oldfield,untreated,174,Melissodes agilis,1,24,Ground,Solitary,Generalist,Apidae,Leg scopa,600,306,0.14,0.13,10.5,0,174,0,0,75,8,12:40,12.40,32,62.5,21.3,6/22/2016
+Atlanta,ATUT2,oldfield,untreated,174,Melissodes comptoides,1,24,Ground,Solitary,Generalist,Apidae,Leg scopa,600,306,0.14,0.13,10.5,0,174,0,0,75,8,12:40,12.40,32,62.5,21.3,6/22/2016
+Atlanta,ATUT2,oldfield,untreated,174,Xylocopa virginica,4,24,Wood,Solitary,Generalist,Apidae,Leg scopa,21000,306,0.14,0.13,10.5,0,174,0,0,75,8,12:40,12.40,32,62.5,21.3,6/22/2016
+Atlanta,ATUT2,oldfield,untreated,200,Agapostemon virescens,1,61,Ground,Communal,Generalist,Halictidae,Leg scopa,500,306,0.14,0.13,10.5,0,174,0,0,73,8,11:20,11.20,26.6,69.2,4.5,6/22/2016
+Atlanta,ATUT2,oldfield,untreated,200,Augochlora pura,3,61,Rotten logs,Solitary,Generalist,Halictidae,Leg scopa,210,306,0.14,0.13,10.5,0,174,0,0,73,8,11:20,11.20,26.6,69.2,4.5,6/22/2016
+Atlanta,ATUT2,oldfield,untreated,200,Augochloropsis metallica,1,61,Ground,Solitary,Generalist,Halictidae,Leg scopa,300,306,0.14,0.13,10.5,0,174,0,0,73,8,11:20,11.20,26.6,69.2,4.5,6/22/2016
+Atlanta,ATUT2,oldfield,untreated,200,Bombus griseocollis,2,61,Ground,Eusocial,Generalist,Apidae,Corbicular basket,7500,306,0.14,0.13,10.5,0,174,0,0,73,8,11:20,11.20,26.6,69.2,4.5,6/22/2016
+Atlanta,ATUT2,oldfield,untreated,200,Hylaeus modestus,1,61,Wood,Solitary,Generalist,Colletidae,Ingestion,250,306,0.14,0.13,10.5,0,174,0,0,73,8,11:20,11.20,26.6,69.2,4.5,6/22/2016
+Atlanta,ATUT2,oldfield,untreated,200,Lasioglossum (Dialictus) sp.,52,61,Varies,Varies,Generalist,Halictidae,Leg scopa,410,306,0.14,0.13,10.5,0,174,0,0,73,8,11:20,11.20,26.6,69.2,4.5,6/22/2016
+Atlanta,ATUT2,oldfield,untreated,200,Melissodes comptoides,1,61,Ground,Solitary,Generalist,Apidae,Leg scopa,600,306,0.14,0.13,10.5,0,174,0,0,73,8,11:20,11.20,26.6,69.2,4.5,6/22/2016
+Fountain Grove,FGT1,corn,treated,158,Agapostemon splendens,1,39,Ground,Communal,Generalist,Halictidae,Leg scopa,500,157,1.01,0.21,7.5,0.8,387,30,0,59,3,18:16,18.16,27,39,2,6/22/2016
+Fountain Grove,FGT1,corn,treated,158,Bombus auricomus,1,39,Ground Surface,Eusocial,Generalist,Apidae,Corbicular basket,7500,157,1.01,0.21,7.5,0.8,387,30,0,59,3,18:16,18.16,27,39,2,6/22/2016
+Fountain Grove,FGT1,corn,treated,158,Bombus pennsylvanicus,1,39,Aboveground,Eusocial,Generalist,Apidae,Corbicular basket,7500,157,1.01,0.21,7.5,0.8,387,30,0,59,3,18:16,18.16,27,39,2,6/22/2016
+Fountain Grove,FGT1,corn,treated,158,Ceratina mikmaqi,2,39,Stems/Pith,Subsocial,Generalist,Apidae,Weak Leg scopa,80,157,1.01,0.21,7.5,0.8,387,30,0,59,3,18:16,18.16,27,39,2,6/22/2016
+Fountain Grove,FGT1,corn,treated,158,Eucera hamata,28,39,Ground,Solitary,Generalist,Apidae,Leg scopa,1000,157,1.01,0.21,7.5,0.8,387,30,0,59,3,18:16,18.16,27,39,2,6/22/2016
+Fountain Grove,FGT1,corn,treated,158,Halictus ligatus,1,39,Ground,Eusocial,Generalist,Halictidae,Leg scopa,182,157,1.01,0.21,7.5,0.8,387,30,0,59,3,18:16,18.16,27,39,2,6/22/2016
+Fountain Grove,FGT1,corn,treated,158,Halictus parallelus,1,39,Ground,Eusocial,Generalist,Halictidae,Leg scopa,182,157,1.01,0.21,7.5,0.8,387,30,0,59,3,18:16,18.16,27,39,2,6/22/2016
+Fountain Grove,FGT1,corn,treated,158,Xylocopa virginica,4,39,Wood,Solitary,Generalist,Apidae,Leg scopa,21000,157,1.01,0.21,7.5,0.8,387,30,0,59,3,18:16,18.16,27,39,2,6/22/2016
+Fountain Grove,FGT1,corn,treated,204,Agapostemon splendens,4,69,Ground,Communal,Generalist,Halictidae,Leg scopa,500,157,1.01,0.21,7.5,0.8,387,84,0,30,7,7:29,7.29,24.5,81.9,17.2,6/22/2016
+Fountain Grove,FGT1,corn,treated,204,Agapostemon texanus,8,69,Ground,Communal,Generalist,Halictidae,Leg scopa,500,157,1.01,0.21,7.5,0.8,387,84,0,30,7,7:29,7.29,24.5,81.9,17.2,6/22/2016
+Fountain Grove,FGT1,corn,treated,204,Agapostemon virescens,1,69,Ground,Communal,Generalist,Halictidae,Leg scopa,500,157,1.01,0.21,7.5,0.8,387,84,0,30,7,7:29,7.29,24.5,81.9,17.2,6/22/2016
+Fountain Grove,FGT1,corn,treated,204,Augochlora pura,2,69,Rotten logs,Solitary,Generalist,Halictidae,Leg scopa,210,157,1.01,0.21,7.5,0.8,387,84,0,30,7,7:29,7.29,24.5,81.9,17.2,6/22/2016
+Fountain Grove,FGT1,corn,treated,204,Bombus auricomus,2,69,Ground Surface,Eusocial,Generalist,Apidae,Corbicular basket,7500,157,1.01,0.21,7.5,0.8,387,84,0,30,7,7:29,7.29,24.5,81.9,17.2,6/22/2016
+Fountain Grove,FGT1,corn,treated,204,Bombus pennsylvanicus,2,69,Aboveground,Eusocial,Generalist,Apidae,Corbicular basket,7500,157,1.01,0.21,7.5,0.8,387,84,0,30,7,7:29,7.29,24.5,81.9,17.2,6/22/2016
+Fountain Grove,FGT1,corn,treated,204,Ceratina dupla,1,69,Stems/Pith,Subsocial,Generalist,Apidae,Weak Leg scopa,80,157,1.01,0.21,7.5,0.8,387,84,0,30,7,7:29,7.29,24.5,81.9,17.2,6/22/2016
+Fountain Grove,FGT1,corn,treated,204,Halictus ligatus,4,69,Ground,Eusocial,Generalist,Halictidae,Leg scopa,182,157,1.01,0.21,7.5,0.8,387,84,0,30,7,7:29,7.29,24.5,81.9,17.2,6/22/2016
+Fountain Grove,FGT1,corn,treated,204,Halictus parallelus,1,69,Ground,Eusocial,Generalist,Halictidae,Leg scopa,182,157,1.01,0.21,7.5,0.8,387,84,0,30,7,7:29,7.29,24.5,81.9,17.2,6/22/2016
+Fountain Grove,FGT1,corn,treated,204,Megachile georgica,1,69,Aboveground,Solitary,Generalist,Megachilidae,Abdominal scopa,457,157,1.01,0.21,7.5,0.8,387,84,0,30,7,7:29,7.29,24.5,81.9,17.2,6/22/2016
+Fountain Grove,FGT1,corn,treated,204,Melissodes bimaculata,27,69,Ground,Solitary,Generalist,Apidae,Leg scopa,600,157,1.01,0.21,7.5,0.8,387,84,0,30,7,7:29,7.29,24.5,81.9,17.2,6/22/2016
+Fountain Grove,FGT1,corn,treated,204,Melissodes comptoides,1,69,Ground,Solitary,Generalist,Apidae,Leg scopa,600,157,1.01,0.21,7.5,0.8,387,84,0,30,7,7:29,7.29,24.5,81.9,17.2,6/22/2016
+Fountain Grove,FGT1,corn,treated,204,Melissodes denticulata,5,69,Ground,Solitary,Specialist,Apidae,Leg scopa,600,157,1.01,0.21,7.5,0.8,387,84,0,30,7,7:29,7.29,24.5,81.9,17.2,6/22/2016
+Fountain Grove,FGT1,corn,treated,204,Melissodes trinodis,3,69,Ground,Solitary,Specialist,Apidae,Leg scopa,600,157,1.01,0.21,7.5,0.8,387,84,0,30,7,7:29,7.29,24.5,81.9,17.2,6/22/2016
+Fountain Grove,FGT1,corn,treated,204,Ptilothrix bombiformis,3,69,Ground,Aggregations,Specialist,Apidae,Leg scopa,500,157,1.01,0.21,7.5,0.8,387,84,0,30,7,7:29,7.29,24.5,81.9,17.2,6/22/2016
+Fountain Grove,FGT1,corn,treated,204,Svastra obliqua,3,69,Ground,Communal,Specialist,Apidae,Leg scopa,1000,157,1.01,0.21,7.5,0.8,387,84,0,30,7,7:29,7.29,24.5,81.9,17.2,6/22/2016
+Fountain Grove,FGT1,corn,treated,204,Xylocopa virginica,1,69,Wood,Solitary,Generalist,Apidae,Leg scopa,21000,157,1.01,0.21,7.5,0.8,387,84,0,30,7,7:29,7.29,24.5,81.9,17.2,6/22/2016
+Fountain Grove,FGT2,corn,treated,158,Bombus auricomus,1,19,Ground Surface,Eusocial,Generalist,Apidae,Corbicular basket,7500,212,2.59,0.56,22.9,0.6,617,30,0,45,6,19:00,19.00,27.2,37.4,2.3,6/22/2016
+Fountain Grove,FGT2,corn,treated,158,Bombus impatiens,1,19,Ground,Eusocial,Generalist,Apidae,Corbicular basket,7500,212,2.59,0.56,22.9,0.6,617,30,0,45,6,19:00,19.00,27.2,37.4,2.3,6/22/2016
+Fountain Grove,FGT2,corn,treated,158,Bombus pennsylvanicus,2,19,Aboveground,Eusocial,Generalist,Apidae,Corbicular basket,7500,212,2.59,0.56,22.9,0.6,617,30,0,45,6,19:00,19.00,27.2,37.4,2.3,7/9/2016
+Fountain Grove,FGT2,corn,treated,158,Eucera hamata,9,19,Ground,Solitary,Generalist,Apidae,Leg scopa,1000,212,2.59,0.56,22.9,0.6,617,30,0,45,6,19:00,19.00,27.2,37.4,2.3,7/9/2016
+Fountain Grove,FGT2,corn,treated,158,Halictus rubicundus,1,19,Ground,Eusocial,Generalist,Halictidae,Leg scopa,182,212,2.59,0.56,22.9,0.6,617,30,0,45,6,19:00,19.00,27.2,37.4,2.3,7/9/2016
+Fountain Grove,FGT2,corn,treated,158,Megachile addenda,1,19,Aboveground,Solitary,Generalist,Megachilidae,Abdominal scopa,457,212,2.59,0.56,22.9,0.6,617,30,0,45,6,19:00,19.00,27.2,37.4,2.3,7/9/2016
+Fountain Grove,FGT2,corn,treated,158,Megachile deflexa,1,19,Aboveground,Solitary,Generalist,Megachilidae,Abdominal scopa,457,212,2.59,0.56,22.9,0.6,617,30,0,45,6,19:00,19.00,27.2,37.4,2.3,7/9/2016
+Fountain Grove,FGT2,corn,treated,158,Xylocopa virginica,3,19,Wood,Solitary,Generalist,Apidae,Leg scopa,21000,212,2.59,0.56,22.9,0.6,617,30,0,45,6,19:00,19.00,27.2,37.4,2.3,7/9/2016
+Fountain Grove,FGT2,corn,treated,204,Agapostemon virescens,1,35,Ground,Communal,Generalist,Halictidae,Leg scopa,500,212,2.59,0.56,22.9,0.6,617,84,0,33,3,8:16,8.16,23.7,75,11.9,7/9/2016
+Fountain Grove,FGT2,corn,treated,204,Augochlora pura,2,35,Rotten logs,Solitary,Generalist,Halictidae,Leg scopa,210,212,2.59,0.56,22.9,0.6,617,84,0,33,3,8:16,8.16,23.7,75,11.9,7/9/2016
+Fountain Grove,FGT2,corn,treated,204,Bombus auricomus,1,35,Ground Surface,Eusocial,Generalist,Apidae,Corbicular basket,7500,212,2.59,0.56,22.9,0.6,617,84,0,33,3,8:16,8.16,23.7,75,11.9,7/9/2016
+Fountain Grove,FGT2,corn,treated,204,Bombus griseocollis,2,35,Ground,Eusocial,Generalist,Apidae,Corbicular basket,7500,212,2.59,0.56,22.9,0.6,617,84,0,33,3,8:16,8.16,23.7,75,11.9,7/9/2016
+Fountain Grove,FGT2,corn,treated,204,Bombus pennsylvanicus,1,35,Aboveground,Eusocial,Generalist,Apidae,Corbicular basket,7500,212,2.59,0.56,22.9,0.6,617,84,0,33,3,8:16,8.16,23.7,75,11.9,7/9/2016
+Fountain Grove,FGT2,corn,treated,204,Ceratina mikmaqi,2,35,Stems/Pith,Subsocial,Generalist,Apidae,Weak Leg scopa,80,212,2.59,0.56,22.9,0.6,617,84,0,33,3,8:16,8.16,23.7,75,11.9,7/9/2016
+Fountain Grove,FGT2,corn,treated,204,Halictus rubicundus,1,35,Ground,Eusocial,Generalist,Halictidae,Leg scopa,182,212,2.59,0.56,22.9,0.6,617,84,0,33,3,8:16,8.16,23.7,75,11.9,7/9/2016
+Fountain Grove,FGT2,corn,treated,204,Hylaeus modestus,1,35,Wood,Solitary,Generalist,Colletidae,Ingestion,250,212,2.59,0.56,22.9,0.6,617,84,0,33,3,8:16,8.16,23.7,75,11.9,7/9/2016
+Fountain Grove,FGT2,corn,treated,204,Megachile montivaga,1,35,Ground,Solitary,Generalist,Megachilidae,Abdominal scopa,457,212,2.59,0.56,22.9,0.6,617,84,0,33,3,8:16,8.16,23.7,75,11.9,7/9/2016
+Fountain Grove,FGT2,corn,treated,204,Melissodes bimaculata,16,35,Ground,Solitary,Generalist,Apidae,Leg scopa,600,212,2.59,0.56,22.9,0.6,617,84,0,33,3,8:16,8.16,23.7,75,11.9,7/9/2016
+Fountain Grove,FGT2,corn,treated,204,Melissodes communis,1,35,Ground,Solitary,Generalist,Apidae,Leg scopa,600,212,2.59,0.56,22.9,0.6,617,84,0,33,3,8:16,8.16,23.7,75,11.9,7/9/2016
+Fountain Grove,FGT2,corn,treated,204,Melissodes tepaneca,1,35,Ground,Solitary,Generalist,Apidae,Leg scopa,600,212,2.59,0.56,22.9,0.6,617,84,0,33,3,8:16,8.16,23.7,75,11.9,7/9/2016
+Fountain Grove,FGT2,corn,treated,204,Ptilothrix bombiformis,4,35,Ground,Aggregations,Specialist,Apidae,Leg scopa,500,212,2.59,0.56,22.9,0.6,617,84,0,33,3,8:16,8.16,23.7,75,11.9,7/9/2016
+Fountain Grove,FGT2,corn,treated,204,Xylocopa virginica,1,35,Wood,Solitary,Generalist,Apidae,Leg scopa,21000,212,2.59,0.56,22.9,0.6,617,84,0,33,3,8:16,8.16,23.7,75,11.9,7/9/2016
+Fountain Grove,FGT3,corn,treated,158,Bombus pennsylvanicus,2,9,Aboveground,Eusocial,Generalist,Apidae,Corbicular basket,7500,216,3.24,0.09,10.3,1.1,503,30,0,62,5,14:54,14.54,29,35,1.87,7/9/2016
+Fountain Grove,FGT3,corn,treated,158,Ceratina cockerelli,1,9,Stems/Pith,Subsocial,Generalist,Apidae,Weak Leg scopa,80,216,3.24,0.09,10.3,1.1,503,30,0,62,5,14:54,14.54,29,35,1.87,7/9/2016
+Fountain Grove,FGT3,corn,treated,158,Ceratina mikmaqi,2,9,Stems/Pith,Subsocial,Generalist,Apidae,Weak Leg scopa,80,216,3.24,0.09,10.3,1.1,503,30,0,62,5,14:54,14.54,29,35,1.87,7/9/2016
+Fountain Grove,FGT3,corn,treated,158,Eucera hamata,1,9,Ground,Solitary,Generalist,Apidae,Leg scopa,1000,216,3.24,0.09,10.3,1.1,503,30,0,62,5,14:54,14.54,29,35,1.87,7/9/2016
+Fountain Grove,FGT3,corn,treated,158,Halictus ligatus,1,9,Ground,Eusocial,Generalist,Halictidae,Leg scopa,182,216,3.24,0.09,10.3,1.1,503,30,0,62,5,14:54,14.54,29,35,1.87,7/9/2016
+Fountain Grove,FGT3,corn,treated,158,Lasioglossum (Dialictus) sp.,2,9,Varies,Varies,Generalist,Halictidae,Leg scopa,410,216,3.24,0.09,10.3,1.1,503,30,0,62,5,14:54,14.54,29,35,1.87,
+Fountain Grove,FGT3,corn,treated,204,Lasioglossum (Dialictus) sp.,2,19,Varies,Varies,Generalist,Halictidae,Leg scopa,410,216,3.24,0.09,10.3,1.1,503,84,0,63,8,9:49,9.49,25.7,70.4,2.7,7/9/2016
+Fountain Grove,FGT3,corn,treated,204,Melissodes bimaculata,14,19,Ground,Solitary,Generalist,Apidae,Leg scopa,600,216,3.24,0.09,10.3,1.1,503,84,0,63,8,9:49,9.49,25.7,70.4,2.7,7/9/2016
+Fountain Grove,FGT3,corn,treated,204,Melissodes communis,1,19,Ground,Solitary,Generalist,Apidae,Leg scopa,600,216,3.24,0.09,10.3,1.1,503,84,0,63,8,9:49,9.49,25.7,70.4,2.7,7/9/2016
+Fountain Grove,FGT3,corn,treated,204,Melissodes denticulata,1,19,Ground,Solitary,Specialist,Apidae,Leg scopa,600,216,3.24,0.09,10.3,1.1,503,84,0,63,8,9:49,9.49,25.7,70.4,2.7,7/9/2016
+Fountain Grove,FGT3,corn,treated,204,Melissodes trinodis,1,19,Ground,Solitary,Specialist,Apidae,Leg scopa,600,216,3.24,0.09,10.3,1.1,503,84,0,63,8,9:49,9.49,25.7,70.4,2.7,7/9/2016
+Fountain Grove,FGT4,corn,treated,158,Bombus auricomus,2,9,Ground Surface,Eusocial,Generalist,Apidae,Corbicular basket,7500,213,2.23,0.06,3.4,4.5,327,30,80,33,3,16:49,16.49,28.6,40,1.9,7/9/2016
+Fountain Grove,FGT4,corn,treated,158,Eucera hamata,6,9,Ground,Solitary,Generalist,Apidae,Leg scopa,1000,213,2.23,0.06,3.4,4.5,327,30,80,33,3,16:49,16.49,28.6,40,1.9,7/9/2016
+Fountain Grove,FGT4,corn,treated,158,Megachile addenda,1,9,Aboveground,Solitary,Generalist,Megachilidae,Abdominal scopa,457,213,2.23,0.06,3.4,4.5,327,30,80,33,3,16:49,16.49,28.6,40,1.9,7/9/2016
+Fountain Grove,FGT4,corn,treated,204,Augochlora pura,2,38,Rotten logs,Solitary,Generalist,Halictidae,Leg scopa,210,213,2.23,0.06,3.4,4.5,327,84,85,15,3,9:00,9.00,35.2,70,7.7,7/9/2016
+Fountain Grove,FGT4,corn,treated,204,Augochloropsis metallica,1,38,Ground,Solitary,Generalist,Halictidae,Leg scopa,300,213,2.23,0.06,3.4,4.5,327,84,85,15,3,9:00,9.00,35.2,70,7.7,7/9/2016
+Fountain Grove,FGT4,corn,treated,204,Bombus pennsylvanicus,1,38,Aboveground,Eusocial,Generalist,Apidae,Corbicular basket,7500,213,2.23,0.06,3.4,4.5,327,84,85,15,3,9:00,9.00,35.2,70,7.7,7/9/2016
+Fountain Grove,FGT4,corn,treated,204,Lasioglossum (Dialictus) sp.,2,38,Varies,Varies,Generalist,Halictidae,Leg scopa,410,213,2.23,0.06,3.4,4.5,327,84,85,15,3,9:00,9.00,35.2,70,7.7,7/9/2016
+Fountain Grove,FGT4,corn,treated,204,Melissodes bimaculata,19,38,Ground,Solitary,Generalist,Apidae,Leg scopa,600,213,2.23,0.06,3.4,4.5,327,84,85,15,3,9:00,9.00,35.2,70,7.7,7/9/2016
+Fountain Grove,FGT4,corn,treated,204,Melissodes communis,3,38,Ground,Solitary,Generalist,Apidae,Leg scopa,600,213,2.23,0.06,3.4,4.5,327,84,85,15,3,9:00,9.00,35.2,70,7.7,7/9/2016
+Fountain Grove,FGT4,corn,treated,204,Melissodes comptoides,6,38,Ground,Solitary,Generalist,Apidae,Leg scopa,600,213,2.23,0.06,3.4,4.5,327,84,85,15,3,9:00,9.00,35.2,70,7.7,7/9/2016
+Fountain Grove,FGT4,corn,treated,204,Melissodes denticulata,1,38,Ground,Solitary,Specialist,Apidae,Leg scopa,600,213,2.23,0.06,3.4,4.5,327,84,85,15,3,9:00,9.00,35.2,70,7.7,7/9/2016
+Fountain Grove,FGT4,corn,treated,204,Melissodes trinodis,2,38,Ground,Solitary,Specialist,Apidae,Leg scopa,600,213,2.23,0.06,3.4,4.5,327,84,85,15,3,9:00,9.00,35.2,70,7.7,7/9/2016
+Fountain Grove,FGT4,corn,treated,204,Svastra obliqua,1,38,Ground,Communal,Specialist,Apidae,Leg scopa,1000,213,2.23,0.06,3.4,4.5,327,84,85,15,3,9:00,9.00,35.2,70,7.7,7/9/2016
+Fountain Grove,FGUT1,grassland,untreated,158,Augochlora pura,1,3,Rotten logs,Solitary,Generalist,Halictidae,Leg scopa,210,255,2.3,0.25,24,0,937,0,0,45,5,16:00,16.00,28,37.2,2.7,7/9/2016
+Fountain Grove,FGUT1,grassland,untreated,158,Augochloropsis fulgida,1,3,Ground,Solitary,Generalist,Halictidae,Leg scopa,300,255,2.3,0.25,24,0,937,0,0,45,5,16:00,16.00,28,37.2,2.7,7/9/2016
+Fountain Grove,FGUT1,grassland,untreated,158,Halictus tripartitus,1,3,Ground,Eusocial,Generalist,Halictidae,Leg scopa,182,255,2.3,0.25,24,0,937,0,0,45,5,16:00,16.00,28,37.2,2.7,7/9/2016
+Fountain Grove,FGUT1,grassland,untreated,204,Augochlora pura,1,30,Rotten logs,Solitary,Generalist,Halictidae,Leg scopa,210,255,2.3,0.25,24,0,937,0,0,58,7,11:00,11.00,25.1,73,2.3,7/9/2016
+Fountain Grove,FGUT1,grassland,untreated,204,Bombus griseocollis,4,30,Ground,Eusocial,Generalist,Apidae,Corbicular basket,7500,255,2.3,0.25,24,0,937,0,0,58,7,11:00,11.00,25.1,73,2.3,7/9/2016
+Fountain Grove,FGUT1,grassland,untreated,204,Bombus pennsylvanicus,2,30,Aboveground,Eusocial,Generalist,Apidae,Corbicular basket,7500,255,2.3,0.25,24,0,937,0,0,58,7,11:00,11.00,25.1,73,2.3,7/9/2016
+Fountain Grove,FGUT1,grassland,untreated,204,Ceratina dupla,1,30,Stems/Pith,Subsocial,Generalist,Apidae,Weak Leg scopa,80,255,2.3,0.25,24,0,937,0,0,58,7,11:00,11.00,25.1,73,2.3,7/9/2016
+Fountain Grove,FGUT1,grassland,untreated,204,Halictus ligatus,1,30,Ground,Eusocial,Generalist,Halictidae,Leg scopa,182,255,2.3,0.25,24,0,937,0,0,58,7,11:00,11.00,25.1,73,2.3,7/9/2016
+Fountain Grove,FGUT1,grassland,untreated,204,Hylaeus modestus,1,30,Wood,Solitary,Generalist,Colletidae,Ingestion,250,255,2.3,0.25,24,0,937,0,0,58,7,11:00,11.00,25.1,73,2.3,7/9/2016
+Fountain Grove,FGUT1,grassland,untreated,204,Lasioglossum (Dialictus) sp.,10,30,Varies,Varies,Generalist,Halictidae,Leg scopa,410,255,2.3,0.25,24,0,937,0,0,58,7,11:00,11.00,25.1,73,2.3,7/9/2016
+Fountain Grove,FGUT1,grassland,untreated,204,Melissodes communis,4,30,Ground,Solitary,Generalist,Apidae,Leg scopa,600,255,2.3,0.25,24,0,937,0,0,58,7,11:00,11.00,25.1,73,2.3,7/9/2016
+Fountain Grove,FGUT1,grassland,untreated,204,Melissodes comptoides,4,30,Ground,Solitary,Generalist,Apidae,Leg scopa,600,255,2.3,0.25,24,0,937,0,0,58,7,11:00,11.00,25.1,73,2.3,7/9/2016
+Fountain Grove,FGUT1,grassland,untreated,204,Melissodes trinodis,1,30,Ground,Solitary,Specialist,Apidae,Leg scopa,600,255,2.3,0.25,24,0,937,0,0,58,7,11:00,11.00,25.1,73,2.3,7/9/2016
+Fountain Grove,FGUT1,grassland,untreated,204,Xylocopa virginica,1,30,Wood,Solitary,Generalist,Apidae,Leg scopa,21000,255,2.3,0.25,24,0,937,0,0,58,7,11:00,11.00,25.1,73,2.3,7/9/2016
+Fountain Grove,FGUT2,oldfield,untreated,158,Bombus griseocollis,1,1,Ground,Eusocial,Generalist,Apidae,Corbicular basket,7500,219,1.08,0.05,3.8,0,484,0,0,47,2,17:16,17.16,29.8,38.8,3,7/9/2016
+Fountain Grove,FGUT2,oldfield,untreated,204,Augochlora pura,2,8,Rotten logs,Solitary,Generalist,Halictidae,Leg scopa,210,219,1.08,0.05,3.8,0,484,0,35,27,4,11:55,11.55,27.7,66.7,3.1,7/9/2016
+Fountain Grove,FGUT2,oldfield,untreated,204,Bombus auricomus,1,8,Ground Surface,Eusocial,Generalist,Apidae,Corbicular basket,7500,219,1.08,0.05,3.8,0,484,0,35,27,4,11:55,11.55,27.7,66.7,3.1,7/9/2016
+Fountain Grove,FGUT2,oldfield,untreated,204,Bombus impatiens,1,8,Ground,Eusocial,Generalist,Apidae,Corbicular basket,7500,219,1.08,0.05,3.8,0,484,0,35,27,4,11:55,11.55,27.7,66.7,3.1,7/9/2016
+Fountain Grove,FGUT2,oldfield,untreated,204,Bombus pennsylvanicus,1,8,Aboveground,Eusocial,Generalist,Apidae,Corbicular basket,7500,219,1.08,0.05,3.8,0,484,0,35,27,4,11:55,11.55,27.7,66.7,3.1,7/9/2016
+Fountain Grove,FGUT2,oldfield,untreated,204,Hylaeus modestus,1,8,Wood,Solitary,Generalist,Colletidae,Ingestion,250,219,1.08,0.05,3.8,0,484,0,35,27,4,11:55,11.55,27.7,66.7,3.1,7/9/2016
+Fountain Grove,FGUT2,oldfield,untreated,204,Melissodes comptoides,1,8,Ground,Solitary,Generalist,Apidae,Leg scopa,600,219,1.08,0.05,3.8,0,484,0,35,27,4,11:55,11.55,27.7,66.7,3.1,7/9/2016
+Fountain Grove,FGUT2,oldfield,untreated,204,Melissodes denticulata,1,8,Ground,Solitary,Specialist,Apidae,Leg scopa,600,219,1.08,0.05,3.8,0,484,0,35,27,4,11:55,11.55,27.7,66.7,3.1,7/9/2016
+Indian Hills,IHT1,corn,treated,161,Agapostemon virescens,1,11,Ground,Communal,Generalist,Halictidae,Leg scopa,500,222,1.17,0.74,55,1.2,217,28,0,63,5,12:44,12.44,29.5,43.8,3.9,7/9/2016
+Indian Hills,IHT1,corn,treated,161,Bombus auricomus,1,11,Ground Surface,Eusocial,Generalist,Apidae,Corbicular basket,7500,222,1.17,0.74,55,1.2,217,28,0,63,5,12:44,12.44,29.5,43.8,3.9,7/9/2016
+Indian Hills,IHT1,corn,treated,161,Eucera hamata,4,11,Ground,Solitary,Generalist,Apidae,Leg scopa,1000,222,1.17,0.74,55,1.2,217,28,0,63,5,12:44,12.44,29.5,43.8,3.9,7/9/2016
+Indian Hills,IHT1,corn,treated,161,Halictus ligatus,1,11,Ground,Eusocial,Generalist,Halictidae,Leg scopa,182,222,1.17,0.74,55,1.2,217,28,0,63,5,12:44,12.44,29.5,43.8,3.9,7/9/2016
+Indian Hills,IHT1,corn,treated,161,Halictus tripartitus,1,11,Ground,Eusocial,Generalist,Halictidae,Leg scopa,182,222,1.17,0.74,55,1.2,217,28,0,63,5,12:44,12.44,29.5,43.8,3.9,7/9/2016
+Indian Hills,IHT1,corn,treated,161,Lasioglossum (Dialictus) sp.,3,11,Varies,Varies,Generalist,Halictidae,Leg scopa,410,222,1.17,0.74,55,1.2,217,28,0,63,5,12:44,12.44,29.5,43.8,3.9,7/9/2016
+Indian Hills,IHT1,corn,treated,191,Augochloropsis fulgida,1,40,Ground,Solitary,Generalist,Halictidae,Leg scopa,300,222,1.17,0.74,55,1.2,217,58,0,70,5,13:24,13.24,33.7,60.7,0,7/9/2016
+Indian Hills,IHT1,corn,treated,191,Augochloropsis metallica,2,40,Ground,Solitary,Generalist,Halictidae,Leg scopa,300,222,1.17,0.74,55,1.2,217,58,0,70,5,13:24,13.24,33.7,60.7,0,7/9/2016
+Indian Hills,IHT1,corn,treated,191,Bombus auricomus,1,40,Ground Surface,Eusocial,Generalist,Apidae,Corbicular basket,7500,222,1.17,0.74,55,1.2,217,58,0,70,5,13:24,13.24,33.7,60.7,0,7/9/2016
+Indian Hills,IHT1,corn,treated,191,Bombus bimaculatus,3,40,Ground,Eusocial,Generalist,Apidae,Corbicular basket,7500,222,1.17,0.74,55,1.2,217,58,0,70,5,13:24,13.24,33.7,60.7,0,7/9/2016
+Indian Hills,IHT1,corn,treated,191,Bombus griseocollis,1,40,Ground,Eusocial,Generalist,Apidae,Corbicular basket,7500,222,1.17,0.74,55,1.2,217,58,0,70,5,13:24,13.24,33.7,60.7,0,7/9/2016
+Indian Hills,IHT1,corn,treated,191,Bombus pennsylvanicus,1,40,Aboveground,Eusocial,Generalist,Apidae,Corbicular basket,7500,222,1.17,0.74,55,1.2,217,58,0,70,5,13:24,13.24,33.7,60.7,0,7/9/2016
+Indian Hills,IHT1,corn,treated,191,Ceratina mikmaqi,1,40,Stems/Pith,Subsocial,Generalist,Apidae,Weak Leg scopa,80,222,1.17,0.74,55,1.2,217,58,0,70,5,13:24,13.24,33.7,60.7,0,7/9/2016
+Indian Hills,IHT1,corn,treated,191,Halictus ligatus,3,40,Ground,Eusocial,Generalist,Halictidae,Leg scopa,182,222,1.17,0.74,55,1.2,217,58,0,70,5,13:24,13.24,33.7,60.7,0,7/9/2016
+Indian Hills,IHT1,corn,treated,191,Halictus rubicundus,2,40,Ground,Eusocial,Generalist,Halictidae,Leg scopa,182,222,1.17,0.74,55,1.2,217,58,0,70,5,13:24,13.24,33.7,60.7,0,7/9/2016
+Indian Hills,IHT1,corn,treated,191,Lasioglossum (Dialictus) sp.,5,40,Varies,Varies,Generalist,Halictidae,Leg scopa,410,222,1.17,0.74,55,1.2,217,58,0,70,5,13:24,13.24,33.7,60.7,0,7/9/2016
+Indian Hills,IHT1,corn,treated,191,Megachile mendica,2,40,Ground,Solitary,Generalist,Megachilidae,Abdominal scopa,457,222,1.17,0.74,55,1.2,217,58,0,70,5,13:24,13.24,33.7,60.7,0,7/9/2016
+Indian Hills,IHT1,corn,treated,191,Melissodes bimaculata,9,40,Ground,Solitary,Generalist,Apidae,Leg scopa,600,222,1.17,0.74,55,1.2,217,58,0,70,5,13:24,13.24,33.7,60.7,0,7/9/2016
+Indian Hills,IHT1,corn,treated,191,Melissodes communis,1,40,Ground,Solitary,Generalist,Apidae,Leg scopa,600,222,1.17,0.74,55,1.2,217,58,0,70,5,13:24,13.24,33.7,60.7,0,7/9/2016
+Indian Hills,IHT1,corn,treated,191,Melissodes comptoides,1,40,Ground,Solitary,Generalist,Apidae,Leg scopa,600,222,1.17,0.74,55,1.2,217,58,0,70,5,13:24,13.24,33.7,60.7,0,7/9/2016
+Indian Hills,IHT1,corn,treated,191,Melissodes denticulata,4,40,Ground,Solitary,Specialist,Apidae,Leg scopa,600,222,1.17,0.74,55,1.2,217,58,0,70,5,13:24,13.24,33.7,60.7,0,7/9/2016
+Indian Hills,IHT1,corn,treated,191,Melissodes trinodis,3,40,Ground,Solitary,Specialist,Apidae,Leg scopa,600,222,1.17,0.74,55,1.2,217,58,0,70,5,13:24,13.24,33.7,60.7,0,7/9/2016
+Indian Hills,IHT2,corn,treated,161,Augochloropsis fulgida,1,25,Ground,Solitary,Generalist,Halictidae,Leg scopa,300,226,0.89,1.35,41.5,1.2,217,28,0,42,2,13:31,13.31,29.5,39.8,2.3,7/9/2016
+Indian Hills,IHT2,corn,treated,161,Bombus auricomus,1,25,Ground Surface,Eusocial,Generalist,Apidae,Corbicular basket,7500,226,0.89,1.35,41.5,1.2,217,28,0,42,2,13:31,13.31,29.5,39.8,2.3,7/9/2016
+Indian Hills,IHT2,corn,treated,161,Bombus pennsylvanicus,1,25,Aboveground,Eusocial,Generalist,Apidae,Corbicular basket,7500,226,0.89,1.35,41.5,1.2,217,28,0,42,2,13:31,13.31,29.5,39.8,2.3,7/9/2016
+Indian Hills,IHT2,corn,treated,161,Eucera hamata,9,25,Ground,Solitary,Generalist,Apidae,Leg scopa,1000,226,0.89,1.35,41.5,1.2,217,28,0,42,2,13:31,13.31,29.5,39.8,2.3,7/9/2016
+Indian Hills,IHT2,corn,treated,161,Halictus confusus,1,25,Ground,Eusocial,Generalist,Halictidae,Leg scopa,130,226,0.89,1.35,41.5,1.2,217,28,0,42,2,13:31,13.31,29.5,39.8,2.3,7/9/2016
+Indian Hills,IHT2,corn,treated,161,Halictus ligatus,6,25,Ground,Eusocial,Generalist,Halictidae,Leg scopa,182,226,0.89,1.35,41.5,1.2,217,28,0,42,2,13:31,13.31,29.5,39.8,2.3,7/18/2016
+Indian Hills,IHT2,corn,treated,161,Halictus rubicundus,1,25,Ground,Eusocial,Generalist,Halictidae,Leg scopa,182,226,0.89,1.35,41.5,1.2,217,28,0,42,2,13:31,13.31,29.5,39.8,2.3,7/18/2016
+Indian Hills,IHT2,corn,treated,161,Lasioglossum (Dialictus) sp.,3,25,Varies,Varies,Generalist,Halictidae,Leg scopa,410,226,0.89,1.35,41.5,1.2,217,28,0,42,2,13:31,13.31,29.5,39.8,2.3,7/18/2016
+Indian Hills,IHT2,corn,treated,161,Megachile addenda,1,25,Aboveground,Solitary,Generalist,Megachilidae,Abdominal scopa,457,226,0.89,1.35,41.5,1.2,217,28,0,42,2,13:31,13.31,29.5,39.8,2.3,7/18/2016
+Indian Hills,IHT2,corn,treated,161,Melissodes agilis,1,25,Ground,Solitary,Generalist,Apidae,Leg scopa,600,226,0.89,1.35,41.5,1.2,217,28,0,42,2,13:31,13.31,29.5,39.8,2.3,7/18/2016
+Indian Hills,IHT2,corn,treated,191,Agapostemon virescens,1,35,Ground,Communal,Generalist,Halictidae,Leg scopa,500,226,0.89,1.35,41.5,1.2,217,58,0,40,6,12:29,12.29,31.5,62.9,4.3,7/18/2016
+Indian Hills,IHT2,corn,treated,191,Augochlora pura,3,35,Rotten logs,Solitary,Generalist,Halictidae,Leg scopa,210,226,0.89,1.35,41.5,1.2,217,58,0,40,6,12:29,12.29,31.5,62.9,4.3,7/18/2016
+Indian Hills,IHT2,corn,treated,191,Bombus auricomus,1,35,Ground Surface,Eusocial,Generalist,Apidae,Corbicular basket,7500,226,0.89,1.35,41.5,1.2,217,58,0,40,6,12:29,12.29,31.5,62.9,4.3,7/18/2016
+Indian Hills,IHT2,corn,treated,191,Bombus griseocollis,3,35,Ground,Eusocial,Generalist,Apidae,Corbicular basket,7500,226,0.89,1.35,41.5,1.2,217,58,0,40,6,12:29,12.29,31.5,62.9,4.3,7/18/2016
+Indian Hills,IHT2,corn,treated,191,Bombus pennsylvanicus,1,35,Aboveground,Eusocial,Generalist,Apidae,Corbicular basket,7500,226,0.89,1.35,41.5,1.2,217,58,0,40,6,12:29,12.29,31.5,62.9,4.3,7/18/2016
+Indian Hills,IHT2,corn,treated,191,Ceratina mikmaqi,5,35,Stems/Pith,Subsocial,Generalist,Apidae,Weak Leg scopa,80,226,0.89,1.35,41.5,1.2,217,58,0,40,6,12:29,12.29,31.5,62.9,4.3,7/18/2016
+Indian Hills,IHT2,corn,treated,191,Halictus ligatus,2,35,Ground,Eusocial,Generalist,Halictidae,Leg scopa,182,226,0.89,1.35,41.5,1.2,217,58,0,40,6,12:29,12.29,31.5,62.9,4.3,7/18/2016
+Indian Hills,IHT2,corn,treated,191,Lasioglossum (Dialictus) sp.,8,35,Varies,Varies,Generalist,Halictidae,Leg scopa,410,226,0.89,1.35,41.5,1.2,217,58,0,40,6,12:29,12.29,31.5,62.9,4.3,7/18/2016
+Indian Hills,IHT2,corn,treated,191,Melissodes bimaculata,3,35,Ground,Solitary,Generalist,Apidae,Leg scopa,600,226,0.89,1.35,41.5,1.2,217,58,0,40,6,12:29,12.29,31.5,62.9,4.3,7/18/2016
+Indian Hills,IHT2,corn,treated,191,Melissodes communis,2,35,Ground,Solitary,Generalist,Apidae,Leg scopa,600,226,0.89,1.35,41.5,1.2,217,58,0,40,6,12:29,12.29,31.5,62.9,4.3,7/18/2016
+Indian Hills,IHT2,corn,treated,191,Melissodes denticulata,2,35,Ground,Solitary,Specialist,Apidae,Leg scopa,600,226,0.89,1.35,41.5,1.2,217,58,0,40,6,12:29,12.29,31.5,62.9,4.3,7/18/2016
+Indian Hills,IHT2,corn,treated,191,Melissodes trinodis,4,35,Ground,Solitary,Specialist,Apidae,Leg scopa,600,226,0.89,1.35,41.5,1.2,217,58,0,40,6,12:29,12.29,31.5,62.9,4.3,7/18/2016
+Indian Hills,IHT3,corn,treated,161,Agapostemon virescens,2,26,Ground,Communal,Generalist,Halictidae,Leg scopa,500,238,1.76,0.42,7.3,0,78,28,0,35,4,15:50,15.50,30.5,38.9,1.7,7/18/2016
+Indian Hills,IHT3,corn,treated,161,Augochloropsis fulgida,1,26,Ground,Solitary,Generalist,Halictidae,Leg scopa,300,238,1.76,0.42,7.3,0,78,28,0,35,4,15:50,15.50,30.5,38.9,1.7,7/18/2016
+Indian Hills,IHT3,corn,treated,161,Augochloropsis metallica,1,26,Ground,Solitary,Generalist,Halictidae,Leg scopa,300,238,1.76,0.42,7.3,0,78,28,0,35,4,15:50,15.50,30.5,38.9,1.7,7/18/2016
+Indian Hills,IHT3,corn,treated,161,Ceratina mikmaqi,3,26,Stems/Pith,Subsocial,Generalist,Apidae,Weak Leg scopa,80,238,1.76,0.42,7.3,0,78,28,0,35,4,15:50,15.50,30.5,38.9,1.7,7/18/2016
+Indian Hills,IHT3,corn,treated,161,Eucera hamata,18,26,Ground,Solitary,Generalist,Apidae,Leg scopa,1000,238,1.76,0.42,7.3,0,78,28,0,35,4,15:50,15.50,30.5,38.9,1.7,7/18/2016
+Indian Hills,IHT3,corn,treated,161,Halictus ligatus,1,26,Ground,Eusocial,Generalist,Halictidae,Leg scopa,182,238,1.76,0.42,7.3,0,78,28,0,35,4,15:50,15.50,30.5,38.9,1.7,7/18/2016
+Indian Hills,IHT3,corn,treated,191,Augochlora pura,4,91,Rotten logs,Solitary,Generalist,Halictidae,Leg scopa,210,238,1.76,0.42,7.3,0,78,58,0,60,6,8:50,8.50,25.7,72.2,6.3,7/18/2016
+Indian Hills,IHT3,corn,treated,191,Augochloropsis fulgida,1,91,Ground,Solitary,Generalist,Halictidae,Leg scopa,300,238,1.76,0.42,7.3,0,78,58,0,60,6,8:50,8.50,25.7,72.2,6.3,7/18/2016
+Indian Hills,IHT3,corn,treated,191,Augochloropsis metallica,5,91,Ground,Solitary,Generalist,Halictidae,Leg scopa,300,238,1.76,0.42,7.3,0,78,58,0,60,6,8:50,8.50,25.7,72.2,6.3,7/18/2016
+Indian Hills,IHT3,corn,treated,191,Bombus auricomus,3,91,Ground Surface,Eusocial,Generalist,Apidae,Corbicular basket,7500,238,1.76,0.42,7.3,0,78,58,0,60,6,8:50,8.50,25.7,72.2,6.3,7/18/2016
+Indian Hills,IHT3,corn,treated,191,Bombus impatiens,1,91,Ground,Eusocial,Generalist,Apidae,Corbicular basket,7500,238,1.76,0.42,7.3,0,78,58,0,60,6,8:50,8.50,25.7,72.2,6.3,7/18/2016
+Indian Hills,IHT3,corn,treated,191,Halictus ligatus,2,91,Ground,Eusocial,Generalist,Halictidae,Leg scopa,182,238,1.76,0.42,7.3,0,78,58,0,60,6,8:50,8.50,25.7,72.2,6.3,7/18/2016
+Indian Hills,IHT3,corn,treated,191,Halictus parallelus,1,91,Ground,Eusocial,Generalist,Halictidae,Leg scopa,182,238,1.76,0.42,7.3,0,78,58,0,60,6,8:50,8.50,25.7,72.2,6.3,7/18/2016
+Indian Hills,IHT3,corn,treated,191,Halictus rubicundus,12,91,Ground,Eusocial,Generalist,Halictidae,Leg scopa,182,238,1.76,0.42,7.3,0,78,58,0,60,6,8:50,8.50,25.7,72.2,6.3,7/18/2016
+Indian Hills,IHT3,corn,treated,191,Lasioglossum (Dialictus) sp.,35,91,Varies,Varies,Generalist,Halictidae,Leg scopa,410,238,1.76,0.42,7.3,0,78,58,0,60,6,8:50,8.50,25.7,72.2,6.3,7/18/2016
+Indian Hills,IHT3,corn,treated,191,Melissodes bimaculata,11,91,Ground,Solitary,Generalist,Apidae,Leg scopa,600,238,1.76,0.42,7.3,0,78,58,0,60,6,8:50,8.50,25.7,72.2,6.3,7/18/2016
+Indian Hills,IHT3,corn,treated,191,Melissodes communis,4,91,Ground,Solitary,Generalist,Apidae,Leg scopa,600,238,1.76,0.42,7.3,0,78,58,0,60,6,8:50,8.50,25.7,72.2,6.3,7/18/2016
+Indian Hills,IHT3,corn,treated,191,Melissodes comptoides,2,91,Ground,Solitary,Generalist,Apidae,Leg scopa,600,238,1.76,0.42,7.3,0,78,58,0,60,6,8:50,8.50,25.7,72.2,6.3,7/18/2016
+Indian Hills,IHT3,corn,treated,191,Melissodes trinodis,10,91,Ground,Solitary,Specialist,Apidae,Leg scopa,600,238,1.76,0.42,7.3,0,78,58,0,60,6,8:50,8.50,25.7,72.2,6.3,7/18/2016
+Indian Hills,IHT4,sunflowers,untreated,161,Bombus griseocollis,1,15,Ground,Eusocial,Generalist,Apidae,Corbicular basket,7500,241,2.91,0.31,5.2,0,376,28,0,48,3,14:23,14.23,29.7,36.6,2.3,7/18/2016
+Indian Hills,IHT4,sunflowers,untreated,161,Bombus pennsylvanicus,1,15,Aboveground,Eusocial,Generalist,Apidae,Corbicular basket,7500,241,2.91,0.31,5.2,0,376,28,0,48,3,14:23,14.23,29.7,36.6,2.3,7/18/2016
+Indian Hills,IHT4,sunflowers,untreated,161,Ceratina mikmaqi,1,15,Stems/Pith,Subsocial,Generalist,Apidae,Weak Leg scopa,80,241,2.91,0.31,5.2,0,376,28,0,48,3,14:23,14.23,29.7,36.6,2.3,7/18/2016
+Indian Hills,IHT4,sunflowers,untreated,161,Eucera hamata,7,15,Ground,Solitary,Generalist,Apidae,Leg scopa,1000,241,2.91,0.31,5.2,0,376,28,0,48,3,14:23,14.23,29.7,36.6,2.3,7/18/2016
+Indian Hills,IHT4,sunflowers,untreated,161,Halictus ligatus,3,15,Ground,Eusocial,Generalist,Halictidae,Leg scopa,182,241,2.91,0.31,5.2,0,376,28,0,48,3,14:23,14.23,29.7,36.6,2.3,7/18/2016
+Indian Hills,IHT4,sunflowers,untreated,161,Megachile addenda,1,15,Aboveground,Solitary,Generalist,Megachilidae,Abdominal scopa,457,241,2.91,0.31,5.2,0,376,28,0,48,3,14:23,14.23,29.7,36.6,2.3,7/18/2016
+Indian Hills,IHT4,sunflowers,untreated,161,Osmia bucephela,1,15,Stems/Pith,Solitary,Generalist,Megachilidae,Abdominal scopa,500,241,2.91,0.31,5.2,0,376,28,0,48,3,14:23,14.23,29.7,36.6,2.3,7/18/2016
+Indian Hills,IHT4,sunflowers,untreated,191,Augochloropsis metallica,1,54,Ground,Solitary,Generalist,Halictidae,Leg scopa,300,241,2.91,0.31,5.2,0,376,58,50,47,5,11:26,11.26,28,70.5,3,7/18/2016
+Indian Hills,IHT4,sunflowers,untreated,191,Bombus auricomus,3,54,Ground Surface,Eusocial,Generalist,Apidae,Corbicular basket,7500,241,2.91,0.31,5.2,0,376,58,50,47,5,11:26,11.26,28,70.5,3,7/18/2016
+Indian Hills,IHT4,sunflowers,untreated,191,Bombus bimaculatus,1,54,Ground,Eusocial,Generalist,Apidae,Corbicular basket,7500,241,2.91,0.31,5.2,0,376,58,50,47,5,11:26,11.26,28,70.5,3,7/18/2016
+Indian Hills,IHT4,sunflowers,untreated,191,Bombus griseocollis,1,54,Ground,Eusocial,Generalist,Apidae,Corbicular basket,7500,241,2.91,0.31,5.2,0,376,58,50,47,5,11:26,11.26,28,70.5,3,7/18/2016
+Indian Hills,IHT4,sunflowers,untreated,191,Bombus impatiens,2,54,Ground,Eusocial,Generalist,Apidae,Corbicular basket,7500,241,2.91,0.31,5.2,0,376,58,50,47,5,11:26,11.26,28,70.5,3,7/18/2016
+Indian Hills,IHT4,sunflowers,untreated,191,Ceratina mikmaqi,3,54,Stems/Pith,Subsocial,Generalist,Apidae,Weak Leg scopa,80,241,2.91,0.31,5.2,0,376,58,50,47,5,11:26,11.26,28,70.5,3,7/18/2016
+Indian Hills,IHT4,sunflowers,untreated,191,Halictus ligatus,3,54,Ground,Eusocial,Generalist,Halictidae,Leg scopa,182,241,2.91,0.31,5.2,0,376,58,50,47,5,11:26,11.26,28,70.5,3,7/18/2016
+Indian Hills,IHT4,sunflowers,untreated,191,Halictus parallelus,1,54,Ground,Eusocial,Generalist,Halictidae,Leg scopa,182,241,2.91,0.31,5.2,0,376,58,50,47,5,11:26,11.26,28,70.5,3,7/18/2016
+Indian Hills,IHT4,sunflowers,untreated,191,Halictus rubicundus,1,54,Ground,Eusocial,Generalist,Halictidae,Leg scopa,182,241,2.91,0.31,5.2,0,376,58,50,47,5,11:26,11.26,28,70.5,3,7/18/2016
+Indian Hills,IHT4,sunflowers,untreated,191,Hylaeus modestus,1,54,Wood,Solitary,Generalist,Colletidae,Ingestion,250,241,2.91,0.31,5.2,0,376,58,50,47,5,11:26,11.26,28,70.5,3,7/18/2016
+Indian Hills,IHT4,sunflowers,untreated,191,Lasioglossum (Dialictus) sp.,12,54,Varies,Varies,Generalist,Halictidae,Leg scopa,410,241,2.91,0.31,5.2,0,376,58,50,47,5,11:26,11.26,28,70.5,3,7/18/2016
+Indian Hills,IHT4,sunflowers,untreated,191,Megachile mendica,1,54,Ground,Solitary,Generalist,Megachilidae,Abdominal scopa,457,241,2.91,0.31,5.2,0,376,58,50,47,5,11:26,11.26,28,70.5,3,7/18/2016
+Indian Hills,IHT4,sunflowers,untreated,191,Melissodes bimaculata,1,54,Ground,Solitary,Generalist,Apidae,Leg scopa,600,241,2.91,0.31,5.2,0,376,58,50,47,5,11:26,11.26,28,70.5,3,7/18/2016
+Indian Hills,IHT4,sunflowers,untreated,191,Melissodes communis,4,54,Ground,Solitary,Generalist,Apidae,Leg scopa,600,241,2.91,0.31,5.2,0,376,58,50,47,5,11:26,11.26,28,70.5,3,7/18/2016
+Indian Hills,IHT4,sunflowers,untreated,191,Melissodes comptoides,8,54,Ground,Solitary,Generalist,Apidae,Leg scopa,600,241,2.91,0.31,5.2,0,376,58,50,47,5,11:26,11.26,28,70.5,3,7/18/2016
+Indian Hills,IHT4,sunflowers,untreated,191,Melissodes denticulata,6,54,Ground,Solitary,Specialist,Apidae,Leg scopa,600,241,2.91,0.31,5.2,0,376,58,50,47,5,11:26,11.26,28,70.5,3,7/18/2016
+Indian Hills,IHT4,sunflowers,untreated,191,Melissodes trinodis,2,54,Ground,Solitary,Specialist,Apidae,Leg scopa,600,241,2.91,0.31,5.2,0,376,58,50,47,5,11:26,11.26,28,70.5,3,7/18/2016
+Indian Hills,IHT4,sunflowers,untreated,191,Nomada sp.,1,54,Cleptoparasitic,Solitary,Generalist,Apidae,Ingestion,200,241,2.91,0.31,5.2,0,376,58,50,47,5,11:26,11.26,28,70.5,3,7/18/2016
+Indian Hills,IHT4,sunflowers,untreated,191,Svastra obliqua,1,54,Ground,Communal,Specialist,Apidae,Leg scopa,1000,241,2.91,0.31,5.2,0,376,58,50,47,5,11:26,11.26,28,70.5,3,7/18/2016
+Indian Hills,IHT4,sunflowers,untreated,191,Xylocopa virginica,1,54,Wood,Solitary,Generalist,Apidae,Leg scopa,21000,241,2.91,0.31,5.2,0,376,58,50,47,5,11:26,11.26,28,70.5,3,7/18/2016
+Indian Hills,IHUT1,hayfield,untreated,161,Agapostemon virescens,3,25,Ground,Communal,Generalist,Halictidae,Leg scopa,500,245,5,0.21,8.3,0,586,0,0,67,3,16:44,16.44,31.2,37.3,1,7/18/2016
+Indian Hills,IHUT1,hayfield,untreated,161,Bombus auricomus,2,25,Ground Surface,Eusocial,Generalist,Apidae,Corbicular basket,7500,245,5,0.21,8.3,0,586,0,0,67,3,16:44,16.44,31.2,37.3,1,7/18/2016
+Indian Hills,IHUT1,hayfield,untreated,161,Ceratina mikmaqi,1,25,Stems/Pith,Subsocial,Generalist,Apidae,Weak Leg scopa,80,245,5,0.21,8.3,0,586,0,0,67,3,16:44,16.44,31.2,37.3,1,7/18/2016
+Indian Hills,IHUT1,hayfield,untreated,161,Eucera hamata,17,25,Ground,Solitary,Generalist,Apidae,Leg scopa,1000,245,5,0.21,8.3,0,586,0,0,67,3,16:44,16.44,31.2,37.3,1,7/18/2016
+Indian Hills,IHUT1,hayfield,untreated,161,Halictus rubicundus,1,25,Ground,Eusocial,Generalist,Halictidae,Leg scopa,182,245,5,0.21,8.3,0,586,0,0,67,3,16:44,16.44,31.2,37.3,1,7/18/2016
+Indian Hills,IHUT1,hayfield,untreated,161,Lasioglossum (Dialictus) sp.,1,25,Varies,Varies,Generalist,Halictidae,Leg scopa,410,245,5,0.21,8.3,0,586,0,0,67,3,16:44,16.44,31.2,37.3,1,7/18/2016
+Indian Hills,IHUT1,hayfield,untreated,191,Agapostemon virescens,4,57,Ground,Communal,Generalist,Halictidae,Leg scopa,500,245,5,0.21,8.3,0,586,58,100,0,0,8:32,8.32,24,75.5,7.2,7/18/2016
+Indian Hills,IHUT1,hayfield,untreated,191,Augochlora pura,2,57,Rotten logs,Solitary,Generalist,Halictidae,Leg scopa,210,245,5,0.21,8.3,0,586,58,100,0,0,8:32,8.32,24,75.5,7.2,7/18/2016
+Indian Hills,IHUT1,hayfield,untreated,191,Augochloropsis fulgida,1,57,Ground,Solitary,Generalist,Halictidae,Leg scopa,300,245,5,0.21,8.3,0,586,58,100,0,0,8:32,8.32,24,75.5,7.2,7/18/2016
+Indian Hills,IHUT1,hayfield,untreated,191,Bombus auricomus,7,57,Ground Surface,Eusocial,Generalist,Apidae,Corbicular basket,7500,245,5,0.21,8.3,0,586,58,100,0,0,8:32,8.32,24,75.5,7.2,7/18/2016
+Indian Hills,IHUT1,hayfield,untreated,191,Bombus bimaculatus,1,57,Ground,Eusocial,Generalist,Apidae,Corbicular basket,7500,245,5,0.21,8.3,0,586,58,100,0,0,8:32,8.32,24,75.5,7.2,7/18/2016
+Indian Hills,IHUT1,hayfield,untreated,191,Bombus griseocollis,1,57,Ground,Eusocial,Generalist,Apidae,Corbicular basket,7500,245,5,0.21,8.3,0,586,58,100,0,0,8:32,8.32,24,75.5,7.2,7/18/2016
+Indian Hills,IHUT1,hayfield,untreated,191,Bombus pennsylvanicus,5,57,Aboveground,Eusocial,Generalist,Apidae,Corbicular basket,7500,245,5,0.21,8.3,0,586,58,100,0,0,8:32,8.32,24,75.5,7.2,7/18/2016
+Indian Hills,IHUT1,hayfield,untreated,191,Halictus parallelus,7,57,Ground,Eusocial,Generalist,Halictidae,Leg scopa,182,245,5,0.21,8.3,0,586,58,100,0,0,8:32,8.32,24,75.5,7.2,7/18/2016
+Indian Hills,IHUT1,hayfield,untreated,191,Halictus rubicundus,10,57,Ground,Eusocial,Generalist,Halictidae,Leg scopa,182,245,5,0.21,8.3,0,586,58,100,0,0,8:32,8.32,24,75.5,7.2,7/18/2016
+Indian Hills,IHUT1,hayfield,untreated,191,Lasioglossum (Dialictus) sp.,13,57,Varies,Varies,Generalist,Halictidae,Leg scopa,410,245,5,0.21,8.3,0,586,58,100,0,0,8:32,8.32,24,75.5,7.2,7/18/2016
+Indian Hills,IHUT1,hayfield,untreated,191,Megachile centuncularis,1,57,Cavity nester,Solitary,Generalist,Megachilidae,Abdominal scopa,457,245,5,0.21,8.3,0,586,58,100,0,0,8:32,8.32,24,75.5,7.2,7/18/2016
+Indian Hills,IHUT1,hayfield,untreated,191,Melissodes bimaculata,1,57,Ground,Solitary,Generalist,Apidae,Leg scopa,600,245,5,0.21,8.3,0,586,58,100,0,0,8:32,8.32,24,75.5,7.2,7/18/2016
+Indian Hills,IHUT1,hayfield,untreated,191,Melissodes comptoides,1,57,Ground,Solitary,Generalist,Apidae,Leg scopa,600,245,5,0.21,8.3,0,586,58,100,0,0,8:32,8.32,24,75.5,7.2,7/18/2016
+Indian Hills,IHUT1,hayfield,untreated,191,Melissodes denticulata,1,57,Ground,Solitary,Specialist,Apidae,Leg scopa,600,245,5,0.21,8.3,0,586,58,100,0,0,8:32,8.32,24,75.5,7.2,7/18/2016
+Indian Hills,IHUT1,hayfield,untreated,191,Melissodes trinodis,2,57,Ground,Solitary,Specialist,Apidae,Leg scopa,600,245,5,0.21,8.3,0,586,58,100,0,0,8:32,8.32,24,75.5,7.2,7/20/2016
+Indian Hills,IHUT2,hayfield,untreated,161,Augochloropsis fulgida,1,20,Ground,Solitary,Generalist,Halictidae,Leg scopa,300,240,5.43,0.63,9,0,164,0,0,30,3,15:03,15.03,31.1,43.8,1.2,7/20/2016
+Indian Hills,IHUT2,hayfield,untreated,161,Ceratina mikmaqi,2,20,Stems/Pith,Subsocial,Generalist,Apidae,Weak Leg scopa,80,240,5.43,0.63,9,0,164,0,0,30,3,15:03,15.03,31.1,43.8,1.2,7/20/2016
+Indian Hills,IHUT2,hayfield,untreated,161,Eucera hamata,8,20,Ground,Solitary,Generalist,Apidae,Leg scopa,1000,240,5.43,0.63,9,0,164,0,0,30,3,15:03,15.03,31.1,43.8,1.2,7/20/2016
+Indian Hills,IHUT2,hayfield,untreated,161,Halictus confusus,1,20,Ground,Eusocial,Generalist,Halictidae,Leg scopa,130,240,5.43,0.63,9,0,164,0,0,30,3,15:03,15.03,31.1,43.8,1.2,7/20/2016
+Indian Hills,IHUT2,hayfield,untreated,161,Halictus ligatus,1,20,Ground,Eusocial,Generalist,Halictidae,Leg scopa,182,240,5.43,0.63,9,0,164,0,0,30,3,15:03,15.03,31.1,43.8,1.2,7/20/2016
+Indian Hills,IHUT2,hayfield,untreated,161,Halictus parallelus,2,20,Ground,Eusocial,Generalist,Halictidae,Leg scopa,182,240,5.43,0.63,9,0,164,0,0,30,3,15:03,15.03,31.1,43.8,1.2,7/20/2016
+Indian Hills,IHUT2,hayfield,untreated,161,Halictus tripartitus,1,20,Ground,Eusocial,Generalist,Halictidae,Leg scopa,182,240,5.43,0.63,9,0,164,0,0,30,3,15:03,15.03,31.1,43.8,1.2,7/20/2016
+Indian Hills,IHUT2,hayfield,untreated,161,Lasioglossum (Dialictus) sp.,4,20,Varies,Varies,Generalist,Halictidae,Leg scopa,410,240,5.43,0.63,9,0,164,0,0,30,3,15:03,15.03,31.1,43.8,1.2,7/20/2016
+Indian Hills,IHUT2,hayfield,untreated,191,Augochlora pura,2,104,Rotten logs,Solitary,Generalist,Halictidae,Leg scopa,210,240,5.43,0.63,9,0,164,58,0,35,3,10:06,10.06,26.7,70.2,4.7,7/20/2016
+Indian Hills,IHUT2,hayfield,untreated,191,Augochloropsis metallica,5,104,Ground,Solitary,Generalist,Halictidae,Leg scopa,300,240,5.43,0.63,9,0,164,58,0,35,3,10:06,10.06,26.7,70.2,4.7,7/20/2016
+Indian Hills,IHUT2,hayfield,untreated,191,Bombus griseocollis,1,104,Ground,Eusocial,Generalist,Apidae,Corbicular basket,7500,240,5.43,0.63,9,0,164,58,0,35,3,10:06,10.06,26.7,70.2,4.7,7/20/2016
+Indian Hills,IHUT2,hayfield,untreated,191,Bombus impatiens,1,104,Ground,Eusocial,Generalist,Apidae,Corbicular basket,7500,240,5.43,0.63,9,0,164,58,0,35,3,10:06,10.06,26.7,70.2,4.7,7/20/2016
+Indian Hills,IHUT2,hayfield,untreated,191,Bombus pennsylvanicus,1,104,Aboveground,Eusocial,Generalist,Apidae,Corbicular basket,7500,240,5.43,0.63,9,0,164,58,0,35,3,10:06,10.06,26.7,70.2,4.7,7/20/2016
+Indian Hills,IHUT2,hayfield,untreated,191,Halictus ligatus,5,104,Ground,Eusocial,Generalist,Halictidae,Leg scopa,182,240,5.43,0.63,9,0,164,58,0,35,3,10:06,10.06,26.7,70.2,4.7,7/20/2016
+Indian Hills,IHUT2,hayfield,untreated,191,Halictus parallelus,34,104,Ground,Eusocial,Generalist,Halictidae,Leg scopa,182,240,5.43,0.63,9,0,164,58,0,35,3,10:06,10.06,26.7,70.2,4.7,7/20/2016
+Indian Hills,IHUT2,hayfield,untreated,191,Halictus rubicundus,18,104,Ground,Eusocial,Generalist,Halictidae,Leg scopa,182,240,5.43,0.63,9,0,164,58,0,35,3,10:06,10.06,26.7,70.2,4.7,7/20/2016
+Indian Hills,IHUT2,hayfield,untreated,191,Lasioglossum (Dialictus) sp.,18,104,Varies,Varies,Generalist,Halictidae,Leg scopa,410,240,5.43,0.63,9,0,164,58,0,35,3,10:06,10.06,26.7,70.2,4.7,7/20/2016
+Indian Hills,IHUT2,hayfield,untreated,191,Megachile mendica,2,104,Ground,Solitary,Generalist,Megachilidae,Abdominal scopa,457,240,5.43,0.63,9,0,164,58,0,35,3,10:06,10.06,26.7,70.2,4.7,7/20/2016
+Indian Hills,IHUT2,hayfield,untreated,191,Melissodes bimaculata,2,104,Ground,Solitary,Generalist,Apidae,Leg scopa,600,240,5.43,0.63,9,0,164,58,0,35,3,10:06,10.06,26.7,70.2,4.7,7/20/2016
+Indian Hills,IHUT2,hayfield,untreated,191,Melissodes communis,1,104,Ground,Solitary,Generalist,Apidae,Leg scopa,600,240,5.43,0.63,9,0,164,58,0,35,3,10:06,10.06,26.7,70.2,4.7,7/20/2016
+Indian Hills,IHUT2,hayfield,untreated,191,Melissodes comptoides,4,104,Ground,Solitary,Generalist,Apidae,Leg scopa,600,240,5.43,0.63,9,0,164,58,0,35,3,10:06,10.06,26.7,70.2,4.7,7/20/2016
+Indian Hills,IHUT2,hayfield,untreated,191,Melissodes denticulata,4,104,Ground,Solitary,Specialist,Apidae,Leg scopa,600,240,5.43,0.63,9,0,164,58,0,35,3,10:06,10.06,26.7,70.2,4.7,7/20/2016
+Indian Hills,IHUT2,hayfield,untreated,191,Melissodes trinodis,5,104,Ground,Solitary,Specialist,Apidae,Leg scopa,600,240,5.43,0.63,9,0,164,58,0,35,3,10:06,10.06,26.7,70.2,4.7,7/20/2016
+Indian Hills,IHUT2,hayfield,untreated,191,Triepeolus sp.,1,104,Cleptoparasitic,Solitary,Generalist,Apidae,Ingestion,1000,240,5.43,0.63,9,0,164,58,0,35,3,10:06,10.06,26.7,70.2,4.7,7/20/2016
+Whetstone Creek,WCT1,corn,treated,173,Bombus griseocollis,2,2,Ground,Eusocial,Generalist,Apidae,Corbicular basket,7500,202,1.62,0.74,26,0.5,1105,15,0,52,2,11:20,11.20,,,,7/20/2016
+Whetstone Creek,WCT1,corn,treated,202,Agapostemon texanus,2,197,Ground,Communal,Generalist,Halictidae,Leg scopa,500,202,1.62,0.74,26,0.5,1105,44,0,48,5,12:00,12.00,35.8,53.4,0.2,7/20/2016
+Whetstone Creek,WCT1,corn,treated,202,Agapostemon virescens,1,197,Ground,Communal,Generalist,Halictidae,Leg scopa,500,202,1.62,0.74,26,0.5,1105,44,0,48,5,12:00,12.00,35.8,53.4,0.2,7/20/2016
+Whetstone Creek,WCT1,corn,treated,202,Augochlora pura,120,197,Rotten logs,Solitary,Generalist,Halictidae,Leg scopa,210,202,1.62,0.74,26,0.5,1105,44,0,48,5,12:00,12.00,35.8,53.4,0.2,7/20/2016
+Whetstone Creek,WCT1,corn,treated,202,Bombus auricomus,9,197,Ground Surface,Eusocial,Generalist,Apidae,Corbicular basket,7500,202,1.62,0.74,26,0.5,1105,44,0,48,5,12:00,12.00,35.8,53.4,0.2,7/20/2016
+Whetstone Creek,WCT1,corn,treated,202,Bombus bimaculatus,1,197,Ground,Eusocial,Generalist,Apidae,Corbicular basket,7500,202,1.62,0.74,26,0.5,1105,44,0,48,5,12:00,12.00,35.8,53.4,0.2,7/20/2016
+Whetstone Creek,WCT1,corn,treated,202,Bombus griseocollis,4,197,Ground,Eusocial,Generalist,Apidae,Corbicular basket,7500,202,1.62,0.74,26,0.5,1105,44,0,48,5,12:00,12.00,35.8,53.4,0.2,7/20/2016
+Whetstone Creek,WCT1,corn,treated,202,Bombus impatiens,7,197,Ground,Eusocial,Generalist,Apidae,Corbicular basket,7500,202,1.62,0.74,26,0.5,1105,44,0,48,5,12:00,12.00,35.8,53.4,0.2,7/20/2016
+Whetstone Creek,WCT1,corn,treated,202,Bombus pennsylvanicus,1,197,Aboveground,Eusocial,Generalist,Apidae,Corbicular basket,7500,202,1.62,0.74,26,0.5,1105,44,0,48,5,12:00,12.00,35.8,53.4,0.2,7/20/2016
+Whetstone Creek,WCT1,corn,treated,202,Halictus rubicundus,1,197,Ground,Eusocial,Generalist,Halictidae,Leg scopa,182,202,1.62,0.74,26,0.5,1105,44,0,48,5,12:00,12.00,35.8,53.4,0.2,7/20/2016
+Whetstone Creek,WCT1,corn,treated,202,Lasioglossum (Dialictus) sp.,23,197,Varies,Varies,Generalist,Halictidae,Leg scopa,410,202,1.62,0.74,26,0.5,1105,44,0,48,5,12:00,12.00,35.8,53.4,0.2,7/20/2016
+Whetstone Creek,WCT1,corn,treated,202,Megachile inermis,1,197,Cavity nester,Solitary,Generalist,Megachilidae,Abdominal scopa,457,202,1.62,0.74,26,0.5,1105,44,0,48,5,12:00,12.00,35.8,53.4,0.2,7/20/2016
+Whetstone Creek,WCT1,corn,treated,202,Melissodes bimaculata,13,197,Ground,Solitary,Generalist,Apidae,Leg scopa,600,202,1.62,0.74,26,0.5,1105,44,0,48,5,12:00,12.00,35.8,53.4,0.2,7/20/2016
+Whetstone Creek,WCT1,corn,treated,202,Melissodes denticulata,7,197,Ground,Solitary,Specialist,Apidae,Leg scopa,600,202,1.62,0.74,26,0.5,1105,44,0,48,5,12:00,12.00,35.8,53.4,0.2,7/20/2016
+Whetstone Creek,WCT1,corn,treated,202,Ptilothrix bombiformis,2,197,Ground,Aggregations,Specialist,Apidae,Leg scopa,500,202,1.62,0.74,26,0.5,1105,44,0,48,5,12:00,12.00,35.8,53.4,0.2,7/20/2016
+Whetstone Creek,WCT1,corn,treated,202,Svastra obliqua,1,197,Ground,Communal,Specialist,Apidae,Leg scopa,1000,202,1.62,0.74,26,0.5,1105,44,0,48,5,12:00,12.00,35.8,53.4,0.2,7/20/2016
+Whetstone Creek,WCT1,corn,treated,202,Triepeolus concavus,1,197,Cleptoparasitic,Solitary,Generalist,Apidae,Ingestion,1000,202,1.62,0.74,26,0.5,1105,44,0,48,5,12:00,12.00,35.8,53.4,0.2,7/20/2016
+Whetstone Creek,WCT1,corn,treated,202,Xylocopa virginica,3,197,Wood,Solitary,Generalist,Apidae,Leg scopa,21000,202,1.62,0.74,26,0.5,1105,44,0,48,5,12:00,12.00,35.8,53.4,0.2,7/20/2016
+Whetstone Creek,WCT2,corn,treated,173,Augochloropsis fulgida,1,14,Ground,Solitary,Generalist,Halictidae,Leg scopa,300,236,2.02,0.19,5,0.5,332,15,0,33,2,10:55,10.55,33.3,42.4,6.9,7/20/2016
+Whetstone Creek,WCT2,corn,treated,173,Bombus bimaculatus,2,14,Ground,Eusocial,Generalist,Apidae,Corbicular basket,7500,236,2.02,0.19,5,0.5,332,15,0,33,2,10:55,10.55,33.3,42.4,6.9,7/20/2016
+Whetstone Creek,WCT2,corn,treated,173,Bombus griseocollis,2,14,Ground,Eusocial,Generalist,Apidae,Corbicular basket,7500,236,2.02,0.19,5,0.5,332,15,0,33,2,10:55,10.55,33.3,42.4,6.9,7/20/2016
+Whetstone Creek,WCT2,corn,treated,173,Hylaeus modestus,3,14,Wood,Solitary,Generalist,Colletidae,Ingestion,250,236,2.02,0.19,5,0.5,332,15,0,33,2,10:55,10.55,33.3,42.4,6.9,7/20/2016
+Whetstone Creek,WCT2,corn,treated,173,Lasioglossum (Dialictus) sp.,3,14,Varies,Varies,Generalist,Halictidae,Leg scopa,410,236,2.02,0.19,5,0.5,332,15,0,33,2,10:55,10.55,33.3,42.4,6.9,7/20/2016
+Whetstone Creek,WCT2,corn,treated,173,Megachile centuncularis,1,14,Cavity nester,Solitary,Generalist,Megachilidae,Abdominal scopa,457,236,2.02,0.19,5,0.5,332,15,0,33,2,10:55,10.55,33.3,42.4,6.9,7/20/2016
+Whetstone Creek,WCT2,corn,treated,173,Osmia georgica,1,14,Wood,Solitary,Generalist,Megachilidae,Abdominal scopa,500,236,2.02,0.19,5,0.5,332,15,0,33,2,10:55,10.55,33.3,42.4,6.9,7/20/2016
+Whetstone Creek,WCT2,corn,treated,173,Triepeolus lunatus,1,14,Cleptoparasitic,Solitary,Generalist,Apidae,Ingestion,1000,236,2.02,0.19,5,0.5,332,15,0,33,2,10:55,10.55,33.3,42.4,6.9,7/20/2016
+Whetstone Creek,WCT2,corn,treated,202,Augochlora pura,20,60,Rotten logs,Solitary,Generalist,Halictidae,Leg scopa,210,236,2.02,0.19,5,0.5,332,44,0,57,6,11:00,11.00,30.5,66.1,1.5,7/20/2016
+Whetstone Creek,WCT2,corn,treated,202,Augochloropsis metallica,1,60,Ground,Solitary,Generalist,Halictidae,Leg scopa,300,236,2.02,0.19,5,0.5,332,44,0,57,6,11:00,11.00,30.5,66.1,1.5,7/20/2016
+Whetstone Creek,WCT2,corn,treated,202,Bombus griseocollis,2,60,Ground,Eusocial,Generalist,Apidae,Corbicular basket,7500,236,2.02,0.19,5,0.5,332,44,0,57,6,11:00,11.00,30.5,66.1,1.5,7/20/2016
+Whetstone Creek,WCT2,corn,treated,202,Bombus impatiens,2,60,Ground,Eusocial,Generalist,Apidae,Corbicular basket,7500,236,2.02,0.19,5,0.5,332,44,0,57,6,11:00,11.00,30.5,66.1,1.5,7/20/2016
+Whetstone Creek,WCT2,corn,treated,202,Ceratina calcarata,2,60,Stems/Pith,Subsocial,Generalist,Apidae,Weak Leg scopa,80,236,2.02,0.19,5,0.5,332,44,0,57,6,11:00,11.00,30.5,66.1,1.5,7/20/2016
+Whetstone Creek,WCT2,corn,treated,202,Halictus ligatus,1,60,Ground,Eusocial,Generalist,Halictidae,Leg scopa,182,236,2.02,0.19,5,0.5,332,44,0,57,6,11:00,11.00,30.5,66.1,1.5,7/20/2016
+Whetstone Creek,WCT2,corn,treated,202,Lasioglossum (Dialictus) sp.,15,60,Varies,Varies,Generalist,Halictidae,Leg scopa,410,236,2.02,0.19,5,0.5,332,44,0,57,6,11:00,11.00,30.5,66.1,1.5,7/20/2016
+Whetstone Creek,WCT2,corn,treated,202,Megachile petulans,1,60,Aboveground,Solitary,Generalist,Megachilidae,Abdominal scopa,457,236,2.02,0.19,5,0.5,332,44,0,57,6,11:00,11.00,30.5,66.1,1.5,7/20/2016
+Whetstone Creek,WCT2,corn,treated,202,Melissodes bimaculata,7,60,Ground,Solitary,Generalist,Apidae,Leg scopa,600,236,2.02,0.19,5,0.5,332,44,0,57,6,11:00,11.00,30.5,66.1,1.5,7/20/2016
+Whetstone Creek,WCT2,corn,treated,202,Melissodes comptoides,2,60,Ground,Solitary,Generalist,Apidae,Leg scopa,600,236,2.02,0.19,5,0.5,332,44,0,57,6,11:00,11.00,30.5,66.1,1.5,7/20/2016
+Whetstone Creek,WCT2,corn,treated,202,Melissodes denticulata,1,60,Ground,Solitary,Specialist,Apidae,Leg scopa,600,236,2.02,0.19,5,0.5,332,44,0,57,6,11:00,11.00,30.5,66.1,1.5,7/20/2016
+Whetstone Creek,WCT2,corn,treated,202,Melissodes tepaneca,1,60,Ground,Solitary,Generalist,Apidae,Leg scopa,600,236,2.02,0.19,5,0.5,332,44,0,57,6,11:00,11.00,30.5,66.1,1.5,7/20/2016
+Whetstone Creek,WCT2,corn,treated,202,Ptilothrix bombiformis,4,60,Ground,Aggregations,Specialist,Apidae,Leg scopa,500,236,2.02,0.19,5,0.5,332,44,0,57,6,11:00,11.00,30.5,66.1,1.5,7/20/2016
+Whetstone Creek,WCT2,corn,treated,202,Svastra obliqua,1,60,Ground,Communal,Specialist,Apidae,Leg scopa,1000,236,2.02,0.19,5,0.5,332,44,0,57,6,11:00,11.00,30.5,66.1,1.5,7/20/2016
+Whetstone Creek,WCT3,corn,treated,173,Augochloropsis fulgida,3,17,Ground,Solitary,Generalist,Halictidae,Leg scopa,300,233,1.21,0.34,11.9,0,133,15,0,25,2,9:55,9.55,25.4,59.1,4.5,7/20/2016
+Whetstone Creek,WCT3,corn,treated,173,Bombus auricomus,1,17,Ground Surface,Eusocial,Generalist,Apidae,Corbicular basket,7500,233,1.21,0.34,11.9,0,133,15,0,25,2,9:55,9.55,25.4,59.1,4.5,7/20/2016
+Whetstone Creek,WCT3,corn,treated,173,Bombus pennsylvanicus,1,17,Aboveground,Eusocial,Generalist,Apidae,Corbicular basket,7500,233,1.21,0.34,11.9,0,133,15,0,25,2,9:55,9.55,25.4,59.1,4.5,7/20/2016
+Whetstone Creek,WCT3,corn,treated,173,Halictus ligatus,1,17,Ground,Eusocial,Generalist,Halictidae,Leg scopa,182,233,1.21,0.34,11.9,0,133,15,0,25,2,9:55,9.55,25.4,59.1,4.5,7/20/2016
+Whetstone Creek,WCT3,corn,treated,173,Halictus parallelus,1,17,Ground,Eusocial,Generalist,Halictidae,Leg scopa,182,233,1.21,0.34,11.9,0,133,15,0,25,2,9:55,9.55,25.4,59.1,4.5,7/20/2016
+Whetstone Creek,WCT3,corn,treated,173,Lasioglossum (Dialictus) sp.,9,17,Varies,Varies,Generalist,Halictidae,Leg scopa,410,233,1.21,0.34,11.9,0,133,15,0,25,2,9:55,9.55,25.4,59.1,4.5,7/20/2016
+Whetstone Creek,WCT3,corn,treated,173,Xylocopa virginica,1,17,Wood,Solitary,Generalist,Apidae,Leg scopa,21000,233,1.21,0.34,11.9,0,133,15,0,25,2,9:55,9.55,25.4,59.1,4.5,7/20/2016
+Whetstone Creek,WCT3,corn,treated,202,Agapostemon sericeus,1,51,Ground,Communal,Generalist,Halictidae,Leg scopa,500,233,1.21,0.34,11.9,0,133,44,0,42,5,8:54,8.54,27.4,75,0,7/20/2016
+Whetstone Creek,WCT3,corn,treated,202,Agapostemon virescens,1,51,Ground,Communal,Generalist,Halictidae,Leg scopa,500,233,1.21,0.34,11.9,0,133,44,0,42,5,8:54,8.54,27.4,75,0,7/20/2016
+Whetstone Creek,WCT3,corn,treated,202,Augochlora pura,14,51,Rotten logs,Solitary,Generalist,Halictidae,Leg scopa,210,233,1.21,0.34,11.9,0,133,44,0,42,5,8:54,8.54,27.4,75,0,7/20/2016
+Whetstone Creek,WCT3,corn,treated,202,Bombus auricomus,9,51,Ground Surface,Eusocial,Generalist,Apidae,Corbicular basket,7500,233,1.21,0.34,11.9,0,133,44,0,42,5,8:54,8.54,27.4,75,0,7/20/2016
+Whetstone Creek,WCT3,corn,treated,202,Bombus griseocollis,1,51,Ground,Eusocial,Generalist,Apidae,Corbicular basket,7500,233,1.21,0.34,11.9,0,133,44,0,42,5,8:54,8.54,27.4,75,0,7/20/2016
+Whetstone Creek,WCT3,corn,treated,202,Ceratina mikmaqi,1,51,Stems/Pith,Subsocial,Generalist,Apidae,Weak Leg scopa,80,233,1.21,0.34,11.9,0,133,44,0,42,5,8:54,8.54,27.4,75,0,7/20/2016
+Whetstone Creek,WCT3,corn,treated,202,Lasioglossum (Dialictus) sp.,7,51,Varies,Varies,Generalist,Halictidae,Leg scopa,410,233,1.21,0.34,11.9,0,133,44,0,42,5,8:54,8.54,27.4,75,0,7/20/2016
+Whetstone Creek,WCT3,corn,treated,202,Melissodes bimaculata,1,51,Ground,Solitary,Generalist,Apidae,Leg scopa,600,233,1.21,0.34,11.9,0,133,44,0,42,5,8:54,8.54,27.4,75,0,7/20/2016
+Whetstone Creek,WCT3,corn,treated,202,Melissodes communis,1,51,Ground,Solitary,Generalist,Apidae,Leg scopa,600,233,1.21,0.34,11.9,0,133,44,0,42,5,8:54,8.54,27.4,75,0,7/22/2016
+Whetstone Creek,WCT3,corn,treated,202,Melissodes comptoides,1,51,Ground,Solitary,Generalist,Apidae,Leg scopa,600,233,1.21,0.34,11.9,0,133,44,0,42,5,8:54,8.54,27.4,75,0,7/22/2016
+Whetstone Creek,WCT3,corn,treated,202,Melissodes denticulata,1,51,Ground,Solitary,Specialist,Apidae,Leg scopa,600,233,1.21,0.34,11.9,0,133,44,0,42,5,8:54,8.54,27.4,75,0,7/22/2016
+Whetstone Creek,WCT3,corn,treated,202,Melissodes tepaneca,1,51,Ground,Solitary,Generalist,Apidae,Leg scopa,600,233,1.21,0.34,11.9,0,133,44,0,42,5,8:54,8.54,27.4,75,0,7/22/2016
+Whetstone Creek,WCT3,corn,treated,202,Melissodes trinodis,1,51,Ground,Solitary,Specialist,Apidae,Leg scopa,600,233,1.21,0.34,11.9,0,133,44,0,42,5,8:54,8.54,27.4,75,0,7/22/2016
+Whetstone Creek,WCT3,corn,treated,202,Ptilothrix bombiformis,1,51,Ground,Aggregations,Specialist,Apidae,Leg scopa,500,233,1.21,0.34,11.9,0,133,44,0,42,5,8:54,8.54,27.4,75,0,7/22/2016
+Whetstone Creek,WCT3,corn,treated,202,Xylocopa virginica,10,51,Wood,Solitary,Generalist,Apidae,Leg scopa,21000,233,1.21,0.34,11.9,0,133,44,0,42,5,8:54,8.54,27.4,75,0,7/22/2016
+Whetstone Creek,WCT4,corn,treated,173,Bombus auricomus,2,40,Ground Surface,Eusocial,Generalist,Apidae,Corbicular basket,7500,226,1.21,0.16,10.7,0.5,490,15,0,35,2,8:21,8.21,23.4,69,2.5,7/22/2016
+Whetstone Creek,WCT4,corn,treated,173,Bombus bimaculatus,1,40,Ground,Eusocial,Generalist,Apidae,Corbicular basket,7500,226,1.21,0.16,10.7,0.5,490,15,0,35,2,8:21,8.21,23.4,69,2.5,7/22/2016
+Whetstone Creek,WCT4,corn,treated,173,Bombus griseocollis,1,40,Ground,Eusocial,Generalist,Apidae,Corbicular basket,7500,226,1.21,0.16,10.7,0.5,490,15,0,35,2,8:21,8.21,23.4,69,2.5,7/22/2016
+Whetstone Creek,WCT4,corn,treated,173,Ceratina mikmaqi,2,40,Stems/Pith,Subsocial,Generalist,Apidae,Weak Leg scopa,80,226,1.21,0.16,10.7,0.5,490,15,0,35,2,8:21,8.21,23.4,69,2.5,7/22/2016
+Whetstone Creek,WCT4,corn,treated,173,Halictus ligatus,2,40,Ground,Eusocial,Generalist,Halictidae,Leg scopa,182,226,1.21,0.16,10.7,0.5,490,15,0,35,2,8:21,8.21,23.4,69,2.5,7/22/2016
+Whetstone Creek,WCT4,corn,treated,173,Lasioglossum (Dialictus) sp.,1,40,Varies,Varies,Generalist,Halictidae,Leg scopa,410,226,1.21,0.16,10.7,0.5,490,15,0,35,2,8:21,8.21,23.4,69,2.5,7/22/2016
+Whetstone Creek,WCT4,corn,treated,173,Melissodes comptoides,1,40,Ground,Solitary,Generalist,Apidae,Leg scopa,600,226,1.21,0.16,10.7,0.5,490,15,0,35,2,8:21,8.21,23.4,69,2.5,7/22/2016
+Whetstone Creek,WCT4,corn,treated,173,Melissodes trinodis,1,40,Ground,Solitary,Specialist,Apidae,Leg scopa,600,226,1.21,0.16,10.7,0.5,490,15,0,35,2,8:21,8.21,23.4,69,2.5,7/22/2016
+Whetstone Creek,WCT4,corn,treated,173,Triepeolus lunatus,1,40,Cleptoparasitic,Solitary,Generalist,Apidae,Ingestion,1000,226,1.21,0.16,10.7,0.5,490,15,0,35,2,8:21,8.21,23.4,69,2.5,7/22/2016
+Whetstone Creek,WCT4,corn,treated,173,Xylocopa virginica,2,40,Wood,Solitary,Generalist,Apidae,Leg scopa,21000,226,1.21,0.16,10.7,0.5,490,15,0,35,2,8:21,8.21,23.4,69,2.5,7/22/2016
+Whetstone Creek,WCT4,corn,treated,202,Agapostemon texanus,1,40,Ground,Communal,Generalist,Halictidae,Leg scopa,500,226,1.21,0.16,10.7,0.5,490,44,0,35,5,6:48,6.48,21,87.9,0.4,7/22/2016
+Whetstone Creek,WCT4,corn,treated,202,Bombus auricomus,2,40,Ground Surface,Eusocial,Generalist,Apidae,Corbicular basket,7500,226,1.21,0.16,10.7,0.5,490,44,0,35,5,6:48,6.48,21,87.9,0.4,7/22/2016
+Whetstone Creek,WCT4,corn,treated,202,Bombus bimaculatus,1,40,Ground,Eusocial,Generalist,Apidae,Corbicular basket,7500,226,1.21,0.16,10.7,0.5,490,44,0,35,5,6:48,6.48,21,87.9,0.4,7/22/2016
+Whetstone Creek,WCT4,corn,treated,202,Ceratina calcarata,1,40,Stems/Pith,Subsocial,Generalist,Apidae,Weak Leg scopa,80,226,1.21,0.16,10.7,0.5,490,44,0,35,5,6:48,6.48,21,87.9,0.4,7/22/2016
+Whetstone Creek,WCT4,corn,treated,202,Ceratina mikmaqi,6,40,Stems/Pith,Subsocial,Generalist,Apidae,Weak Leg scopa,80,226,1.21,0.16,10.7,0.5,490,44,0,35,5,6:48,6.48,21,87.9,0.4,7/22/2016
+Whetstone Creek,WCT4,corn,treated,202,Coelioxys mexicana,1,40,Cleptoparasitic,Solitary,Generalist,Megachilidae,None,457,226,1.21,0.16,10.7,0.5,490,44,0,35,5,6:48,6.48,21,87.9,0.4,7/22/2016
+Whetstone Creek,WCT4,corn,treated,202,Halictus rubicundus,1,40,Ground,Eusocial,Generalist,Halictidae,Leg scopa,182,226,1.21,0.16,10.7,0.5,490,44,0,35,5,6:48,6.48,21,87.9,0.4,7/22/2016
+Whetstone Creek,WCT4,corn,treated,202,Melissodes bimaculata,9,40,Ground,Solitary,Generalist,Apidae,Leg scopa,600,226,1.21,0.16,10.7,0.5,490,44,0,35,5,6:48,6.48,21,87.9,0.4,7/22/2016
+Whetstone Creek,WCT4,corn,treated,202,Melissodes comptoides,1,40,Ground,Solitary,Generalist,Apidae,Leg scopa,600,226,1.21,0.16,10.7,0.5,490,44,0,35,5,6:48,6.48,21,87.9,0.4,7/22/2016
+Whetstone Creek,WCT4,corn,treated,202,Melissodes denticulata,2,40,Ground,Solitary,Specialist,Apidae,Leg scopa,600,226,1.21,0.16,10.7,0.5,490,44,0,35,5,6:48,6.48,21,87.9,0.4,7/22/2016
+Whetstone Creek,WCT4,corn,treated,202,Ptilothrix bombiformis,1,40,Ground,Aggregations,Specialist,Apidae,Leg scopa,500,226,1.21,0.16,10.7,0.5,490,44,0,35,5,6:48,6.48,21,87.9,0.4,7/22/2016
+Whetstone Creek,WCUT1,oldfield,untreated,173,Augochlora pura,1,40,Rotten logs,Solitary,Generalist,Halictidae,Leg scopa,210,236,1.62,0.31,11.4,0,772,0,0,28,2,10:16,10.16,27.2,53.5,0.6,7/22/2016
+Whetstone Creek,WCUT1,oldfield,untreated,173,Augochloropsis fulgida,3,40,Ground,Solitary,Generalist,Halictidae,Leg scopa,300,236,1.62,0.31,11.4,0,772,0,0,28,2,10:16,10.16,27.2,53.5,0.6,7/22/2016
+Whetstone Creek,WCUT1,oldfield,untreated,173,Augochloropsis metallica,1,40,Ground,Solitary,Generalist,Halictidae,Leg scopa,300,236,1.62,0.31,11.4,0,772,0,0,28,2,10:16,10.16,27.2,53.5,0.6,7/22/2016
+Whetstone Creek,WCUT1,oldfield,untreated,173,Bombus bimaculatus,1,40,Ground,Eusocial,Generalist,Apidae,Corbicular basket,7500,236,1.62,0.31,11.4,0,772,0,0,28,2,10:16,10.16,27.2,53.5,0.6,7/22/2016
+Whetstone Creek,WCUT1,oldfield,untreated,173,Bombus griseocollis,3,40,Ground,Eusocial,Generalist,Apidae,Corbicular basket,7500,236,1.62,0.31,11.4,0,772,0,0,28,2,10:16,10.16,27.2,53.5,0.6,7/22/2016
+Whetstone Creek,WCUT1,oldfield,untreated,173,Hylaeus modestus,8,40,Wood,Solitary,Generalist,Colletidae,Ingestion,250,236,1.62,0.31,11.4,0,772,0,0,28,2,10:16,10.16,27.2,53.5,0.6,7/22/2016
+Whetstone Creek,WCUT1,oldfield,untreated,173,Lasioglossum (Dialictus) sp.,15,40,Varies,Varies,Generalist,Halictidae,Leg scopa,410,236,1.62,0.31,11.4,0,772,0,0,28,2,10:16,10.16,27.2,53.5,0.6,7/22/2016
+Whetstone Creek,WCUT1,oldfield,untreated,202,Agapostemon virescens,1,40,Ground,Communal,Generalist,Halictidae,Leg scopa,500,236,1.62,0.31,11.4,0,772,0,60,27,7,10:00,10.00,28.7,71.4,2.5,7/22/2016
+Whetstone Creek,WCUT1,oldfield,untreated,202,Augochlora pura,1,40,Rotten logs,Solitary,Generalist,Halictidae,Leg scopa,210,236,1.62,0.31,11.4,0,772,0,60,27,7,10:00,10.00,28.7,71.4,2.5,7/22/2016
+Whetstone Creek,WCUT1,oldfield,untreated,202,Augochloropsis metallica,1,40,Ground,Solitary,Generalist,Halictidae,Leg scopa,300,236,1.62,0.31,11.4,0,772,0,60,27,7,10:00,10.00,28.7,71.4,2.5,7/22/2016
+Whetstone Creek,WCUT1,oldfield,untreated,202,Ceratina mikmaqi,3,40,Stems/Pith,Subsocial,Generalist,Apidae,Weak Leg scopa,80,236,1.62,0.31,11.4,0,772,0,60,27,7,10:00,10.00,28.7,71.4,2.5,7/22/2016
+Whetstone Creek,WCUT1,oldfield,untreated,202,Halictus rubicundus,1,40,Ground,Eusocial,Generalist,Halictidae,Leg scopa,182,236,1.62,0.31,11.4,0,772,0,60,27,7,10:00,10.00,28.7,71.4,2.5,7/22/2016
+Whetstone Creek,WCUT1,oldfield,untreated,202,Hylaeus modestus,2,40,Wood,Solitary,Generalist,Colletidae,Ingestion,250,236,1.62,0.31,11.4,0,772,0,60,27,7,10:00,10.00,28.7,71.4,2.5,7/22/2016
+Whetstone Creek,WCUT1,oldfield,untreated,202,Lasioglossum (Dialictus) sp.,3,40,Varies,Varies,Generalist,Halictidae,Leg scopa,410,236,1.62,0.31,11.4,0,772,0,60,27,7,10:00,10.00,28.7,71.4,2.5,7/22/2016
+Whetstone Creek,WCUT1,oldfield,untreated,202,Megachile petulans,2,40,Aboveground,Solitary,Generalist,Megachilidae,Abdominal scopa,457,236,1.62,0.31,11.4,0,772,0,60,27,7,10:00,10.00,28.7,71.4,2.5,7/22/2016
+Whetstone Creek,WCUT1,oldfield,untreated,202,Melissodes bimaculata,13,40,Ground,Solitary,Generalist,Apidae,Leg scopa,600,236,1.62,0.31,11.4,0,772,0,60,27,7,10:00,10.00,28.7,71.4,2.5,7/22/2016
+Whetstone Creek,WCUT1,oldfield,untreated,202,Melissodes communis,7,40,Ground,Solitary,Generalist,Apidae,Leg scopa,600,236,1.62,0.31,11.4,0,772,0,60,27,7,10:00,10.00,28.7,71.4,2.5,7/22/2016
+Whetstone Creek,WCUT1,oldfield,untreated,202,Melissodes comptoides,1,40,Ground,Solitary,Generalist,Apidae,Leg scopa,600,236,1.62,0.31,11.4,0,772,0,60,27,7,10:00,10.00,28.7,71.4,2.5,7/22/2016
+Whetstone Creek,WCUT1,oldfield,untreated,202,Osmia georgica,1,40,Wood,Solitary,Generalist,Megachilidae,Abdominal scopa,500,236,1.62,0.31,11.4,0,772,0,60,27,7,10:00,10.00,28.7,71.4,2.5,7/22/2016
+Whetstone Creek,WCUT2,oldfield,untreated,173,Bombus auricomus,3,33,Ground Surface,Eusocial,Generalist,Apidae,Corbicular basket,7500,200,1.21,0.21,9.2,0,704,0,0,22,2,9:00,9.00,24.7,63.8,2.5,7/22/2016
+Whetstone Creek,WCUT2,oldfield,untreated,173,Bombus bimaculatus,12,33,Ground,Eusocial,Generalist,Apidae,Corbicular basket,7500,200,1.21,0.21,9.2,0,704,0,0,22,2,9:00,9.00,24.7,63.8,2.5,7/22/2016
+Whetstone Creek,WCUT2,oldfield,untreated,173,Bombus griseocollis,9,33,Ground,Eusocial,Generalist,Apidae,Corbicular basket,7500,200,1.21,0.21,9.2,0,704,0,0,22,2,9:00,9.00,24.7,63.8,2.5,7/22/2016
+Whetstone Creek,WCUT2,oldfield,untreated,173,Eucera rosae,5,33,Ground,Solitary,Generalist,Apidae,Leg scopa,1000,200,1.21,0.21,9.2,0,704,0,0,22,2,9:00,9.00,24.7,63.8,2.5,7/22/2016
+Whetstone Creek,WCUT2,oldfield,untreated,173,Melissodes tepaneca,3,33,Ground,Solitary,Generalist,Apidae,Leg scopa,600,200,1.21,0.21,9.2,0,704,0,0,22,2,9:00,9.00,24.7,63.8,2.5,7/22/2016
+Whetstone Creek,WCUT2,oldfield,untreated,173,Xylocopa virginica,1,33,Wood,Solitary,Generalist,Apidae,Leg scopa,21000,200,1.21,0.21,9.2,0,704,0,0,22,2,9:00,9.00,24.7,63.8,2.5,7/22/2016
+Whetstone Creek,WCUT2,oldfield,untreated,202,Augochlora pura,3,29,Rotten logs,Solitary,Generalist,Halictidae,Leg scopa,210,200,1.21,0.21,9.2,0,704,0,85,33,6,7:55,7.55,25.9,74.5,0,7/22/2016
+Whetstone Creek,WCUT2,oldfield,untreated,202,Bombus auricomus,2,29,Ground Surface,Eusocial,Generalist,Apidae,Corbicular basket,7500,200,1.21,0.21,9.2,0,704,0,85,33,6,7:55,7.55,25.9,74.5,0,7/22/2016
+Whetstone Creek,WCUT2,oldfield,untreated,202,Bombus impatiens,3,29,Ground,Eusocial,Generalist,Apidae,Corbicular basket,7500,200,1.21,0.21,9.2,0,704,0,85,33,6,7:55,7.55,25.9,74.5,0,7/22/2016
+Whetstone Creek,WCUT2,oldfield,untreated,202,Coelioxys mexicana,1,29,Cleptoparasitic,Solitary,Generalist,Megachilidae,None,457,200,1.21,0.21,9.2,0,704,0,85,33,6,7:55,7.55,25.9,74.5,0,7/22/2016
+Whetstone Creek,WCUT2,oldfield,untreated,202,Megachile mendica,2,29,Ground,Solitary,Generalist,Megachilidae,Abdominal scopa,457,200,1.21,0.21,9.2,0,704,0,85,33,6,7:55,7.55,25.9,74.5,0,7/22/2016
+Whetstone Creek,WCUT2,oldfield,untreated,202,Melissodes bimaculata,9,29,Ground,Solitary,Generalist,Apidae,Leg scopa,600,200,1.21,0.21,9.2,0,704,0,85,33,6,7:55,7.55,25.9,74.5,0,7/22/2016
+Whetstone Creek,WCUT2,oldfield,untreated,202,Melissodes comptoides,1,29,Ground,Solitary,Generalist,Apidae,Leg scopa,600,200,1.21,0.21,9.2,0,704,0,85,33,6,7:55,7.55,25.9,74.5,0,7/22/2016
+Whetstone Creek,WCUT2,oldfield,untreated,202,Melissodes denticulata,2,29,Ground,Solitary,Specialist,Apidae,Leg scopa,600,200,1.21,0.21,9.2,0,704,0,85,33,6,7:55,7.55,25.9,74.5,0,7/22/2016
+Whetstone Creek,WCUT2,oldfield,untreated,202,Melissodes tepaneca,3,29,Ground,Solitary,Generalist,Apidae,Leg scopa,600,200,1.21,0.21,9.2,0,704,0,85,33,6,7:55,7.55,25.9,74.5,0,7/22/2016
+Whetstone Creek,WCUT2,oldfield,untreated,202,Melissodes trinodis,1,29,Ground,Solitary,Specialist,Apidae,Leg scopa,600,200,1.21,0.21,9.2,0,704,0,85,33,6,7:55,7.55,25.9,74.5,0,7/22/2016
+Whetstone Creek,WCUT2,oldfield,untreated,202,Ptilothrix bombiformis,2,29,Ground,Aggregations,Specialist,Apidae,Leg scopa,500,200,1.21,0.21,9.2,0,704,0,85,33,6,7:55,7.55,25.9,74.5,0,7/22/2016

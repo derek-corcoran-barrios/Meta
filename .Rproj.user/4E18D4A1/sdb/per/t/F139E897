@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "---\nauthor:\n  - name: Main author\n    affiliation: University of life and more\n    address: >\n      First line\n      Second line\n    email: me@university.edu\n    url: http://rstudio.com\n  - name: second author\n    affiliation: University of life and more\n  - name: Third Author\n    affiliation: University of life and more\n  - name: Fourth Author\n    affiliation: University of life and more\ntitle:\n  formatted: \"super interesting r package called \\\\pkg{TheSuperPackage}\"\n  short:     \"\\\\pkg{TheSuperPackage}: This is exiting\"\nabstract: >\n  We present a package that will solve your life\nkeywords:\n  # at least one keyword must be supplied\n  formatted: [ \"\\\\pkg{TheSuperPackage}\", Life, \"\\\\proglang{R}\"]\n  plain:     [keywords, not capitalized, life]\npreamble: >\n  \\usepackage{amsmath}\nbiblio-style: jss\noutput:\n  rticles::jss_article:\n    fig_caption: true\n    citation_package: natbib\nbibliography: Derek.bib\n---\n\n\n```{r, echo=FALSE, warning=FALSE, message=FALSE}\nlibrary(rticles)\nlibrary(rmarkdown)\nlibrary(yaml)\n```\n\n```{r, echo=FALSE, warning=FALSE}\nlibrary(knitr)\nopts_chunk$set(prompt=TRUE)\noptions(replace.assign=TRUE, width=90, prompt=\"R> \")\n```\n\n# Introduction\n\nThis template demonstrates some of the basic latex you'll need to know to create a JSS article.\n\n## Code formatting\n\nDon't use markdown, instead use the more precise latex commands:\n\n* \\proglang{Java}\n* \\pkg{plyr}\n* \\code{print(\"abc\")}\n\n# R code\n\nCan be inserted in regular R markdown blocks.\n\n```{r}\nx <- 1:10\nx\n```\n",
+    "created" : 1482169959106.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1726063384",
+    "id" : "F139E897",
+    "lastKnownWriteTime" : 1482170234,
+    "last_content_update" : 1482170234155,
+    "path" : "~/Metanalysis/Example/Example.Rmd",
+    "project_path" : "Example/Example.Rmd",
+    "properties" : {
+    },
+    "relative_order" : 17,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

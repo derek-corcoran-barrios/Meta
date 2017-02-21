@@ -1,0 +1,185 @@
+---
+title: "Metanalysis"
+author: "Derek Corcoran"
+date: "February 13, 2017"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(dev = 'pdf')
+```
+
+## summary stats
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+Meta <- read.csv("~/Metanalysis/Meta_MasterData.csv")
+Meta <- Meta[1:188,]
+
+library(ggplot2)
+```
+###Studies per fitness measure
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+
+ggplot(Meta, aes(x=reorder(Fitness.measure,Fitness.measure, function(x)-length(x)))) + geom_bar() + xlab("Performance measure") + ylab("Number of studies") + theme_classic()
+```
+
+####Categories present by Fitness measure
+
+#####Functional group
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+ggplot(Meta, aes(x=reorder(Fitness.measure,Fitness.measure, function(x)-length(x)))) + geom_bar(aes(fill = Functional.group), position = "dodge")+ xlab("Performance measure") + ylab("Number of studies") + theme_classic()
+```
+
+#####Taxonimical Order
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+ggplot(Meta, aes(x=reorder(Fitness.measure,Fitness.measure, function(x)-length(x)))) + geom_bar(aes(fill = Order), position = "dodge")+ xlab("Performance measure") + ylab("Number of studies") + theme_classic()
+```
+
+#####Study type
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+ggplot(Meta, aes(x=reorder(Fitness.measure,Fitness.measure, function(x)-length(x)))) + geom_bar(aes(fill = Study.Type), position = "dodge")+ xlab("Performance measure") + ylab("Number of studies") + theme_classic()
+```
+
+## Use of Hedge's g for testing differences
+
+####Interpreting Results
+
+A g of 1 indicates the two groups differ by 1 standard deviation, a g of 2 indicates they differ by 2 standard deviations, and so on. Standard deviations are equivalent to z-scores (1 standard deviation = 1 z-score).
+Rule of Thumb Interpretation
+
+Cohen’s d and Hedges’ g are interpreted in a similar way. Cohen suggested using the following rule of thumb for interpreting results:
+
+- Small effect (cannot be discerned by the naked eye) = 0.2
+- Medium Effect = 0.5
+- Large Effect (can be seen by the naked eye) = 0.8
+
+### Heterogeneity
+
+####Tau Square
+-  An estimate of the between-study variance in a random-effects meta-analysis is given as (known as tau-squared). 
+
+-  If > 1, suggests presence of substantial statistical 
+heterogeneity.
+
+####I Squared
+
+Thresholds for the interpretation of I2 can be misleading, since the importance of inconsistency depends on several factors. A rough guide to interpretation is as follows:
+
+– 0% to 40%: might not be important;
+
+– 30% to 60%: may represent moderate 
+heterogeneity;
+
+– 50% to 90%: may represent substantial 
+heterogeneity;
+
+– 75% to 100%: considerable heterogeneity*.
+
+If there is evidence of statistical heterogeneity, we should proceed cautiously, investigate  the reasons for its presence and  modify our approach accordingly, perhaps by dividing the studies into subgroups of those with similar characteristics.    
+
+## Fitness measure
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+
+library(metafor)
+
+#Abundance
+Abundance <- dplyr::filter(Meta, Fitness.measure == "abundance")
+
+dat1 <- escalc(measure="SMDH", m2i=Con_Mean, sd2i=Con_SE, n2i=Study.control..n., m1i=T1_Mean, sd1i=T1_SE, n1i=Study.T1..n., data=Abundance, vtype = "UB")
+
+res <- rma(yi, vi, data=dat1, refline = 0, method = "HE", slab = paste(dat1$Authors, dat1$Year))
+
+Abund <- data.frame(estimate = res$b, ci.ub = res$ci.ub, ci.lb = res$ci.lb, group = c("Abundance"), p = res$pval, n =nrow(Abundance))
+#Behavior
+
+Behavior <- dplyr::filter(Meta, Fitness.measure == "behavior")
+
+dat1 <- escalc(measure="SMDH", m2i=Con_Mean, sd2i=Con_SE, n2i=Study.control..n., m1i=T1_Mean, sd1i=T1_SE, n1i=Study.T1..n., data=Behavior, vtype = "UB")
+
+res2 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", slab = paste(dat1$Authors, dat1$Year))
+
+Behav <- data.frame(estimate = res2$b, ci.ub = res2$ci.ub, ci.lb = res2$ci.lb, group = c("Behavior"), p = res2$pval, n =nrow(Behavior))
+#Survival
+
+survival <- dplyr::filter(Meta, Fitness.measure == "survival")
+
+dat1 <- escalc(measure="SMDH", m2i=Con_Mean, sd2i=Con_SE, n2i=Study.control..n., m1i=T1_Mean, sd1i=T1_SE, n1i=Study.T1..n., data=survival, vtype = "UB")
+
+res3 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", slab = paste(dat1$Authors, dat1$Year))
+
+Surviv <- data.frame(estimate = res3$b, ci.ub = res3$ci.ub, ci.lb = res3$ci.lb, group = c("Survival"), p = res3$pval, n =nrow(survival))
+
+#Reproduction
+
+reproduction <- dplyr::filter(Meta, Fitness.measure == "reproduction")
+
+dat1 <- escalc(measure="SMDH", m2i=Con_Mean, sd2i=Con_SE, n2i=Study.control..n., m1i=T1_Mean, sd1i=T1_SE, n1i=Study.T1..n., data=reproduction, vtype = "UB")
+
+res4 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", slab = paste(dat1$Authors, dat1$Year))
+
+Reprod <- data.frame(estimate = res4$b, ci.ub = res4$ci.ub, ci.lb = res4$ci.lb, group = c("Reproduction"), p = res4$pval, n =nrow(reproduction))
+
+#Condition
+
+condition <- dplyr::filter(Meta, Fitness.measure == "condition")
+
+dat1 <- escalc(measure="SMDH", m2i=Con_Mean, sd2i=Con_SE, n2i=Study.control..n., m1i=T1_Mean, sd1i=T1_SE, n1i=Study.T1..n., data=condition, vtype = "UB")
+
+res4 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", slab = paste(dat1$Authors, dat1$Year))
+
+Cond <- data.frame(estimate = res4$b, ci.ub = res4$ci.ub, ci.lb = res4$ci.lb, group = c("Condition"), p = res4$pval, n =nrow(condition))
+
+All <- rbind(Abund, Behav, Surviv, Reprod, Cond)
+
+knitr::kable(All, digits = 3, row.names = FALSE)
+
+All <- All[-4,]
+
+ggplot(All, aes(x = group, y = estimate)) + geom_point(aes(size = n)) + coord_flip() + geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub),width=0.0) + geom_hline(yintercept = 0, linetype=2) + ylim(c(-8.5, 8.5)) + ylab(c("Standardized Mean Difference")) + theme_classic() + xlab(c(""))
+
+```
+
+## Abundance
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE, fig.height=10, fig.width=6}
+library(meta)
+library(metafor)
+###########Examples
+
+Abundance <- dplyr::filter(Meta, Fitness.measure == "abundance")
+
+
+
+dat1 <- escalc(measure="SMDH", m2i=Con_Mean, sd2i=Con_SE, n2i=Study.control..n., m1i=T1_Mean, sd1i=T1_SE, n1i=Study.T1..n., data=Abundance, vtype = "UB")
+
+res <- rma(yi, vi, data=dat1, refline = 0, method = "HE", slab = paste(dat1$Authors, dat1$Year))
+
+nullmod <- data.frame(estimate = res$b, ci.ub = res$ci.ub, ci.lb = res$ci.lb, group = c("Null"), p = res$pval, n =nrow(Abundance))
+
+
+
+res1 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =~  factor(Functional.group) - 1, slab = paste(dat1$Authors, dat1$Year))
+
+functionalgroup <- data.frame(estimate = res1$b, ci.ub = res1$ci.ub, ci.lb = res1$ci.lb, group = c("detritivore", "omnivore", "pollinator", "predator"), p = res1$pval, n = c(length(dplyr::filter(Abundance, Functional.group == "detritivore")$Functional.group), length(dplyr::filter(Abundance, Functional.group == "omnivore")$Functional.group), length(dplyr::filter(Abundance, Functional.group == "pollinator")$Functional.group), length(dplyr::filter(Abundance, Functional.group == "predator")$Functional.group)))
+
+
+All <- rbind(nullmod, functionalgroup)
+
+knitr::kable(All, digits = 3, row.names = FALSE)
+
+```
+
+
+
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE, cache=FALSE}
+
+ggplot(All, aes(x = group, y = estimate)) + geom_point(aes(size = n)) + coord_flip() + geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub),width=0.0) + geom_hline(yintercept = 0, linetype=2) + ylim(c(-6, 6)) + ylab(c("Standardized Mean Difference")) + theme_classic() + xlab(c(""))
+
+```
+
