@@ -13,8 +13,7 @@ knitr::opts_chunk$set(dev = 'pdf')
 ## summary stats
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
-Meta <- read.csv("~/Metanalysis/Meta_MasterData.csv")
-Meta <- Meta[1:188,]
+Meta <- readRDS("Meta_data.rds")
 
 library(ggplot2)
 ```
