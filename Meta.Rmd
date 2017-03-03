@@ -55,6 +55,12 @@ ggplot(Meta, aes(x=reorder(Fitness.measure,Fitness.measure, function(x)-length(x
 ggplot(Meta, aes(x=reorder(Fitness.measure,Fitness.measure, function(x)-length(x)))) + geom_bar(aes(fill = Nesting.Area), position = "dodge")+ xlab("Performance measure") + ylab("Number of studies") + theme_classic()
 ```
 
+#####Application type
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+ggplot(Meta, aes(x=reorder(Fitness.measure,Fitness.measure, function(x)-length(x)))) + geom_bar(aes(fill = Treatment.2), position = "dodge")+ xlab("Performance measure") + ylab("Number of studies") + theme_classic()
+```
+
 ## Use of Hedge's g for testing differences
 
 ####Interpreting Results
