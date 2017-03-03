@@ -176,7 +176,7 @@ nullmod <- data.frame(estimate = res$b, ci.ub = res$ci.ub, ci.lb = res$ci.lb, gr
 
 res1 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =~  factor(Functional.group) - 1, slab = paste(dat1$Authors, dat1$Year))
 
-functionalgroup <- data.frame(estimate = res1$b, ci.ub = res1$ci.ub, ci.lb = res1$ci.lb, group = c("detritivore", "omnivore", "pollinator", "predator"), p = res1$pval, n = c(length(dplyr::filter(Abundance, Functional.group == "detritivore")$Functional.group), length(dplyr::filter(Abundance, Functional.group == "omnivore")$Functional.group), length(dplyr::filter(Abundance, Functional.group == "pollinator")$Functional.group), length(dplyr::filter(Abundance, Functional.group == "predator")$Functional.group)))
+functionalgroup <- data.frame(estimate = res1$b, ci.ub = res1$ci.ub, ci.lb = res1$ci.lb, group = c("detritivore","mixed", "omnivore", "pollinator", "predator"), p = res1$pval, n = c(length(dplyr::filter(Abundance, Functional.group == "detritivore")$Functional.group),length(dplyr::filter(Abundance, Functional.group == "mixed")$Functional.group), length(dplyr::filter(Abundance, Functional.group == "omnivore")$Functional.group), length(dplyr::filter(Abundance, Functional.group == "pollinator")$Functional.group), length(dplyr::filter(Abundance, Functional.group == "predator")$Functional.group)))
 
 
 All <- rbind(nullmod, functionalgroup)
@@ -190,7 +190,7 @@ knitr::kable(All, digits = 3, row.names = FALSE)
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE, cache=FALSE}
 
-ggplot(All, aes(x = group, y = estimate)) + geom_point(aes(size = n)) + coord_flip() + geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub),width=0.0) + geom_hline(yintercept = 0, linetype=2) + ylim(c(-6, 6)) + ylab(c("Standardized Mean Difference")) + theme_classic() + xlab(c(""))
+ggplot(All, aes(x = group, y = estimate)) + geom_point(aes(size = n)) + coord_flip() + geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub),width=0.0) + geom_hline(yintercept = 0, linetype=2) + ylim(c(-7, 7)) + ylab(c("Standardized Mean Difference")) + theme_classic() + xlab(c(""))
 
 ```
 
