@@ -43,6 +43,18 @@ ggplot(Meta, aes(x=reorder(Fitness.measure,Fitness.measure, function(x)-length(x
 ggplot(Meta, aes(x=reorder(Fitness.measure,Fitness.measure, function(x)-length(x)))) + geom_bar(aes(fill = Study.Type), position = "dodge")+ xlab("Performance measure") + ylab("Number of studies") + theme_classic()
 ```
 
+#####Foraging Area
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+ggplot(Meta, aes(x=reorder(Fitness.measure,Fitness.measure, function(x)-length(x)))) + geom_bar(aes(fill = Foraging.Area), position = "dodge")+ xlab("Performance measure") + ylab("Number of studies") + theme_classic()
+```
+
+#####Nesting Area
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+ggplot(Meta, aes(x=reorder(Fitness.measure,Fitness.measure, function(x)-length(x)))) + geom_bar(aes(fill = Nesting.Area), position = "dodge")+ xlab("Performance measure") + ylab("Number of studies") + theme_classic()
+```
+
 ## Use of Hedge's g for testing differences
 
 ####Interpreting Results
@@ -139,7 +151,7 @@ knitr::kable(All, digits = 3, row.names = FALSE)
 
 All <- All[-4,]
 
-ggplot(All, aes(x = group, y = estimate)) + geom_point(aes(size = n)) + coord_flip() + geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub),width=0.0) + geom_hline(yintercept = 0, linetype=2) + ylim(c(-8.5, 8.5)) + ylab(c("Standardized Mean Difference")) + theme_classic() + xlab(c(""))
+ggplot(All, aes(x = group, y = estimate)) + geom_point(aes(size = n)) + coord_flip() + geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub),width=0.0) + geom_hline(yintercept = 0, linetype=2) + ylim(c(-10, 10)) + ylab(c("Standardized Mean Difference")) + theme_classic() + xlab(c(""))
 
 ```
 
@@ -182,3 +194,128 @@ ggplot(All, aes(x = group, y = estimate)) + geom_point(aes(size = n)) + coord_fl
 
 ```
 
+
+##Survival
+
+####Nesting Area
+
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE, fig.height=10, fig.width=6}
+library(meta)
+library(metafor)
+###########Examples
+
+Survival <- dplyr::filter(Meta, Fitness.measure == "survival")
+
+
+
+dat1 <- escalc(measure="SMDH", m2i=Con_Mean, sd2i=Con_SE, n2i=Study.control..n., m1i=T1_Mean, sd1i=T1_SE, n1i=Study.T1..n., data=Survival, vtype = "UB")
+
+res <- rma(yi, vi, data=dat1, refline = 0, method = "HE", slab = paste(dat1$Authors, dat1$Year))
+
+nullmod <- data.frame(estimate = res$b, ci.ub = res$ci.ub, ci.lb = res$ci.lb, group = c("Null"), p = res$pval, n =nrow(Survival))
+
+
+
+res1 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =~  factor(Nesting.Area) - 1, slab = paste(dat1$Authors, dat1$Year))
+
+Nesting <- data.frame(estimate = res1$b, ci.ub = res1$ci.ub, ci.lb = res1$ci.lb, group = c("aboveground", "ground"), p = res1$pval, n = c(length(dplyr::filter(Survival, Nesting.Area == "aboveground")$Nesting.Area), length(dplyr::filter(Survival, Nesting.Area == "ground")$Nesting.Area)))
+
+
+All <- rbind(nullmod, Nesting)
+
+knitr::kable(All, digits = 3, row.names = FALSE)
+
+```
+
+
+
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE, cache=FALSE}
+
+ggplot(All, aes(x = group, y = estimate)) + geom_point(aes(size = n)) + coord_flip() + geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub),width=0.0) + geom_hline(yintercept = 0, linetype=2) + ylim(c(-12, 12)) + ylab(c("Standardized Mean Difference")) + theme_classic() + xlab(c(""))
+
+```
+
+
+##Behavior
+
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE, fig.height=10, fig.width=6}
+library(meta)
+library(metafor)
+###########Examples
+
+Behavior <- dplyr::filter(Meta, Fitness.measure == "behavior")
+
+
+
+dat1 <- escalc(measure="SMDH", m2i=Con_Mean, sd2i=Con_SE, n2i=Study.control..n., m1i=T1_Mean, sd1i=T1_SE, n1i=Study.T1..n., data=Behavior, vtype = "UB")
+
+res <- rma(yi, vi, data=dat1, refline = 0, method = "HE", slab = paste(dat1$Authors, dat1$Year))
+
+nullmod <- data.frame(estimate = res$b, ci.ub = res$ci.ub, ci.lb = res$ci.lb, group = c("Null"), p = res$pval, n =nrow(Behavior))
+
+
+
+res1 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =~  factor(Nesting.Area) - 1, slab = paste(dat1$Authors, dat1$Year))
+
+Nesting <- data.frame(estimate = res1$b, ci.ub = res1$ci.ub, ci.lb = res1$ci.lb, group = c("aboveground", "both", "ground"), p = res1$pval, n = c(length(dplyr::filter(Behavior, Nesting.Area == "aboveground")$Nesting.Area), length(dplyr::filter(Behavior, Nesting.Area == "both")$Nesting.Area), length(dplyr::filter(Behavior, Nesting.Area == "ground")$Nesting.Area)))
+
+
+All <- rbind(nullmod, Nesting)
+
+knitr::kable(All, digits = 3, row.names = FALSE)
+
+```
+
+
+
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE, cache=FALSE}
+All <- dplyr::filter(All, group != "both")
+
+ggplot(All, aes(x = group, y = estimate)) + geom_point(aes(size = n)) + coord_flip() + geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub),width=0.0) + geom_hline(yintercept = 0, linetype=2) + ylim(c(-12, 12)) + ylab(c("Standardized Mean Difference")) + theme_classic() + xlab(c(""))
+
+```
+
+
+##Condition
+
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE, fig.height=10, fig.width=6}
+library(meta)
+library(metafor)
+###########Examples
+
+Condition <- dplyr::filter(Meta, Fitness.measure == "condition")
+
+
+
+dat1 <- escalc(measure="SMDH", m2i=Con_Mean, sd2i=Con_SE, n2i=Study.control..n., m1i=T1_Mean, sd1i=T1_SE, n1i=Study.T1..n., data=Condition, vtype = "UB")
+
+res <- rma(yi, vi, data=dat1, refline = 0, method = "HE", slab = paste(dat1$Authors, dat1$Year))
+
+nullmod <- data.frame(estimate = res$b, ci.ub = res$ci.ub, ci.lb = res$ci.lb, group = c("Null"), p = res$pval, n =nrow(Condition))
+
+
+
+res1 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =~  factor(Nesting.Area) - 1, slab = paste(dat1$Authors, dat1$Year))
+
+Nesting <- data.frame(estimate = res1$b, ci.ub = res1$ci.ub, ci.lb = res1$ci.lb, group = c("aboveground", "ground"), p = res1$pval, n = c(length(dplyr::filter(Behavior, Nesting.Area == "aboveground")$Nesting.Area), length(dplyr::filter(Behavior, Nesting.Area == "ground")$Nesting.Area)))
+
+
+All <- rbind(nullmod, Nesting)
+
+knitr::kable(All, digits = 3, row.names = FALSE)
+
+```
+
+
+
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE, cache=FALSE}
+
+ggplot(All, aes(x = group, y = estimate)) + geom_point(aes(size = n)) + coord_flip() + geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub),width=0.0) + geom_hline(yintercept = 0, linetype=2) + ylim(c(-3, 3)) + ylab(c("Standardized Mean Difference")) + theme_classic() + xlab(c(""))
+
+```
