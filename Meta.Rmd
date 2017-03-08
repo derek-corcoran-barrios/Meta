@@ -13,13 +13,13 @@ knitr::opts_chunk$set(dev = 'pdf')
 ## summary stats
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
-Meta <- readRDS("Meta_data.rds")
+Meta <- readRDS("Meta.rds")
 
 library(ggplot2)
 ```
 ###Studies per fitness measure
 
-```{r, message=FALSE, warning=FALSE, echo=FALSE}
+```{r, message=FALSE, warning=FALSE, echo=FALSE, fig.cap= "Number of estimation of strength of assosiation within the meta-analyses"}
 
 ggplot(Meta, aes(x=reorder(Fitness.measure,Fitness.measure, function(x)-length(x)))) + geom_bar() + xlab("Performance measure") + ylab("Number of studies") + theme_classic()
 ```
@@ -163,7 +163,7 @@ ggplot(All, aes(x = group, y = estimate)) + geom_point(aes(size = n)) + coord_fl
 
 ## Abundance
 
-```{r, message=FALSE, warning=FALSE, echo=FALSE, fig.height=10, fig.width=6}
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
 library(meta)
 library(metafor)
 ###########Examples
@@ -217,7 +217,7 @@ Survival <- dplyr::filter(Meta, Fitness.measure == "survival")
 
 dat1 <- escalc(measure="SMDH", m2i=Con_Mean, sd2i=Con_SE, n2i=Study.control..n., m1i=T1_Mean, sd1i=T1_SE, n1i=Study.T1..n., data=Survival, vtype = "UB")
 
-res <- rma(yi, vi, data=dat1, refline = 0, method = "HE", slab = paste(dat1$Authors, dat1$Year))
+res <- rma(yi, vi, data=dat1, refline = 0, method = "HE", slab = paste(dat1$Authors, dat1$Year), test="knha")
 
 nullmod <- data.frame(estimate = res$b, ci.ub = res$ci.ub, ci.lb = res$ci.lb, group = c("Null"), p = res$pval, n =nrow(Survival))
 

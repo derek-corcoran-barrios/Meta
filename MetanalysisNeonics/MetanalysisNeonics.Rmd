@@ -22,10 +22,323 @@ bibliography: mybibfile.bib
 output: rticles::elsevier_article
 ---
 
-Please find attached the updated meta analysis draft. Also, I have listed the ideas we discussed regarding potential analyses to run. See below. Basically, these are the variables we would include in each of the models. Some you have already completed. Hopefully there are no issues! Let's aim for a due date of analyses and draft figures/tables by March 11. 
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+Meta <- readRDS("Meta.rds")
+
+library(ggplot2)
+library(metafor)
+```
+
+# Methods
+
+All analysis were carried away with the R Statistical Software [@Rcore], all meta-analyses were made on the metafor package [@viechtbauer2010conducting]. Our estimations were based on the use of random/mixed-effects models form of meta-analyses, which provide an unconditional inference about a larger set of studies from which the k studies included in the meta-analysis are assumed to be a random sample [@hedges1998fixed]. This estimations do not assume that this larger set consists only of studies that have actually been conducted, but instead envision a hypothetical population of studies that comprises studies that have been conducted, that could have been conducted, or that may be conducted in the future [@hedges1998fixed].
+
+We used the *escalc* function of the metafor package to estimate the effect size estimates  [@viechtbauer2010conducting], we used the *standardized mean difference with heteroscedastic population variances in the two groups* (SDMH) as our estimator for effect size [@bonett2009meta], the metafor package also corrects the slight positive bias of the estimation following [@Wasserman1988]. To be extra conservative we used the unbiased estimates of the sampling variances. In all cases the residual heterogeneity estimator was Hedges. 
+
+Since we used mixed effect models we used the The Knapp and Hartung adjustment **(Knapp and Hartung, 2003)** to  test the individual coefficients of the model. 
+
+## Test for (Residual) Heterogeneity
+
+For each model we tested for residual heterogeneity, if we used models without moderators, then the Cochran's Q-test [@cochran1954combination] was used to test whether the variability in the observed effect sizes or outcomes is larger than would be expected based on sampling variability alone. *A significant test suggests that the true effects or outcomes are heterogeneous*. When moderators were included in the models the Q_E-test for residual heterogeneity was used, this tests whether the variability in the observed effect sizes or outcomes not accounted for by the moderators included in the model is larger than would be expected based on sampling variability alone. When using moderators to explain more variability a pseudo R squared was computed following [@raudenbush2009analyzing].
 
 
-Meta-regression
+# Results
+
+As we can see in figure 1, the most common type of performance measured in studies was abundance, with 101 estimations, followed by reproduction with 44 estimation, behavior with 23, and finally survival and condition with 16 each.
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE, fig.cap= "Number of estimation of effect size within the meta-analyses"}
+
+ggplot(Meta, aes(x=reorder(Fitness.measure,Fitness.measure, function(x)-length(x)))) + geom_bar() + xlab("Performance measure") + ylab("Number of studies") + theme_classic()
+```
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+
+library(metafor)
+
+#Abundance
+Abundance <- dplyr::filter(Meta, Fitness.measure == "abundance")
+
+dat1 <- escalc(measure="SMDH", m2i=Con_Mean, sd2i=Con_SE, n2i=Study.control..n., m1i=T1_Mean, sd1i=T1_SE, n1i=Study.T1..n., data=Abundance, vtype = "UB")
+
+res <- rma(yi, vi, data=dat1, refline = 0, method = "HE", slab = paste(dat1$Authors, dat1$Year))
+
+Abund <- data.frame(estimate = res$b, ci.ub = res$ci.ub, ci.lb = res$ci.lb, group = c("Abundance"), p = res$pval, n =nrow(Abundance), I2= res$I2, pvalCT = res$QEp)
+#Behavior
+
+Behavior <- dplyr::filter(Meta, Fitness.measure == "behavior")
+
+dat1 <- escalc(measure="SMDH", m2i=Con_Mean, sd2i=Con_SE, n2i=Study.control..n., m1i=T1_Mean, sd1i=T1_SE, n1i=Study.T1..n., data=Behavior, vtype = "UB")
+
+res2 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", slab = paste(dat1$Authors, dat1$Year))
+
+Behav <- data.frame(estimate = res2$b, ci.ub = res2$ci.ub, ci.lb = res2$ci.lb, group = c("Behavior"), p = res2$pval, n =nrow(Behavior), I2= res2$I2, pvalCT = res2$QEp)
+#Survival
+
+survival <- dplyr::filter(Meta, Fitness.measure == "survival")
+
+dat1 <- escalc(measure="SMDH", m2i=Con_Mean, sd2i=Con_SE, n2i=Study.control..n., m1i=T1_Mean, sd1i=T1_SE, n1i=Study.T1..n., data=survival, vtype = "UB")
+
+res3 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", slab = paste(dat1$Authors, dat1$Year))
+
+Surviv <- data.frame(estimate = res3$b, ci.ub = res3$ci.ub, ci.lb = res3$ci.lb, group = c("Survival"), p = res3$pval, n =nrow(survival), I2= res3$I2, pvalCT = res3$QEp)
+
+#Reproduction
+
+reproduction <- dplyr::filter(Meta, Fitness.measure == "reproduction")
+
+dat1 <- escalc(measure="SMDH", m2i=Con_Mean, sd2i=Con_SE, n2i=Study.control..n., m1i=T1_Mean, sd1i=T1_SE, n1i=Study.T1..n., data=reproduction, vtype = "UB")
+
+res4 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", slab = paste(dat1$Authors, dat1$Year))
+
+Reprod <- data.frame(estimate = res4$b, ci.ub = res4$ci.ub, ci.lb = res4$ci.lb, group = c("Reproduction"), p = res4$pval, n =nrow(reproduction), I2= res4$I2, pvalCT = res4$QEp)
+
+#Condition
+
+condition <- dplyr::filter(Meta, Fitness.measure == "condition")
+
+dat1 <- escalc(measure="SMDH", m2i=Con_Mean, sd2i=Con_SE, n2i=Study.control..n., m1i=T1_Mean, sd1i=T1_SE, n1i=Study.T1..n., data=condition, vtype = "UB")
+
+res5 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", slab = paste(dat1$Authors, dat1$Year))
+
+Cond <- data.frame(estimate = res5$b, ci.ub = res5$ci.ub, ci.lb = res5$ci.lb, group = c("Condition"), p = res5$pval, n =nrow(condition), I2= res5$I2, pvalCT = res5$QEp)
+
+All <- rbind(Abund, Behav, Surviv, Reprod, Cond)
+knitr::kable(All, digits = 3, row.names = FALSE, caption = "effect size of the Standardized mean difference for each type of estimation of performance, it's standard error and p-value")
+```
+
+## Overall effect size
+
+As we can see in table 1 and figure 2, all estimations of the effects are negative. However, only abundance, survival and condition have significative negative effects. Survival has the highest effect size, with a mean difference estimation of `r round(Surviv$estimate,2)`
+
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE, fig.cap= "effect size of the Standardized mean difference for each type of estimation of performance and it's standard error"}
+All <- All[-4,]
+
+ggplot(All, aes(x = group, y = estimate)) + geom_point(aes(size = n)) + coord_flip() + geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub),width=0.0) + geom_hline(yintercept = 0, linetype=2) + ylim(c(-10, 10)) + ylab(c("Standardized Mean Difference")) + theme_classic() + xlab(c(""))
+
+```
+
+# Estimations using moderators:
+
+# Abundance
+
+### Abundance and functional group
+
+Using functional group as a moderator yields the following results
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+Abundance <- dplyr::filter(Meta, Fitness.measure == "abundance")
+
+dat1 <- escalc(measure="SMDH", m2i=Con_Mean, sd2i=Con_SE, n2i=Study.control..n., m1i=T1_Mean, sd1i=T1_SE, n1i=Study.T1..n., data=Abundance, vtype = "UB")
+
+res <- rma(yi, vi, data=dat1, refline = 0, method = "HE", slab = paste(dat1$Authors, dat1$Year))
+
+nullmod <- data.frame(estimate = res$b, ci.ub = res$ci.ub, ci.lb = res$ci.lb, group = c("Null"), p = res$pval, n =nrow(Abundance))
+
+
+
+res0 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =~  factor(Functional.group) - 1, slab = paste(dat1$Authors, dat1$Year))
+
+functionalgroup <- data.frame(estimate = res0$b, ci.ub = res0$ci.ub, ci.lb = res0$ci.lb, group = c("detritivore","mixed", "omnivore", "pollinator", "predator"), p = res0$pval, n = c(length(dplyr::filter(Abundance, Functional.group == "detritivore")$Functional.group),length(dplyr::filter(Abundance, Functional.group == "mixed")$Functional.group), length(dplyr::filter(Abundance, Functional.group == "omnivore")$Functional.group), length(dplyr::filter(Abundance, Functional.group == "pollinator")$Functional.group), length(dplyr::filter(Abundance, Functional.group == "predator")$Functional.group)))
+
+
+All <- rbind(nullmod, functionalgroup)
+
+knitr::kable(All, digits = 3, row.names = FALSE, caption = "effect size of the Standardized mean difference of abundance for each functional group and it's standard error")
+
+res1 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =~  factor(Functional.group), slab = paste(dat1$Authors, dat1$Year))
+
+model1 <- data.frame(model = "y ~ Functional group", p_value = res1$QMp, R_squared = round(res1$R2/100,2), AICc = res1$fit.stats$ML[5])
+
+```
+
+the the psuedo R squared for this model was `r round(res1$R2/100,2)`, that is despite the mixed and omnivore funtional groups being statistically significant, functional group on its own does not explain the variability of the results very well.
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE, cache=FALSE, fig.cap= "effect size of the Standardized mean difference of abundance for each functional group and it's standard error"}
+
+ggplot(All, aes(x = group, y = estimate)) + geom_point(aes(size = n)) + coord_flip() + geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub),width=0.0) + geom_hline(yintercept = 0, linetype=2) + ylim(c(-7, 7)) + ylab(c("Standardized Mean Difference")) + theme_classic() + xlab(c(""))
+
+```
+
+### Abundance and nesting area
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+Abundance <- dplyr::filter(Meta, Fitness.measure == "abundance")
+
+dat1 <- escalc(measure="SMDH", m2i=Con_Mean, sd2i=Con_SE, n2i=Study.control..n., m1i=T1_Mean, sd1i=T1_SE, n1i=Study.T1..n., data=Abundance, vtype = "UB")
+
+res <- rma(yi, vi, data=dat1, refline = 0, method = "HE", slab = paste(dat1$Authors, dat1$Year))
+
+nullmod <- data.frame(estimate = res$b, ci.ub = res$ci.ub, ci.lb = res$ci.lb, group = c("Null"), p = res$pval, n =nrow(Abundance))
+
+
+
+res0 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =~  factor(Nesting.Area) - 1, slab = paste(dat1$Authors, dat1$Year))
+
+NestingArea <- data.frame(estimate = res0$b, ci.ub = res0$ci.ub, ci.lb = res0$ci.lb, group = c("aboveground","both", "ground"), p = res0$pval, n = c(length(dplyr::filter(Abundance, Functional.group == "aboveground")$Nesting.Area),length(dplyr::filter(Abundance, Functional.group == "both")$Nesting.Area), length(dplyr::filter(Abundance, Functional.group == "ground")$Nesting.Area)))
+
+
+All <- rbind(nullmod, NestingArea)
+
+knitr::kable(All, digits = 3, row.names = FALSE, caption = "effect size of the Standardized mean difference of abundance controling for nesting area and it's standard error")
+
+res4 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =~  factor(Nesting.Area), slab = paste(dat1$Authors, dat1$Year))
+
+model4 <- data.frame(model = "y ~ Nesting Area", p_value = res4$QMp, R_squared = round(res4$R2/100,2), AICc = res4$fit.stats$ML[5])
+
+```
+
+the the psuedo R squared for using nesting area as the only moderator was `r round(res4$R2/100,2)`, this model does not explain much.
+
+### Abundance and concentration (ppb)
+
+When we use concentration as parts per billion, the number of effect sizes diminishes from 101 to only nine.
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+Abundance <- dplyr::filter(Meta, Fitness.measure == "abundance")
+Abundance <- Abundance[!is.na(Abundance$T1_ppb),]
+
+dat1 <- escalc(measure="SMDH", m2i=Con_Mean, sd2i=Con_SE, n2i=Study.control..n., m1i=T1_Mean, sd1i=T1_SE, n1i=Study.T1..n., data=Abundance, vtype = "UB")
+
+res2 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =~  T1_ppb, slab = paste(dat1$Authors, dat1$Year))
+
+#res2 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =~  T1_ppb +  factor(Functional.group), slab = paste(dat1$Authors, dat1$Year))
+preds <- predict(res2, newmods = cbind(seq(from = min(dat1$T1_ppb), to = max(dat1$T1_ppb), length.out =  20)), addx = TRUE)
+preds <- data.frame(pred = preds$pred, ci.lb = preds$ci.lb, ci.ub = preds$ci.ub, X.T1_ppb = preds$X[,2])
+
+model2 <- data.frame(model = "y ~ Concentration", p_value = res2$QMp, R_squared = round(res2$R2/100,2), AICc = res2$fit.stats$ML[5])
+```
+
+Despite that, the r squared of this model is `r round(res2$R2/100,2)`, that is over 40 percent of cariability explained by this factor alone. The relationship between concentration and Abundance can be seen in figure 4.
+
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE, cache=FALSE, fig.cap= "effect size of the Standardized mean difference of abundance and concentration (ppb)"}
+
+ggplot(dat1, aes(x = T1_ppb, y = yi))  + geom_ribbon(data = preds, aes(x = X.T1_ppb, y = pred, ymin = ci.lb, ymax = ci.ub), fill = "grey", alpha = 0.5) + theme_classic() + geom_line(data = preds, aes(x = X.T1_ppb, y = pred)) + geom_point() + xlab("Concentration (ppb)") + ylab("Standardized mean difference") + geom_hline(yintercept = 0, lty= 2)
+
+```
+
+### Abundance concentration and functional group
+
+Again, when we have concentration, the number of studies is reduced form 101 to nine.
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+Abundance <- dplyr::filter(Meta, Fitness.measure == "abundance")
+Abundance <- Abundance[!is.na(Abundance$T1_ppb),]
+
+dat1 <- escalc(measure="SMDH", m2i=Con_Mean, sd2i=Con_SE, n2i=Study.control..n., m1i=T1_Mean, sd1i=T1_SE, n1i=Study.T1..n., data=Abundance, vtype = "UB")
+
+res3 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =~  T1_ppb + factor(Functional.group), slab = paste(dat1$Authors, dat1$Year))
+
+library(caret)
+
+newmods = expand.grid(T1_ppb = seq(from = min(dat1$T1_ppb), to = max(dat1$T1_ppb), length.out =  20), Functional.group = c("omnivore", "pollinator", "predator"))
+
+dum <- dummyVars(~ Functional.group, data = newmods)
+
+NM <- cbind(newmods[,1],predict(dum, newmods))
+
+preds <- predict(res3, newmods = NM[,1:3])
+
+preds <- data.frame(pred = preds$pred, ci.lb = preds$ci.lb, ci.ub = preds$ci.ub, T1_ppb = newmods$T1_ppb, Functional.group = newmods$Functional.group)
+
+model3 <- data.frame(model = "y ~ Concentration + Functional group", p_value = res3$QMp, R_squared = round(res3$R2/100,2), AICc = res3$fit.stats$ML[5])
+```
+
+Adding functional group to the model increases R squared to `r round(res3$R2/100,2)`
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE, cache=FALSE, fig.cap= "effect size of the concentration and functional group on the  Standardized mean difference of abundance"}
+
+ggplot(preds, aes(x = T1_ppb, y = pred))  + geom_ribbon(alpha = 0.5,aes(ymin = ci.lb, ymax = ci.ub, fill = Functional.group)) + theme_classic() + geom_line(aes(lty = Functional.group))+ xlab("Concentration (ppb)") + ylab("Standardized mean difference") + geom_hline(yintercept = 0, lty= 2) + scale_fill_grey()
+
+```
+
+### Abundance concentration and nesting area
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+Abundance <- dplyr::filter(Meta, Fitness.measure == "abundance")
+Abundance <- Abundance[!is.na(Abundance$T1_ppb),]
+
+dat1 <- escalc(measure="SMDH", m2i=Con_Mean, sd2i=Con_SE, n2i=Study.control..n., m1i=T1_Mean, sd1i=T1_SE, n1i=Study.T1..n., data=Abundance, vtype = "UB")
+
+res5 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =~  T1_ppb + factor(Nesting.Area), slab = paste(dat1$Authors, dat1$Year))
+
+
+
+model5 <- data.frame(model = "y ~ Concentration + Nesting area", p_value = res5$QMp, R_squared = round(res5$R2/100,2), AICc = res5$fit.stats$ML[5])
+```
+
+### Full model
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+Abundance <- dplyr::filter(Meta, Fitness.measure == "abundance")
+Abundance <- Abundance[!is.na(Abundance$T1_ppb),]
+
+dat1 <- escalc(measure="SMDH", m2i=Con_Mean, sd2i=Con_SE, n2i=Study.control..n., m1i=T1_Mean, sd1i=T1_SE, n1i=Study.T1..n., data=Abundance, vtype = "UB")
+
+res6 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =~  T1_ppb + factor(Nesting.Area) + factor(Functional.group), slab = paste(dat1$Authors, dat1$Year))
+
+
+
+model6 <- data.frame(model = "y ~ Concentration + Nesting area + Functional group", p_value = res6$QMp, R_squared = round(res6$R2/100,2), AICc = res6$fit.stats$ML[5])
+```
+
+### Comparison of models
+
+```{r, echo= FALSE}
+All <- rbind(model1, model2, model3, model4, model5, model6)
+
+All <- dplyr::arrange(All, AICc)
+
+All$deltaAICc <- (All$AICc - min(All$AICc))
+
+knitr::kable(All, digits = 3, row.names = FALSE, caption = "Comparison of models taking into account p value, Pseudo R squared and AICc")
+```
+
+# Behaviour
+
+# Abundance
+
+### Abundance and functional group
+
+Using functional group as a moderator yields the following results
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+Behavior <- dplyr::filter(Meta, Fitness.measure == "behavior")
+
+dat1 <- escalc(measure="SMDH", m2i=Con_Mean, sd2i=Con_SE, n2i=Study.control..n., m1i=T1_Mean, sd1i=T1_SE, n1i=Study.T1..n., data=Behavior, vtype = "UB")
+
+res <- rma(yi, vi, data=dat1, refline = 0, method = "HE", slab = paste(dat1$Authors, dat1$Year))
+
+nullmod <- data.frame(estimate = res$b, ci.ub = res$ci.ub, ci.lb = res$ci.lb, group = c("Null"), p = res$pval, n =nrow(Behavior))
+
+
+
+res0 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =~  factor(AI.type) - 1, slab = paste(dat1$Authors, dat1$Year))
+
+AItype <- data.frame(estimate = res0$b, ci.ub = res0$ci.ub, ci.lb = res0$ci.lb, group = c("commercial","granular", "not specified", "seed treatment", "solution", "technical grade"), p = res0$pval, n = c(NROW(dplyr::filter(Behavior, AI.type == "commercial")), NROW(dplyr::filter(Behavior, AI.type == "granular")), NROW(dplyr::filter(Behavior, AI.type == "not specified")), NROW(dplyr::filter(Behavior, AI.type == "seed treatment")), NROW(dplyr::filter(Behavior, AI.type == "solution")), NROW(dplyr::filter(Behavior, AI.type == "technical grade"))))
+
+
+All <- rbind(nullmod, AItype)
+
+knitr::kable(All, digits = 3, row.names = FALSE, caption = "effect size of the Standardized mean difference of abundance for each functional group and it's standard error")
+
+res1 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =~  factor(AI.type), slab = paste(dat1$Authors, dat1$Year))
+
+model1 <- data.frame(model = "y ~ AI type", p_value = res1$QMp, R_squared = round(res1$R2/100,2), AICc = res1$fit.stats$ML[5])
+
+```
+
+the the psuedo R squared for this model was `r round(res1$R2/100,2)`, that is despite the mixed and omnivore funtional groups being statistically significant, functional group on its own does not explain the variability of the results very well.
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE, cache=FALSE, fig.cap= "effect size of the Standardized mean difference of behavior for each AI type and it's standard error"}
+
+ggplot(All, aes(x = group, y = estimate)) + geom_point(aes(size = n)) + coord_flip() + geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub),width=0.0) + geom_hline(yintercept = 0, linetype=2) + ylim(c(-17, 17)) + ylab(c("Standardized Mean Difference")) + theme_classic() + xlab(c(""))
+
+```
+
+
+
 
 Behavior/Reproduction and neonic AI (e.g., IMI, CLO) and ppb
 
@@ -63,72 +376,9 @@ Behavior and study type
 Reproduction and nesting area
 
 
-
-
-_Text based on elsarticle sample manuscript, see [http://www.elsevier.com/author-schemas/latex-instructions#elsarticle](http://www.elsevier.com/author-schemas/latex-instructions#elsarticle)_
-
-
-The Elsevier article class
-==========================
-
-#### Installation
-
-If the document class *elsarticle* is not available on your computer,
-you can download and install the system package *texlive-publishers*
-(Linux) or install the LaTeX package *elsarticle* using the package
-manager of your TeX installation, which is typically TeX Live or MikTeX.
-
-#### Usage
-
-Once the package is properly installed, you can use the document class
-*elsarticle* to create a manuscript. Please make sure that your
-manuscript follows the guidelines in the Guide for Authors of the
-relevant journal. It is not necessary to typeset your manuscript in
-exactly the same way as an article, unless you are submitting to a
-camera-ready copy (CRC) journal.
-
-#### Functionality
-
-The Elsevier article class is based on the standard article class and
-supports almost all of the functionality of that class. In addition, it
-features commands and options to format the
-
--   document style
-
--   baselineskip
-
--   front matter
-
--   keywords and MSC codes
-
--   theorems, definitions and proofs
-
--   lables of enumerations
-
--   citation style and labeling.
-
-Front matter
-============
-
-The author names and affiliations could be formatted in two ways:
-
-(1) Group the authors per affiliation.
-
-(2) Use footnotes to indicate the affiliations.
-
-See the front matter of this document for examples. You are recommended
-to conform your choice to the journal you are submitting to.
-
-Bibliography styles
-===================
-
-There are various bibliography styles available. You can select the
-style of your choice in the preamble of this document. These styles are
-Elsevier styles based on standard styles like Harvard and Vancouver.
-Please use BibTeX to generate your bibliography and include DOIs
-whenever available.
-
-Here are two sample references: @Feynman1963118 [@Dirac1953888].
+```{r, message=FALSE, warning=FALSE, echo=FALSE, fig.cap="test"}
+ggplot(Meta, aes(x=reorder(Fitness.measure,Fitness.measure, function(x)-length(x)))) + geom_bar(aes(fill = Functional.group), position = "dodge")+ xlab("Performance measure") + ylab("Number of studies") + theme_classic() + scale_fill_grey()
+```
 
 References {#references .unnumbered}
 ==========
