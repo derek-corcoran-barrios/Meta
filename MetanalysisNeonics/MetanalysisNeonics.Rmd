@@ -228,7 +228,7 @@ Abundance <- Abundance[!is.na(Abundance$T1_ppb),]
 
 dat1 <- escalc(measure="SMDH", m2i=Con_Mean, sd2i=Con_SE, n2i=Study.control..n., m1i=T1_Mean, sd1i=T1_SE, n1i=Study.T1..n., data=Abundance, vtype = "UB")
 
-res3 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =~  T1_ppb + factor(Functional.group), slab = paste(dat1$Authors, dat1$Year))
+res3 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =~  T1_ppb + factor(Functional.group), slab = paste(dat1$Authors, dat1$Year), test="knha")
 
 library(caret)
 
@@ -261,7 +261,7 @@ Abundance <- Abundance[!is.na(Abundance$T1_ppb),]
 
 dat1 <- escalc(measure="SMDH", m2i=Con_Mean, sd2i=Con_SE, n2i=Study.control..n., m1i=T1_Mean, sd1i=T1_SE, n1i=Study.T1..n., data=Abundance, vtype = "UB")
 
-res5 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =~  T1_ppb + factor(Nesting.Area), slab = paste(dat1$Authors, dat1$Year))
+res5 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =~  T1_ppb + factor(Nesting.Area), slab = paste(dat1$Authors, dat1$Year), test="knha")
 
 
 
