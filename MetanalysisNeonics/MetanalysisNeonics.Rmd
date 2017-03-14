@@ -123,11 +123,11 @@ ggplot(All, aes(x = group, y = estimate)) + geom_point(aes(size = n)) + coord_fl
 
 # Abundance
 
-### Abundance and functional group
-
-Using functional group as a moderator yields the following results
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
+
+### Abundance and functional group
+
 Abundance <- dplyr::filter(Meta, Fitness.measure == "abundance")
 
 dat1 <- escalc(measure="SMDH", m2i=Con_Mean, sd2i=Con_SE, n2i=Study.control..n., m1i=T1_Mean, sd1i=T1_SE, n1i=Study.T1..n., data=Abundance, vtype = "UB")
@@ -144,28 +144,19 @@ res0 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =~  factor(Funct
 
 functionalgroup <- data.frame(estimate = res0$b, ci.ub = res0$ci.ub, ci.lb = res0$ci.lb, group = c("detritivore","mixed", "omnivore", "pollinator", "predator"), p = res0$pval, n = c(length(dplyr::filter(Abundance, Functional.group == "detritivore")$Functional.group),length(dplyr::filter(Abundance, Functional.group == "mixed")$Functional.group), length(dplyr::filter(Abundance, Functional.group == "omnivore")$Functional.group), length(dplyr::filter(Abundance, Functional.group == "pollinator")$Functional.group), length(dplyr::filter(Abundance, Functional.group == "predator")$Functional.group)))
 
-
-All <- rbind(nullmod, functionalgroup)
-
-knitr::kable(All, digits = 3, row.names = FALSE, caption = "effect size of the Standardized mean difference of abundance for each functional group and it's standard error")
-
 res1 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =~  factor(Functional.group), slab = paste(dat1$Authors, dat1$Year))
 
 model1 <- data.frame(model = "y ~ Functional group", p_value = res1$QMp, R_squared = round(res1$R2/100,2), AICc = res1$fit.stats$ML[5])
 
 ```
 
-the the psuedo R squared for this model was `r round(res1$R2/100,2)`, that is despite the mixed and omnivore funtional groups being statistically significant, functional group on its own does not explain the variability of the results very well.
 
-```{r, message=FALSE, warning=FALSE, echo=FALSE, cache=FALSE, fig.cap= "effect size of the Standardized mean difference of abundance for each functional group and it's standard error"}
 
-ggplot(All, aes(x = group, y = estimate)) + geom_point(aes(size = n)) + coord_flip() + geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub),width=0.0) + geom_hline(yintercept = 0, linetype=2) + ylim(c(-7, 7)) + ylab(c("Standardized Mean Difference")) + theme_classic() + xlab(c(""))
-
-```
-
-### Abundance and nesting area
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
+### Abundance and nesting area
+
+
 Abundance <- dplyr::filter(Meta, Fitness.measure == "abundance")
 
 dat1 <- escalc(measure="SMDH", m2i=Con_Mean, sd2i=Con_SE, n2i=Study.control..n., m1i=T1_Mean, sd1i=T1_SE, n1i=Study.T1..n., data=Abundance, vtype = "UB")
@@ -180,52 +171,18 @@ res0 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =~  factor(Nesti
 
 NestingArea <- data.frame(estimate = res0$b, ci.ub = res0$ci.ub, ci.lb = res0$ci.lb, group = c("aboveground","both", "ground"), p = res0$pval, n = c(length(dplyr::filter(Abundance, Functional.group == "aboveground")$Nesting.Area),length(dplyr::filter(Abundance, Functional.group == "both")$Nesting.Area), length(dplyr::filter(Abundance, Functional.group == "ground")$Nesting.Area)))
 
-
-All <- rbind(nullmod, NestingArea)
-
-knitr::kable(All, digits = 3, row.names = FALSE, caption = "effect size of the Standardized mean difference of abundance controling for nesting area and it's standard error")
-
 res4 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =~  factor(Nesting.Area), slab = paste(dat1$Authors, dat1$Year))
 
 model4 <- data.frame(model = "y ~ Nesting Area", p_value = res4$QMp, R_squared = round(res4$R2/100,2), AICc = res4$fit.stats$ML[5])
 
 ```
 
-the the psuedo R squared for using nesting area as the only moderator was `r round(res4$R2/100,2)`, this model does not explain much.
 
-### Abundance and concentration (ppb)
 
-When we use concentration as parts per billion, the number of effect sizes diminishes from 101 to only nine.
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
-Abundance <- dplyr::filter(Meta, Fitness.measure == "abundance")
-Abundance <- Abundance[!is.na(Abundance$T1_ppb),]
-
-dat1 <- escalc(measure="SMDH", m2i=Con_Mean, sd2i=Con_SE, n2i=Study.control..n., m1i=T1_Mean, sd1i=T1_SE, n1i=Study.T1..n., data=Abundance, vtype = "UB")
-
-res2 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =~  T1_ppb, slab = paste(dat1$Authors, dat1$Year))
-
-#res2 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =~  T1_ppb +  factor(Functional.group), slab = paste(dat1$Authors, dat1$Year))
-preds <- predict(res2, newmods = cbind(seq(from = min(dat1$T1_ppb), to = max(dat1$T1_ppb), length.out =  20)), addx = TRUE)
-preds <- data.frame(pred = preds$pred, ci.lb = preds$ci.lb, ci.ub = preds$ci.ub, X.T1_ppb = preds$X[,2])
-
-model2 <- data.frame(model = "y ~ Concentration", p_value = res2$QMp, R_squared = round(res2$R2/100,2), AICc = res2$fit.stats$ML[5])
-```
-
-Despite that, the r squared of this model is `r round(res2$R2/100,2)`, that is over 40 percent of cariability explained by this factor alone. The relationship between concentration and Abundance can be seen in figure 4.
-
-
-```{r, message=FALSE, warning=FALSE, echo=FALSE, cache=FALSE, fig.cap= "effect size of the Standardized mean difference of abundance and concentration (ppb)"}
-
-ggplot(dat1, aes(x = T1_ppb, y = yi))  + geom_ribbon(data = preds, aes(x = X.T1_ppb, y = pred, ymin = ci.lb, ymax = ci.ub), fill = "grey", alpha = 0.5) + theme_classic() + geom_line(data = preds, aes(x = X.T1_ppb, y = pred)) + geom_point() + xlab("Concentration (ppb)") + ylab("Standardized mean difference") + geom_hline(yintercept = 0, lty= 2)
-
-```
-
 ### Abundance and concentration (Kg/Ha) for Powder/granular treatment
 
-When we use concentration as parts per billion, the number of effect sizes diminishes from 101 to only nine.
-
-```{r, message=FALSE, warning=FALSE, echo=FALSE}
 Abundance <- dplyr::filter(Meta, Fitness.measure == "abundance")
 
 Abundance_kg_ha <- dplyr::filter(Abundance, Application.Units == "kg/ha")
@@ -242,27 +199,16 @@ dat1 <- escalc(measure="SMDH", m2i=Con_Mean, sd2i=Con_SE, n2i=Study.control..n.,
 
 res7 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =~  AI.Rate_T1, slab = paste(dat1$Authors, dat1$Year))
 
-#res2 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =~  T1_ppb +  factor(Functional.group), slab = paste(dat1$Authors, dat1$Year))
 preds <- predict(res7, newmods = cbind(seq(from = min(dat1$AI.Rate_T1), to = max(dat1$AI.Rate_T1), length.out =  20)), addx = TRUE)
 preds <- data.frame(pred = preds$pred, ci.lb = preds$ci.lb, ci.ub = preds$ci.ub, X.AI.Rate_T1 = preds$X[,2])
 
-model7 <- data.frame(model = "y ~ Concentration[Kg/Ha]", p_value = res7$QMp, R_squared = round(res7$R2/100,2), AICc = res7$fit.stats$ML[5])
+model7 <- data.frame(model = "y ~ Concentration [Kg/Ha]", p_value = res7$QMp, R_squared = round(res7$R2/100,2), AICc = res7$fit.stats$ML[5])
 ```
 
-Despite that, the r squared of this model is `r round(res7$R2/100,2)`, that is over 40 percent of cariability explained by this factor alone. The relationship between concentration and Abundance can be seen in figure 4.
-
-
-```{r, message=FALSE, warning=FALSE, echo=FALSE, cache=FALSE, fig.cap= "effect size of the Standardized mean difference of abundance and concentration (ppb)"}
-
-ggplot(dat1, aes(x = AI.Rate_T1, y = yi))  + geom_ribbon(data = preds, aes(x = X.AI.Rate_T1, y = pred, ymin = ci.lb, ymax = ci.ub), fill = "grey", alpha = 0.5) + theme_classic() + geom_line(data = preds, aes(x = X.AI.Rate_T1, y = pred)) + geom_point() + xlab("Concentration (kg/ha)") + ylab("Standardized mean difference") + geom_hline(yintercept = 0, lty= 2)
-
-```
-
-### Abundance and concentration (g/Kg) for seed treatment
-
-When we use concentration as parts per billion, the number of effect sizes diminishes from 101 to only nine.
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
+### Abundance and concentration (g/Kg) for seed treatment
+
 Abundance <- dplyr::filter(Meta, Fitness.measure == "abundance")
 
 Abundance_g_kg <- dplyr::filter(Abundance, Application.Units == "g/kg")
@@ -275,102 +221,118 @@ res8 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =~  AI.Rate_T1, 
 preds <- predict(res8, newmods = cbind(seq(from = min(dat1$AI.Rate_T1), to = max(dat1$AI.Rate_T1), length.out =  20)), addx = TRUE)
 preds <- data.frame(pred = preds$pred, ci.lb = preds$ci.lb, ci.ub = preds$ci.ub, X.AI.Rate_T1 = preds$X[,2])
 
-model8 <- data.frame(model = "y ~ Concentration[g/kg]", p_value = res8$QMp, R_squared = round(res8$R2/100,2), AICc = res8$fit.stats$ML[5])
+model8 <- data.frame(model = "y ~ Concentration [g/kg]", p_value = res8$QMp, R_squared = round(res8$R2/100,2), AICc = res8$fit.stats$ML[5])
 ```
 
-Despite that, the r squared of this model is `r round(res8$R2/100,2)`, that is over 40 percent of cariability explained by this factor alone. The relationship between concentration and Abundance can be seen in figure 4.
-
-
-```{r, message=FALSE, warning=FALSE, echo=FALSE, cache=FALSE, fig.cap= "effect size of the Standardized mean difference of abundance and concentration (ppb)"}
-
-ggplot(dat1, aes(x = AI.Rate_T1, y = yi))  + geom_ribbon(data = preds, aes(x = X.AI.Rate_T1, y = pred, ymin = ci.lb, ymax = ci.ub), fill = "grey", alpha = 0.5) + theme_classic() + geom_line(data = preds, aes(x = X.AI.Rate_T1, y = pred)) + geom_point() + xlab("Concentration (g/kg)") + ylab("Standardized mean difference") + geom_hline(yintercept = 0, lty= 2)
-
-```
-
-### Abundance concentration and functional group
-
-Again, when we have concentration, the number of studies is reduced form 101 to nine.
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
+### Abundance concentration [g/Kg] and functional group
+
 Abundance <- dplyr::filter(Meta, Fitness.measure == "abundance")
-Abundance <- Abundance[!is.na(Abundance$T1_ppb),]
+Abundance <- dplyr::filter(Meta, Fitness.measure == "abundance")
 
-dat1 <- escalc(measure="SMDH", m2i=Con_Mean, sd2i=Con_SE, n2i=Study.control..n., m1i=T1_Mean, sd1i=T1_SE, n1i=Study.T1..n., data=Abundance, vtype = "UB")
+Abundance_g_kg <- dplyr::filter(Abundance, Application.Units == "g/kg")
 
-res3 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =~  T1_ppb + factor(Functional.group), slab = paste(dat1$Authors, dat1$Year), test="knha")
+
+dat1 <- escalc(measure="SMDH", m2i=Con_Mean, sd2i=Con_SE, n2i=Study.control..n., m1i=T1_Mean, sd1i=T1_SE, n1i=Study.T1..n., data=Abundance_g_kg, vtype = "UB")
+
+res9 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =~  AI.Rate_T1+ factor(Functional.group), slab = paste(dat1$Authors, dat1$Year))
 
 library(caret)
 
-newmods = expand.grid(T1_ppb = seq(from = min(dat1$T1_ppb), to = max(dat1$T1_ppb), length.out =  20), Functional.group = c("omnivore", "pollinator", "predator"))
+newmods = expand.grid(AI.Rate_T1 = seq(from = min(dat1$AI.Rate_T1), to = max(dat1$AI.Rate_T1), length.out =  20), Functional.group = c("mixed", "predator"))
 
 dum <- dummyVars(~ Functional.group, data = newmods)
 
 NM <- cbind(newmods[,1],predict(dum, newmods))
 
-preds <- predict(res3, newmods = NM[,1:3])
+preds <- predict(res9, newmods = NM[,1:2], addx = TRUE)
 
-preds <- data.frame(pred = preds$pred, ci.lb = preds$ci.lb, ci.ub = preds$ci.ub, T1_ppb = newmods$T1_ppb, Functional.group = newmods$Functional.group)
+preds <- data.frame(pred = preds$pred, ci.lb = preds$ci.lb, ci.ub = preds$ci.ub, X.AI.Rate_T1 = preds$X[,2], Functional.group = newmods$Functional.group)
 
-model3 <- data.frame(model = "y ~ Concentration + Functional group", p_value = res3$QMp, R_squared = round(res3$R2/100,2), AICc = res3$fit.stats$ML[5])
-```
-
-Adding functional group to the model increases R squared to `r round(res3$R2/100,2)`
-
-```{r, message=FALSE, warning=FALSE, echo=FALSE, cache=FALSE, fig.cap= "effect size of the concentration and functional group on the  Standardized mean difference of abundance"}
-
-ggplot(preds, aes(x = T1_ppb, y = pred))  + geom_ribbon(alpha = 0.5,aes(ymin = ci.lb, ymax = ci.ub, fill = Functional.group)) + theme_classic() + geom_line(aes(lty = Functional.group))+ xlab("Concentration (ppb)") + ylab("Standardized mean difference") + geom_hline(yintercept = 0, lty= 2) + scale_fill_grey()
+model9 <- data.frame(model = "y ~ Concentration [g/kg] + Functional group", p_value = res9$QMp, R_squared = round(res9$R2/100,2), AICc = res9$fit.stats$ML[5])
 
 ```
 
-### Abundance concentration and nesting area
+```{r, message=FALSE, warning=FALSE, echo=FALSE, cache=FALSE, fig.cap= "effect size of the Standardized mean difference of Abundance and concentration [g/Kg]"}
+
+ggplot(dat1, aes(x = AI.Rate_T1, y = yi))  + geom_ribbon(data = preds, aes(x = X.AI.Rate_T1, y = pred, ymin = ci.lb, ymax = ci.ub, fill = Functional.group), alpha = 0.5) + theme_classic() + geom_line(data = preds, aes(x = X.AI.Rate_T1, y = pred, lty = Functional.group)) + geom_point() + xlab("Concentration [g/kg]") + ylab("Standardized mean difference") + geom_hline(yintercept = 0, lty= 2) + scale_fill_grey("Functional Group") + scale_linetype(name = "Functional Group")
+
+```
+
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
+### Abundance concentration [g/Kg] and nesting area
+
 Abundance <- dplyr::filter(Meta, Fitness.measure == "abundance")
-Abundance <- Abundance[!is.na(Abundance$T1_ppb),]
+Abundance <- dplyr::filter(Meta, Fitness.measure == "abundance")
 
-dat1 <- escalc(measure="SMDH", m2i=Con_Mean, sd2i=Con_SE, n2i=Study.control..n., m1i=T1_Mean, sd1i=T1_SE, n1i=Study.T1..n., data=Abundance, vtype = "UB")
-
-res5 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =~  T1_ppb + factor(Nesting.Area), slab = paste(dat1$Authors, dat1$Year), test="knha")
+Abundance_g_kg <- dplyr::filter(Abundance, Application.Units == "g/kg")
 
 
+dat1 <- escalc(measure="SMDH", m2i=Con_Mean, sd2i=Con_SE, n2i=Study.control..n., m1i=T1_Mean, sd1i=T1_SE, n1i=Study.T1..n., data=Abundance_g_kg, vtype = "UB")
 
-model5 <- data.frame(model = "y ~ Concentration + Nesting area", p_value = res5$QMp, R_squared = round(res5$R2/100,2), AICc = res5$fit.stats$ML[5])
+res10 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =~  AI.Rate_T1+ factor(Nesting.Area), slab = paste(dat1$Authors, dat1$Year))
+
+library(caret)
+
+newmods = expand.grid(T1_ppb = seq(from = min(dat1$AI.Rate_T1), to = max(dat1$AI.Rate_T1), length.out =  20), Nesting.Area = c("aboveground", "both"))
+
+dum <- dummyVars(~ Nesting.Area, data = newmods)
+
+NM <- cbind(newmods[,1],predict(dum, newmods))
+
+preds <- predict(res10, newmods = NM[,1:2], addx = TRUE)
+
+preds <- data.frame(pred = preds$pred, ci.lb = preds$ci.lb, ci.ub = preds$ci.ub, X.AI.Rate_T1 = preds$X[,2])
+
+model10 <- data.frame(model = "y ~ Concentration [g/kg] + Nesting Area", p_value = res10$QMp, R_squared = round(res10$R2/100,2), AICc = res10$fit.stats$ML[5])
+
 ```
 
-### Full model
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
+### Abundance concentration [g/Kg] and nesting area
+
 Abundance <- dplyr::filter(Meta, Fitness.measure == "abundance")
-Abundance <- Abundance[!is.na(Abundance$T1_ppb),]
+Abundance <- dplyr::filter(Meta, Fitness.measure == "abundance")
 
-dat1 <- escalc(measure="SMDH", m2i=Con_Mean, sd2i=Con_SE, n2i=Study.control..n., m1i=T1_Mean, sd1i=T1_SE, n1i=Study.T1..n., data=Abundance, vtype = "UB")
-
-res6 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =~  T1_ppb + factor(Nesting.Area) + factor(Functional.group), slab = paste(dat1$Authors, dat1$Year))
+Abundance_g_kg <- dplyr::filter(Abundance, Application.Units == "g/kg")
 
 
+dat1 <- escalc(measure="SMDH", m2i=Con_Mean, sd2i=Con_SE, n2i=Study.control..n., m1i=T1_Mean, sd1i=T1_SE, n1i=Study.T1..n., data=Abundance_g_kg, vtype = "UB")
 
-model6 <- data.frame(model = "y ~ Concentration + Nesting area + Functional group", p_value = res6$QMp, R_squared = round(res6$R2/100,2), AICc = res6$fit.stats$ML[5])
+res11 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =~  AI.Rate_T1+ factor(Nesting.Area) + factor(Functional.group), slab = paste(dat1$Authors, dat1$Year))
+
+model11 <- data.frame(model = "y ~ Concentration [g/kg] + Nesting Area + Functional Group", p_value = res11$QMp, R_squared = round(res11$R2/100,2), AICc = res11$fit.stats$ML[5])
+
 ```
 
 ### Comparison of models
 
 ```{r, echo= FALSE}
-All <- rbind(model0, model1, model2, model3, model4, model5, model6, model7, model8)
+All <- rbind(model0, model1, model4, model7, model8, model9, model10, model11)
 
 All <- dplyr::arrange(All, AICc)
 
 All$deltaAICc <- (All$AICc - min(All$AICc))
 
+SUMDELTA <- sum(exp(-0.5*All$deltaAICc))
+
+All$Weight <- exp(-0.5*All$deltaAICc)/SUMDELTA
+
 knitr::kable(All, digits = 3, row.names = FALSE, caption = "Comparison of models taking into account p value, Pseudo R squared and AICc")
 ```
 
+
+
 # Behaviour
 
-### Behaviour and functional group
 
-Using functional group as a moderator yields the following results
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
+### Behaviour and AI type
+
 Behavior <- dplyr::filter(Meta, Fitness.measure == "behavior")
 
 dat1 <- escalc(measure="SMDH", m2i=Con_Mean, sd2i=Con_SE, n2i=Study.control..n., m1i=T1_Mean, sd1i=T1_SE, n1i=Study.T1..n., data=Behavior, vtype = "UB")
@@ -385,10 +347,7 @@ res0 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =~  factor(AI.ty
 
 AItype <- data.frame(estimate = res0$b, ci.ub = res0$ci.ub, ci.lb = res0$ci.lb, group = c("commercial","granular", "not specified", "seed treatment", "solution", "technical grade"), p = res0$pval, n = c(NROW(dplyr::filter(Behavior, AI.type == "commercial")), NROW(dplyr::filter(Behavior, AI.type == "granular")), NROW(dplyr::filter(Behavior, AI.type == "not specified")), NROW(dplyr::filter(Behavior, AI.type == "seed treatment")), NROW(dplyr::filter(Behavior, AI.type == "solution")), NROW(dplyr::filter(Behavior, AI.type == "technical grade"))))
 
-
 All <- rbind(nullmod, AItype)
-
-knitr::kable(All, digits = 3, row.names = FALSE, caption = "effect size of the Standardized mean difference of abundance for each functional group and it's standard error")
 
 res1 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =~  factor(AI.type), slab = paste(dat1$Authors, dat1$Year))
 
@@ -396,17 +355,6 @@ model1 <- data.frame(model = "y ~ AI type", p_value = res1$QMp, R_squared = roun
 
 ```
 
-the the psuedo R squared for this model was `r round(res1$R2/100,2)`, that is despite the mixed and omnivore funtional groups being statistically significant, functional group on its own does not explain the variability of the results very well.
-
-```{r, message=FALSE, warning=FALSE, echo=FALSE, cache=FALSE, fig.cap= "effect size of the Standardized mean difference of behavior for each AI type and it's standard error"}
-
-ggplot(All, aes(x = group, y = estimate)) + geom_point(aes(size = n)) + coord_flip() + geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub),width=0.0) + geom_hline(yintercept = 0, linetype=2) + ylim(c(-17, 17)) + ylab(c("Standardized Mean Difference")) + theme_classic() + xlab(c(""))
-
-```
-
-# Behavior and concentration (PPB)
-
-When we use concentration as parts per billion, the number of effect sizes diminishes from 101 to only nine.
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
 Behavior <- dplyr::filter(Meta, Fitness.measure == "behavior")
@@ -428,24 +376,20 @@ res2 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =~  T1_ppb, slab
 preds <- predict(res2, newmods = cbind(seq(from = min(dat1$T1_ppb), to = max(dat1$T1_ppb), length.out =  20)), addx = TRUE)
 preds <- data.frame(pred = preds$pred, ci.lb = preds$ci.lb, ci.ub = preds$ci.ub, X.T1_ppb = preds$X[,2])
 
-model2 <- data.frame(model = "y ~ Concentration", p_value = res2$QMp, R_squared = round(res2$R2/100,2), AICc = res2$fit.stats$ML[5])
+model2 <- data.frame(model = "y ~ Concentration [ppb]", p_value = res2$QMp, R_squared = round(res2$R2/100,2), AICc = res2$fit.stats$ML[5])
 ```
 
-Despite that, the r squared of this model is `r round(res2$R2/100,2)`, that is over 40 percent of cariability explained by this factor alone. The relationship between concentration and Abundance can be seen in figure 4.
 
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE, cache=FALSE, fig.cap= "effect size of the Standardized mean difference of behavior and concentration (ppb)"}
 
-ggplot(dat1, aes(x = T1_ppb, y = yi))  + geom_ribbon(data = preds, aes(x = X.T1_ppb, y = pred, ymin = ci.lb, ymax = ci.ub), fill = "grey", alpha = 0.5) + theme_classic() + geom_line(data = preds, aes(x = X.T1_ppb, y = pred)) + geom_point(aes(size = Study.T1..n.)) + xlab("Concentration (ppb)") + ylab("Standardized mean difference") + geom_hline(yintercept = 0, lty= 2)
+ggplot(dat1, aes(x = T1_ppb, y = yi))  + geom_ribbon(data = preds, aes(x = X.T1_ppb, y = pred, ymin = ci.lb, ymax = ci.ub), fill = "grey", alpha = 0.5) + theme_classic() + geom_line(data = preds, aes(x = X.T1_ppb, y = pred)) + geom_point(aes(size = Study.T1..n.)) + xlab("Concentration (ppb)") + ylab("Standardized mean difference") + geom_hline(yintercept = 0, lty= 2) + scale_size("Number of studies")
 
 ```
 
-### Abundance concentration and functional group
-
-Again, when we have concentration, the number of studies is reduced form 101 to nine.
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
-
+### Behavior, concentration and neonic type
 
 Behavior <- dplyr::filter(Meta, Fitness.measure == "behavior")
 Behavior_ppb <- Behavior[!is.na(Behavior$T1_ppb),]
@@ -478,65 +422,171 @@ preds <- data.frame(pred = preds$pred, ci.lb = preds$ci.lb, ci.ub = preds$ci.ub,
 model3 <- data.frame(model = "y ~ Concentration + neonic type", p_value = res3$QMp, R_squared = round(res3$R2/100,2), AICc = res3$fit.stats$ML[5])
 ```
 
-Adding functional group to the model increases R squared to `r round(res3$R2/100,2)`
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE, cache=FALSE, fig.cap= "effect size of the concentration and neonic type on the behavior Standardized mean difference of abundance"}
 
-ggplot(preds, aes(x = T1_ppb, y = pred))  + geom_ribbon(alpha = 0.5,aes(ymin = ci.lb, ymax = ci.ub, fill = Treatment.2)) + theme_classic() + geom_line(aes(lty = Treatment.2))+ xlab("Concentration (ppb)") + ylab("Standardized mean difference") + geom_hline(yintercept = 0, lty= 2) + scale_fill_grey() + geom_point(alpha = 0.8, data= dat1, aes(x = T1_ppb, y = yi, size = Study.T1..n., color = Treatment.2)) + scale_color_grey() + scale_x_log10()
+ggplot(preds, aes(x = T1_ppb, y = pred))  + geom_ribbon(alpha = 0.5,aes(ymin = ci.lb, ymax = ci.ub, fill = Treatment.2)) + theme_classic() + geom_line(aes(lty = Treatment.2))+ xlab("Concentration (ppb)") + ylab("Standardized mean difference") + geom_hline(yintercept = 0, lty= 2) + scale_fill_grey(name = "Neonic Type") + geom_point(alpha = 0.8, data= dat1, aes(x = T1_ppb, y = yi, size = Study.T1..n., color = Treatment.2)) + scale_color_grey(name = "Neonic Type") + scale_linetype(name = "Neonic Type") + scale_size(name = "number of studies")
+```
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+### Behaviorand neonic type
+
+Behavior <- dplyr::filter(Meta, Fitness.measure == "behavior")
+
+dat1 <- escalc(measure="SMDH", m2i=Con_Mean, sd2i=Con_SE, n2i=Study.control..n., m1i=T1_Mean, sd1i=T1_SE, n1i=Study.T1..n., data=Behavior, vtype = "UB")
+
+
+res4 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =~ factor(Treatment.2), slab = paste(dat1$Authors, dat1$Year))
+
+model4 <- data.frame(model = "y ~ neonic type", p_value = res4$QMp, R_squared = round(res4$R2/100,2), AICc = res4$fit.stats$ML[5])
+```
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+### Behaviorand study type
+
+Behavior <- dplyr::filter(Meta, Fitness.measure == "behavior")
+
+dat1 <- escalc(measure="SMDH", m2i=Con_Mean, sd2i=Con_SE, n2i=Study.control..n., m1i=T1_Mean, sd1i=T1_SE, n1i=Study.T1..n., data=Behavior, vtype = "UB")
+
+
+res5 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =~ factor(Study.Type), slab = paste(dat1$Authors, dat1$Year))
+
+model5 <- data.frame(model = "y ~ study type", p_value = res5$QMp, R_squared = round(res5$R2/100,2), AICc = res5$fit.stats$ML[5])
+```
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+### Behaviorand Ai type and functional group
+
+Behavior <- dplyr::filter(Meta, Fitness.measure == "behavior")
+
+dat1 <- escalc(measure="SMDH", m2i=Con_Mean, sd2i=Con_SE, n2i=Study.control..n., m1i=T1_Mean, sd1i=T1_SE, n1i=Study.T1..n., data=Behavior, vtype = "UB")
+
+
+res6 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =~ factor(Functional.group) + factor(AI.type), slab = paste(dat1$Authors, dat1$Year))
+
+model6 <- data.frame(model = "y ~ AI type + Functional group", p_value = res6$QMp, R_squared = round(res6$R2/100,2), AICc = res6$fit.stats$ML[5])
 ```
 
 ### Comparison of models
 
 ```{r, echo= FALSE}
-All <- rbind(model1, model2, model3)
+All <- rbind(model1, model2, model3, model4, model5, model6)
 
 All <- dplyr::arrange(All, AICc)
 
 All$deltaAICc <- (All$AICc - min(All$AICc))
 
+SUMDELTA <- sum(exp(-0.5*All$deltaAICc))
+
+All$Weight <- exp(-0.5*All$deltaAICc)/SUMDELTA
+
 knitr::kable(All, digits = 3, row.names = FALSE, caption = "Comparison of models taking into account p value, Pseudo R squared and AICc")
 ```
 
+#Reproduction
 
-Behavior/Reproduction and neonic AI (e.g., IMI, CLO) and ppb
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+### Reproduction, functional group and Order
 
+Reproduction <- dplyr::filter(Meta, Fitness.measure == "reproduction")
 
-Abundance
-
-Seed treatment only 
-
-AI type and functional group
-
-
-Effects on:
-
-Performance measures
-
-Performance measures and functional group
-
-Functional group
-
-Performance measures and nesting area
+dat1 <- escalc(measure="SMDH", m2i=Con_Mean, sd2i=Con_SE, n2i=Study.control..n., m1i=T1_Mean, sd1i=T1_SE, n1i=Study.T1..n., data=Reproduction, vtype = "UB")
 
 
-Behavior
+res1 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =~ factor(Functional.group) + factor(Order), slab = paste(dat1$Authors, dat1$Year))
 
-AI type and functional group
-
-
-Reproduction and order and functional group
-
-Abundance and order and functional group
-
-
-Behavior and study type
-
-Reproduction and nesting area
-
-
-```{r, message=FALSE, warning=FALSE, echo=FALSE, fig.cap="test"}
-ggplot(Meta, aes(x=reorder(Fitness.measure,Fitness.measure, function(x)-length(x)))) + geom_bar(aes(fill = Functional.group), position = "dodge")+ xlab("Performance measure") + ylab("Number of studies") + theme_classic() + scale_fill_grey()
+model1 <- data.frame(model = "y ~ Order + Functional group", p_value = res1$QMp, R_squared = round(res1$R2/100,2), AICc = res1$fit.stats$ML[5])
 ```
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+### Reproduction, Nesting area
+
+Reproduction <- dplyr::filter(Meta, Fitness.measure == "reproduction")
+
+dat1 <- escalc(measure="SMDH", m2i=Con_Mean, sd2i=Con_SE, n2i=Study.control..n., m1i=T1_Mean, sd1i=T1_SE, n1i=Study.T1..n., data=Reproduction, vtype = "UB")
+
+
+res2 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =~ factor(Nesting.Area), slab = paste(dat1$Authors, dat1$Year))
+
+
+model2 <- data.frame(model = "y ~ Order + Nesting Area", p_value = res2$QMp, R_squared = round(res2$R2/100,2), AICc = res2$fit.stats$ML[5])
+```
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+#Reproduction and ppb
+Reproduction <- dplyr::filter(Meta, Fitness.measure == "reproduction")
+Reproduction_ppb <- Reproduction[!is.na(Reproduction$T1_ppb),]
+
+Reproduction_ppb_t2 <- dplyr::filter(Reproduction_ppb, !is.na(T2_ppb))
+Reproduction_ppb_t2$T1_ppb <- Reproduction_ppb_t2$T2_ppb
+Reproduction_ppb_t2$T1_Mean <- Reproduction_ppb_t2$T2_Mean
+Reproduction_ppb_t2$T1_SE <- Reproduction_ppb_t2$T2_SE
+Reproduction_ppb_t2$Study.T1..n. <- Reproduction_ppb_t2$Study.T2..n.
+
+Reproduction_ppb <- rbind(Reproduction_ppb, Reproduction_ppb_t2)
+
+dat1 <- escalc(measure="SMDH", m2i=Con_Mean, sd2i=Con_SE, n2i=Study.control..n., m1i=T1_Mean, sd1i=T1_SE, n1i=Study.T1..n., data=Reproduction_ppb, vtype = "UB")
+
+res3 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =~  T1_ppb, slab = paste(dat1$Authors, dat1$Year))
+
+
+model3 <- data.frame(model = "y ~ Concentration [ppb]", p_value = res3$QMp, R_squared = round(res3$R2/100,2), AICc = res3$fit.stats$ML[5])
+```
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+#Reproduction, ppb and Neonic type
+Reproduction <- dplyr::filter(Meta, Fitness.measure == "reproduction")
+Reproduction_ppb <- Reproduction[!is.na(Reproduction$T1_ppb),]
+
+Reproduction_ppb_t2 <- dplyr::filter(Reproduction_ppb, !is.na(T2_ppb))
+Reproduction_ppb_t2$T1_ppb <- Reproduction_ppb_t2$T2_ppb
+Reproduction_ppb_t2$T1_Mean <- Reproduction_ppb_t2$T2_Mean
+Reproduction_ppb_t2$T1_SE <- Reproduction_ppb_t2$T2_SE
+Reproduction_ppb_t2$Study.T1..n. <- Reproduction_ppb_t2$Study.T2..n.
+
+Reproduction_ppb <- rbind(Reproduction_ppb, Reproduction_ppb_t2)
+
+dat1 <- escalc(measure="SMDH", m2i=Con_Mean, sd2i=Con_SE, n2i=Study.control..n., m1i=T1_Mean, sd1i=T1_SE, n1i=Study.T1..n., data=Reproduction_ppb, vtype = "UB")
+
+res4 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =~  T1_ppb + Treatment.2, slab = paste(dat1$Authors, dat1$Year))
+
+
+library(caret)
+
+newmods = expand.grid(T1_ppb = seq(from = min(dat1$T1_ppb), to = max(dat1$T1_ppb), length.out =  20), Treatment.2 = c("CLO", "IMI", "MIX", "THX"))
+
+dum <- dummyVars(~ Treatment.2, data = newmods)
+
+NM <- cbind(newmods[,1],predict(dum, newmods))
+
+preds <- predict(res4, newmods = NM[,1:4])
+
+preds <- data.frame(pred = preds$pred, ci.lb = preds$ci.lb, ci.ub = preds$ci.ub, T1_ppb = newmods$T1_ppb, Treatment.2 = newmods$Treatment.2)
+
+model4 <- data.frame(model = "y ~ Concentration [ppb] + Neonic type", p_value = res4$QMp, R_squared = round(res4$R2/100,2), AICc = res4$fit.stats$ML[5])
+```
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE, cache=FALSE, fig.cap= "effect size of the concentration and neonic type on the reporoduction Standardized mean difference of abundance"}
+
+ggplot(preds, aes(x = T1_ppb, y = pred))  + geom_ribbon(alpha = 0.5,aes(ymin = ci.lb, ymax = ci.ub, fill = Treatment.2)) + theme_classic() + geom_line(aes(lty = Treatment.2))+ xlab("Concentration (ppb)") + ylab("Standardized mean difference") + geom_hline(yintercept = 0, lty= 2) + scale_fill_grey(name = "Neonic Type") + geom_point(alpha = 0.8, data= dat1, aes(x = T1_ppb, y = yi, size = Study.T1..n., color = Treatment.2)) + scale_color_grey(name = "Neonic Type") + scale_linetype(name = "Neonic Type") + scale_size(name = "number of studies")
+```
+
+### Comparison of models
+
+```{r, echo= FALSE}
+All <- rbind(model1, model2, model3, model4)
+
+All <- dplyr::arrange(All, AICc)
+
+All$deltaAICc <- (All$AICc - min(All$AICc))
+
+SUMDELTA <- sum(exp(-0.5*All$deltaAICc))
+
+All$Weight <- exp(-0.5*All$deltaAICc)/SUMDELTA
+
+knitr::kable(All, digits = 3, row.names = FALSE, caption = "Comparison of models taking into account p value, Pseudo R squared and AICc")
+```
+
 
 References {#references .unnumbered}
 ==========
