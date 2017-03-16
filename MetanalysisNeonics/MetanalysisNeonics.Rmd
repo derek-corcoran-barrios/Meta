@@ -308,10 +308,47 @@ model11 <- data.frame(model = "y ~ Concentration [g/kg] + Nesting Area + Functio
 
 ```
 
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+### Abundance concentration [kg/ha] and nesting area
+
+Abundance_kg_ha <- dplyr::filter(Abundance, Application.Units == "kg/ha")
+Abundance_kg_ha <- dplyr::filter(Abundance_kg_ha, TreatmentType == "powder/granular")
+Abundance_kg_ha_t2 <- dplyr::filter(Abundance_kg_ha, !is.na(AI.Rate_T2))
+Abundance_kg_ha_t2$AI.Rate_T1 <- Abundance_kg_ha_t2$AI.Rate_T2
+Abundance_kg_ha_t2$T1_Mean <- Abundance_kg_ha_t2$T2_Mean
+Abundance_kg_ha_t2$T1_SE <- Abundance_kg_ha_t2$T2_SE
+Abundance_kg_ha_t2$Study.T1..n. <- Abundance_kg_ha_t2$Study.T2..n.
+
+Abundance_kg_ha <- rbind(Abundance_kg_ha, Abundance_kg_ha_t2)
+
+
+dat1 <- escalc(measure="SMDH", m2i=Con_Mean, sd2i=Con_SE, n2i=Study.control..n., m1i=T1_Mean, sd1i=T1_SE, n1i=Study.T1..n., data=Abundance_kg_ha, vtype = "UB")
+
+res12 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =~  AI.Rate_T1+ factor(Nesting.Area) + factor(Functional.group), slab = paste(dat1$Authors, dat1$Year))
+
+model12 <- data.frame(model = "y ~ Concentration [kg/ha] + Nesting Area + Functional Group", p_value = res12$QMp, R_squared = round(res12$R2/100,2), AICc = res12$fit.stats$ML[5])
+
+```
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+### Abundance and nesting area
+
+
+Abundance <- dplyr::filter(Meta, Fitness.measure == "abundance")
+
+dat1 <- escalc(measure="SMDH", m2i=Con_Mean, sd2i=Con_SE, n2i=Study.control..n., m1i=T1_Mean, sd1i=T1_SE, n1i=Study.T1..n., data=Abundance, vtype = "UB")
+
+res13 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =~  factor(Order) + factor(Functional.group), slab = paste(dat1$Authors, dat1$Year))
+
+model13 <- data.frame(model = "y ~ Order + Functional group", p_value = res13$QMp, R_squared = round(res13$R2/100,2), AICc = res13$fit.stats$ML[5])
+
+```
+
 ### Comparison of models
 
 ```{r, echo= FALSE}
-All <- rbind(model0, model1, model4, model7, model8, model9, model10, model11)
+All <- rbind(model0, model1, model4, model7, model8, model9, model10, model11, model12, model13)
 
 All <- dplyr::arrange(All, AICc)
 
@@ -343,15 +380,15 @@ nullmod <- data.frame(estimate = res$b, ci.ub = res$ci.ub, ci.lb = res$ci.lb, gr
 
 
 
-res0 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =~  factor(AI.type) - 1, slab = paste(dat1$Authors, dat1$Year))
+res0 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =~  factor(TreatmentType) - 1, slab = paste(dat1$Authors, dat1$Year))
 
-AItype <- data.frame(estimate = res0$b, ci.ub = res0$ci.ub, ci.lb = res0$ci.lb, group = c("commercial","granular", "not specified", "seed treatment", "solution", "technical grade"), p = res0$pval, n = c(NROW(dplyr::filter(Behavior, AI.type == "commercial")), NROW(dplyr::filter(Behavior, AI.type == "granular")), NROW(dplyr::filter(Behavior, AI.type == "not specified")), NROW(dplyr::filter(Behavior, AI.type == "seed treatment")), NROW(dplyr::filter(Behavior, AI.type == "solution")), NROW(dplyr::filter(Behavior, AI.type == "technical grade"))))
+AItype <- data.frame(estimate = res0$b, ci.ub = res0$ci.ub, ci.lb = res0$ci.lb, group = c("commercial","granular", "not specified", "seed treatment", "solution", "technical grade"), p = res0$pval, n = c(NROW(dplyr::filter(Behavior, TreatmentType == "commercial")), NROW(dplyr::filter(Behavior, TreatmentType == "granular")), NROW(dplyr::filter(Behavior, TreatmentType == "not specified")), NROW(dplyr::filter(Behavior, TreatmentType == "seed treatment")), NROW(dplyr::filter(Behavior, TreatmentType == "solution")), NROW(dplyr::filter(Behavior, TreatmentType == "technical grade"))))
 
 All <- rbind(nullmod, AItype)
 
-res1 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =~  factor(AI.type), slab = paste(dat1$Authors, dat1$Year))
+res1 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =~  factor(TreatmentType), slab = paste(dat1$Authors, dat1$Year))
 
-model1 <- data.frame(model = "y ~ AI type", p_value = res1$QMp, R_squared = round(res1$R2/100,2), AICc = res1$fit.stats$ML[5])
+model1 <- data.frame(model = "y ~ Treatment type", p_value = res1$QMp, R_squared = round(res1$R2/100,2), AICc = res1$fit.stats$ML[5])
 
 ```
 
@@ -383,7 +420,7 @@ model2 <- data.frame(model = "y ~ Concentration [ppb]", p_value = res2$QMp, R_sq
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE, cache=FALSE, fig.cap= "effect size of the Standardized mean difference of behavior and concentration (ppb)"}
 
-ggplot(dat1, aes(x = T1_ppb, y = yi))  + geom_ribbon(data = preds, aes(x = X.T1_ppb, y = pred, ymin = ci.lb, ymax = ci.ub), fill = "grey", alpha = 0.5) + theme_classic() + geom_line(data = preds, aes(x = X.T1_ppb, y = pred)) + geom_point(aes(size = Study.T1..n.)) + xlab("Concentration (ppb)") + ylab("Standardized mean difference") + geom_hline(yintercept = 0, lty= 2) + scale_size("Number of studies")
+ggplot(dat1, aes(x = T1_ppb, y = yi))  + geom_ribbon(data = preds, aes(x = X.T1_ppb, y = pred, ymin = ci.lb, ymax = ci.ub), fill = "grey", alpha = 0.5) + theme_classic() + geom_line(data = preds, aes(x = X.T1_ppb, y = pred)) + geom_point(aes(size = Study.T1..n.)) + xlab("Concentration (ppb)") + ylab("Standardized mean difference") + geom_hline(yintercept = 0, lty= 2) + scale_size("Number of studies") + scale_x_continuous(labels = scales::comma)
 
 ```
 
@@ -409,7 +446,7 @@ res3 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =~  T1_ppb + fac
 
 library(caret)
 
-newmods = expand.grid(T1_ppb = seq(from = min(dat1$T1_ppb), to = max(dat1$T1_ppb), length.out =  20), Treatment.2 = c("CLO", "IMI"))
+newmods = expand.grid(T1_ppb = seq(from = min(dat1$T1_ppb), to = max(dat1$T1_ppb), length.out =  20), Treatment.2 = c("IMI", "THX"))
 
 dum <- dummyVars(~ Treatment.2, data = newmods)
 
@@ -425,7 +462,7 @@ model3 <- data.frame(model = "y ~ Concentration + neonic type", p_value = res3$Q
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE, cache=FALSE, fig.cap= "effect size of the concentration and neonic type on the behavior Standardized mean difference of abundance"}
 
-ggplot(preds, aes(x = T1_ppb, y = pred))  + geom_ribbon(alpha = 0.5,aes(ymin = ci.lb, ymax = ci.ub, fill = Treatment.2)) + theme_classic() + geom_line(aes(lty = Treatment.2))+ xlab("Concentration (ppb)") + ylab("Standardized mean difference") + geom_hline(yintercept = 0, lty= 2) + scale_fill_grey(name = "Neonic Type") + geom_point(alpha = 0.8, data= dat1, aes(x = T1_ppb, y = yi, size = Study.T1..n., color = Treatment.2)) + scale_color_grey(name = "Neonic Type") + scale_linetype(name = "Neonic Type") + scale_size(name = "number of studies")
+ggplot(preds, aes(x = T1_ppb, y = pred))  + geom_ribbon(alpha = 0.5,aes(ymin = ci.lb, ymax = ci.ub, fill = Treatment.2)) + theme_classic() + geom_line(aes(lty = Treatment.2))+ xlab("Concentration (ppb)") + ylab("Standardized mean difference") + geom_hline(yintercept = 0, lty= 2) + scale_fill_grey(name = "Neonic Type") + geom_point(alpha = 0.8, data= dat1, aes(x = T1_ppb, y = yi, size = Study.T1..n., color = Treatment.2)) + scale_color_grey(name = "Neonic Type") + scale_linetype(name = "Neonic Type") + scale_size(name = "number of studies") + scale_x_continuous(labels = scales::comma)
 ```
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
@@ -462,9 +499,9 @@ Behavior <- dplyr::filter(Meta, Fitness.measure == "behavior")
 dat1 <- escalc(measure="SMDH", m2i=Con_Mean, sd2i=Con_SE, n2i=Study.control..n., m1i=T1_Mean, sd1i=T1_SE, n1i=Study.T1..n., data=Behavior, vtype = "UB")
 
 
-res6 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =~ factor(Functional.group) + factor(AI.type), slab = paste(dat1$Authors, dat1$Year))
+res6 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =~ factor(Functional.group) + factor(TreatmentType), slab = paste(dat1$Authors, dat1$Year))
 
-model6 <- data.frame(model = "y ~ AI type + Functional group", p_value = res6$QMp, R_squared = round(res6$R2/100,2), AICc = res6$fit.stats$ML[5])
+model6 <- data.frame(model = "y ~ Treatment type + Functional group", p_value = res6$QMp, R_squared = round(res6$R2/100,2), AICc = res6$fit.stats$ML[5])
 ```
 
 ### Comparison of models
@@ -568,7 +605,7 @@ model4 <- data.frame(model = "y ~ Concentration [ppb] + Neonic type", p_value = 
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE, cache=FALSE, fig.cap= "effect size of the concentration and neonic type on the reporoduction Standardized mean difference of abundance"}
 
-ggplot(preds, aes(x = T1_ppb, y = pred))  + geom_ribbon(alpha = 0.5,aes(ymin = ci.lb, ymax = ci.ub, fill = Treatment.2)) + theme_classic() + geom_line(aes(lty = Treatment.2))+ xlab("Concentration (ppb)") + ylab("Standardized mean difference") + geom_hline(yintercept = 0, lty= 2) + scale_fill_grey(name = "Neonic Type") + geom_point(alpha = 0.8, data= dat1, aes(x = T1_ppb, y = yi, size = Study.T1..n., color = Treatment.2)) + scale_color_grey(name = "Neonic Type") + scale_linetype(name = "Neonic Type") + scale_size(name = "number of studies")
+ggplot(preds, aes(x = T1_ppb, y = pred))  + geom_ribbon(alpha = 0.5,aes(ymin = ci.lb, ymax = ci.ub, fill = Treatment.2)) + theme_classic() + geom_line(aes(lty = Treatment.2))+ xlab("Concentration (ppb)") + ylab("Standardized mean difference") + geom_hline(yintercept = 0, lty= 2) + scale_fill_grey(name = "Neonic Type") + geom_point(alpha = 0.8, data= dat1, aes(x = T1_ppb, y = yi, size = Study.T1..n., color = Treatment.2)) + scale_color_grey(name = "Neonic Type") + scale_linetype(name = "Neonic Type") + scale_size(name = "number of studies") + scale_x_continuous(labels = scales::comma)
 ```
 
 ### Comparison of models
