@@ -1,0 +1,5 @@
+"","model","pvalue","R_squared","n","AICc","deltaAICc","Weight"
+"1","y~ Order+Neonic+Study Type+Concentration [ppb]",1.27871541948999e-11,0.58,59,285.571501736361,0,0.146674315314195
+"2","y~ Order+Neonic+Treatment Type+Study Type+Concentration [ppb]",9.52330118055804e-12,0.6,59,286.250323195964,0.678821459603,0.104459961761828
+"3","y~ Order+Neonic+Study Type",5.19393445063834e-11,0.56,59,287.329059825908,1.75755808954636,0.0609123254135216
+"4","y~ Order+Nesting Area+Neonic+Concentration [ppb]",5.84196498713103e-11,0.56,59,287.366316556218,1.79481481985658,0.0597881318268316

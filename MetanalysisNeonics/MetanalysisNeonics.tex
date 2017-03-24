@@ -172,15 +172,15 @@ estimate & ci.ub & ci.lb & group & p & n & I2 & pvalCT\tabularnewline
 estimate & ci.ub & ci.lb & group & p & n & I2 & pvalCT\tabularnewline
 \midrule
 \endhead
--0.917 & -0.423 & -1.410 & Abundance & 0.000 & 101 & 90.594 &
+-0.776 & -0.378 & -1.175 & Abundance & 0.000 & 131 & 88.894 &
 0\tabularnewline
--2.508 & 0.940 & -5.957 & Behavior & 0.154 & 23 & 99.742 &
+-2.232 & 3.012 & -7.476 & Behavior & 0.404 & 29 & 99.895 &
 0\tabularnewline
--5.319 & -1.556 & -9.083 & Survival & 0.006 & 16 & 98.756 &
+-8.131 & -2.544 & -13.718 & Survival & 0.004 & 28 & 99.667 &
 0\tabularnewline
--3.366 & 13.710 & -20.441 & Reproduction & 0.699 & 44 & 99.995 &
+0.203 & 14.647 & -14.240 & Reproduction & 0.978 & 90 & 99.997 &
 0\tabularnewline
--1.078 & -0.128 & -2.027 & Condition & 0.026 & 16 & 98.597 &
+-1.903 & -0.892 & -2.915 & Condition & 0.000 & 40 & 99.247 &
 0\tabularnewline
 \bottomrule
 \end{longtable}
@@ -190,7 +190,7 @@ estimate & ci.ub & ci.lb & group & p & n & I2 & pvalCT\tabularnewline
 As we can see in table 1 and figure 2, all estimations of the effects
 are negative. However, only abundance, survival and condition have
 significative negative effects. Survival has the highest effect size,
-with a mean difference estimation of -5.32
+with a mean difference estimation of -8.13
 
 \begin{figure}[htbp]
 \centering
@@ -202,126 +202,210 @@ of estimation of performance and it's standard error}
 \section{Estimations using
 moderators:}\label{estimations-using-moderators}
 
-\section{Abundance}\label{abundance}
+\subsubsection{Abundance models without
+concentrations}\label{abundance-models-without-concentrations}
 
-\begin{figure}[htbp]
-\centering
-\includegraphics{MetanalysisNeonics_files/figure-latex/unnamed-chunk-10-1.pdf}
-\caption{effect size of the Standardized mean difference of Abundance
-and concentration {[}g/Kg{]}}
-\end{figure}
+\subsubsection{Comparison of models without
+concentrations}\label{comparison-of-models-without-concentrations}
 
-\subsubsection{Comparison of models}\label{comparison-of-models}
-
-\begin{longtable}[c]{@{}lrrrrr@{}}
+\begin{longtable}[c]{@{}lrrrrrr@{}}
 \caption{Comparison of models taking into account p value, Pseudo R
 squared and AICc}\tabularnewline
 \toprule
-model & p\_value & R\_squared & AICc & deltaAICc & Weight\tabularnewline
+model & pvalue & R\_squared & n & AICc & deltaAICc &
+Weight\tabularnewline
 \midrule
 \endfirsthead
 \toprule
-model & p\_value & R\_squared & AICc & deltaAICc & Weight\tabularnewline
+model & pvalue & R\_squared & n & AICc & deltaAICc &
+Weight\tabularnewline
 \midrule
 \endhead
-y \textasciitilde{} Concentration {[}g/kg{]} + Nesting Area + Functional
-Group & 0.013 & 0.37 & 132.095 & 0.000 & 0.363\tabularnewline
-y \textasciitilde{} Concentration {[}g/kg{]} + Functional group & 0.017
-& 0.32 & 132.421 & 0.326 & 0.309\tabularnewline
-y \textasciitilde{} Concentration {[}g/kg{]} & 0.019 & 0.27 & 132.915 &
-0.820 & 0.241\tabularnewline
-y \textasciitilde{} Concentration {[}g/kg{]} + Nesting Area & 0.052 &
-0.26 & 134.968 & 2.872 & 0.086\tabularnewline
-y \textasciitilde{} Concentration {[}kg/ha{]} + Nesting Area +
-Functional Group & 0.019 & 0.36 & 164.602 & 32.507 &
-0.000\tabularnewline
-y \textasciitilde{} Concentration {[}Kg/Ha{]} & 0.165 & 0.04 & 164.902 &
-32.807 & 0.000\tabularnewline
-y \textasciitilde{} 1 & 0.000 & 0.00 & 463.583 & 331.488 &
-0.000\tabularnewline
-y \textasciitilde{} Functional group & 0.106 & 0.06 & 464.017 & 331.922
-& 0.000\tabularnewline
-y \textasciitilde{} Nesting Area & 0.532 & 0.00 & 466.648 & 334.553 &
-0.000\tabularnewline
-y \textasciitilde{} Order + Functional group & 0.028 & 0.17 & 472.253 &
-340.158 & 0.000\tabularnewline
+y\textasciitilde{} Order+Functional group+Treatment Type & 0.000 & 0.28
+& 131 & 572.304 & 0.000 & 0.327\tabularnewline
+y\textasciitilde{} Order+Functional group+Treatment Type+Neonic & 0.000
+& 0.29 & 131 & 573.175 & 0.871 & 0.211\tabularnewline
+y\textasciitilde{} Functional group+Treatment Type+Neonic+Nesting Area &
+0.008 & 0.14 & 131 & 575.871 & 3.567 & 0.055\tabularnewline
+y\textasciitilde{} Functional group+Treatment Type+Nesting Area & 0.012
+& 0.12 & 131 & 576.083 & 3.779 & 0.049\tabularnewline
+y\textasciitilde{} Order+Treatment Type & 0.002 & 0.21 & 131 & 576.675 &
+4.371 & 0.037\tabularnewline
+y\textasciitilde{} Treatment Type+Neonic+Nesting Area & 0.031 & 0.08 &
+131 & 576.910 & 4.606 & 0.033\tabularnewline
+y\textasciitilde{} Treatment Type+Nesting Area & 0.044 & 0.07 & 131 &
+577.291 & 4.987 & 0.027\tabularnewline
+\bottomrule
+\end{longtable}
+
+\subsubsection{Abundance and concentration (Kg/Ha) for Powder/granular
+treatment
+models}\label{abundance-and-concentration-kgha-for-powdergranular-treatment-models}
+
+\subsubsection{Comparison of models with concentrations
+{[}Kg/Ha{]}}\label{comparison-of-models-with-concentrations-kgha}
+
+\begin{longtable}[c]{@{}lrrrrrr@{}}
+\caption{Comparison of models taking into account p value, Pseudo R
+squared and AICc}\tabularnewline
+\toprule
+model & pvalue & R\_squared & n & AICc & deltaAICc &
+Weight\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+model & pvalue & R\_squared & n & AICc & deltaAICc &
+Weight\tabularnewline
+\midrule
+\endhead
+y\textasciitilde{} Nesting Area & 0.025 & 0.18 & 50 & 193.603 & 0.000 &
+0.469\tabularnewline
+y\textasciitilde{} Order & 0.012 & 0.33 & 50 & 195.823 & 2.220 &
+0.155\tabularnewline
+y\textasciitilde{} Nesting Area+Concentration {[}Kg/Ha{]} & 0.063 & 0.16
+& 50 & 196.298 & 2.695 & 0.122\tabularnewline
+y\textasciitilde{} Order+Functional group & 0.006 & 0.42 & 50 & 196.719
+& 3.116 & 0.099\tabularnewline
+y\textasciitilde{} Order+Functional group+Nesting Area & 0.005 & 0.44 &
+50 & 198.559 & 4.955 & 0.039\tabularnewline
+\bottomrule
+\end{longtable}
+
+\subsubsection{Abundance and concentration (g/Kg) models with seed
+treatment}\label{abundance-and-concentration-gkg-models-with-seed-treatment}
+
+\subsubsection{Comparison of models
+{[}g/Kg{]}}\label{comparison-of-models-gkg}
+
+\begin{longtable}[c]{@{}lrrrrrr@{}}
+\caption{Comparison of models taking into account p value, Pseudo R
+squared and AICc}\tabularnewline
+\toprule
+model & pvalue & R\_squared & n & AICc & deltaAICc &
+Weight\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+model & pvalue & R\_squared & n & AICc & deltaAICc &
+Weight\tabularnewline
+\midrule
+\endhead
+y\textasciitilde{} Functional group & 0.049 & 0.09 & 53 & 180.179 &
+0.000 & 0.283\tabularnewline
+y\textasciitilde{} Functional group+Nesting Area & 0.079 & 0.10 & 53 &
+181.285 & 1.106 & 0.163\tabularnewline
+y\textasciitilde{} Concentration {[}g/Kg{]} & 0.110 & 0.09 & 53 &
+181.555 & 1.376 & 0.142\tabularnewline
+y\textasciitilde{} Functional group+Concentration {[}g/Kg{]} & 0.102 &
+0.11 & 53 & 181.685 & 1.506 & 0.133\tabularnewline
+y\textasciitilde{} Functional group+Nesting Area+Concentration
+{[}g/Kg{]} & 0.087 & 0.14 & 53 & 181.854 & 1.675 & 0.123\tabularnewline
+y\textasciitilde{} Nesting Area+Concentration {[}g/Kg{]} & 0.228 & 0.08
+& 53 & 183.579 & 3.400 & 0.052\tabularnewline
+y\textasciitilde{} Nesting Area & 0.908 & 0.00 & 53 & 185.163 & 4.984 &
+0.023\tabularnewline
 \bottomrule
 \end{longtable}
 
 \section{Behaviour}\label{behaviour}
 
-\begin{figure}[htbp]
-\centering
-\includegraphics{MetanalysisNeonics_files/figure-latex/unnamed-chunk-18-1.pdf}
-\caption{effect size of the Standardized mean difference of behavior and
-concentration (ppb)}
-\end{figure}
+\subsubsection{Behaviour without
+concentration}\label{behaviour-without-concentration}
 
-\begin{figure}[htbp]
-\centering
-\includegraphics{MetanalysisNeonics_files/figure-latex/unnamed-chunk-20-1.pdf}
-\caption{effect size of the concentration and neonic type on the
-behavior Standardized mean difference of abundance}
-\end{figure}
+\subsubsection{Model Comparison behaviour without
+concentration}\label{model-comparison-behaviour-without-concentration}
 
-\subsubsection{Comparison of models}\label{comparison-of-models-1}
-
-\begin{longtable}[c]{@{}lrrrrr@{}}
+\begin{longtable}[c]{@{}lrrrrrr@{}}
 \caption{Comparison of models taking into account p value, Pseudo R
 squared and AICc}\tabularnewline
 \toprule
-model & p\_value & R\_squared & AICc & deltaAICc & Weight\tabularnewline
+model & pvalue & R\_squared & n & AICc & deltaAICc &
+Weight\tabularnewline
 \midrule
 \endfirsthead
 \toprule
-model & p\_value & R\_squared & AICc & deltaAICc & Weight\tabularnewline
+model & pvalue & R\_squared & n & AICc & deltaAICc &
+Weight\tabularnewline
 \midrule
 \endhead
-y \textasciitilde{} Concentration {[}ppb{]} & 0.107 & 0.05 & 142.911 &
-0.000 & 0.54\tabularnewline
-y \textasciitilde{} Concentration + neonic type & 0.090 & 0.15 & 143.231
-& 0.320 & 0.46\tabularnewline
-y \textasciitilde{} study type & 0.110 & 0.08 & 166.687 & 23.776 &
-0.00\tabularnewline
-y \textasciitilde{} neonic type & 0.181 & 0.04 & 167.467 & 24.556 &
-0.00\tabularnewline
-y \textasciitilde{} Treatment type & 0.460 & 0.00 & 170.758 & 27.847 &
-0.00\tabularnewline
-y \textasciitilde{} Treatment type + Functional group & 0.375 & 0.02 &
-175.035 & 32.124 & 0.00\tabularnewline
+y\textasciitilde{} Study Type & 0.450 & 0 & 29 & 241.727 & 0.000 &
+0.197\tabularnewline
+y\textasciitilde{} Neonic & 0.525 & 0 & 29 & 241.913 & 0.186 &
+0.180\tabularnewline
+y\textasciitilde{} Order & 0.742 & 0 & 29 & 242.245 & 0.518 &
+0.152\tabularnewline
+y\textasciitilde{} Nesting Area & 0.532 & 0 & 29 & 243.781 & 2.054 &
+0.071\tabularnewline
+y\textasciitilde{} Neonic+Study Type & 0.752 & 0 & 29 & 244.555 & 2.828
+& 0.048\tabularnewline
+y\textasciitilde{} Order+Study Type & 0.759 & 0 & 29 & 244.580 & 2.853 &
+0.047\tabularnewline
+y\textasciitilde{} Order+Neonic & 0.822 & 0 & 29 & 244.761 & 3.034 &
+0.043\tabularnewline
+y\textasciitilde{} Treatment Type & 0.831 & 0 & 29 & 244.788 & 3.061 &
+0.043\tabularnewline
 \bottomrule
 \end{longtable}
 
 \section{Reproduction}\label{reproduction}
 
-\begin{figure}[htbp]
-\centering
-\includegraphics{MetanalysisNeonics_files/figure-latex/unnamed-chunk-29-1.pdf}
-\caption{effect size of the concentration and neonic type on the
-reporoduction Standardized mean difference of abundance}
-\end{figure}
+\subsubsection{Reproduction without
+concentration}\label{reproduction-without-concentration}
 
-\subsubsection{Comparison of models}\label{comparison-of-models-2}
+\subsubsection{Model Comparison reproduction without
+concentration}\label{model-comparison-reproduction-without-concentration}
 
-\begin{longtable}[c]{@{}lrrrrr@{}}
+\begin{longtable}[c]{@{}lrrrrrr@{}}
 \caption{Comparison of models taking into account p value, Pseudo R
 squared and AICc}\tabularnewline
 \toprule
-model & p\_value & R\_squared & AICc & deltaAICc & Weight\tabularnewline
+model & pvalue & R\_squared & n & AICc & deltaAICc &
+Weight\tabularnewline
 \midrule
 \endfirsthead
 \toprule
-model & p\_value & R\_squared & AICc & deltaAICc & Weight\tabularnewline
+model & pvalue & R\_squared & n & AICc & deltaAICc &
+Weight\tabularnewline
 \midrule
 \endhead
-y \textasciitilde{} Concentration {[}ppb{]} + Neonic type & 0.000 & 0.43
-& 213.923 & 0.000 & 1\tabularnewline
-y \textasciitilde{} Concentration {[}ppb{]} & 0.194 & 0.01 & 235.285 &
-21.362 & 0\tabularnewline
-y \textasciitilde{} Order + Nesting Area & 0.940 & 0.00 & 471.357 &
-257.434 & 0\tabularnewline
-y \textasciitilde{} Order + Functional group & 0.513 & 0.08 & 476.834 &
-262.912 & 0\tabularnewline
+y\textasciitilde{} Order & 0.225 & 0.15 & 90 & 973.543 & 0.000 &
+0.601\tabularnewline
+y\textasciitilde{} Order+Nesting Area & 0.339 & 0.14 & 90 & 976.635 &
+3.092 & 0.128\tabularnewline
+y\textasciitilde{} Order+Treatment Type & 0.398 & 0.20 & 90 & 977.007 &
+3.464 & 0.106\tabularnewline
+y\textasciitilde{} Order+Functional group & 0.381 & 0.14 & 90 & 978.523
+& 4.981 & 0.050\tabularnewline
+\bottomrule
+\end{longtable}
+
+\subsubsection{Reproduction and concentration
+{[}ppb{]}}\label{reproduction-and-concentration-ppb}
+
+\subsubsection{Model Comparison reproduction with concentration
+{[}ppb{]}}\label{model-comparison-reproduction-with-concentration-ppb}
+
+\begin{longtable}[c]{@{}lrrrrrr@{}}
+\caption{Comparison of models taking into account p value, Pseudo R
+squared and AICc}\tabularnewline
+\toprule
+model & pvalue & R\_squared & n & AICc & deltaAICc &
+Weight\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+model & pvalue & R\_squared & n & AICc & deltaAICc &
+Weight\tabularnewline
+\midrule
+\endhead
+y\textasciitilde{} Order+Neonic+Study Type+Concentration {[}ppb{]} & 0 &
+0.58 & 59 & 285.572 & 0.000 & 0.147\tabularnewline
+y\textasciitilde{} Order+Neonic+Treatment Type+Study Type+Concentration
+{[}ppb{]} & 0 & 0.60 & 59 & 286.250 & 0.679 & 0.104\tabularnewline
+y\textasciitilde{} Order+Neonic+Study Type & 0 & 0.56 & 59 & 287.329 &
+1.758 & 0.061\tabularnewline
+y\textasciitilde{} Order+Nesting Area+Neonic+Concentration {[}ppb{]} & 0
+& 0.56 & 59 & 287.366 & 1.795 & 0.060\tabularnewline
 \bottomrule
 \end{longtable}
 
