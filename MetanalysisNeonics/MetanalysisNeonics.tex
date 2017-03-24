@@ -258,16 +258,14 @@ model & pvalue & R\_squared & n & AICc & deltaAICc &
 Weight\tabularnewline
 \midrule
 \endhead
-y\textasciitilde{} Nesting Area & 0.025 & 0.18 & 50 & 193.603 & 0.000 &
-0.469\tabularnewline
-y\textasciitilde{} Order & 0.012 & 0.33 & 50 & 195.823 & 2.220 &
-0.155\tabularnewline
 y\textasciitilde{} Nesting Area+Concentration {[}Kg/Ha{]} & 0.063 & 0.16
-& 50 & 196.298 & 2.695 & 0.122\tabularnewline
-y\textasciitilde{} Order+Functional group & 0.006 & 0.42 & 50 & 196.719
-& 3.116 & 0.099\tabularnewline
-y\textasciitilde{} Order+Functional group+Nesting Area & 0.005 & 0.44 &
-50 & 198.559 & 4.955 & 0.039\tabularnewline
+& 50 & 196.298 & 0.000 & 0.610\tabularnewline
+y\textasciitilde{} Order+Concentration {[}Kg/Ha{]} & 0.021 & 0.32 & 50 &
+198.905 & 2.606 & 0.166\tabularnewline
+y\textasciitilde{} Order+Functional group+Concentration {[}Kg/Ha{]} &
+0.010 & 0.41 & 50 & 200.352 & 4.054 & 0.080\tabularnewline
+y\textasciitilde{} Concentration {[}Kg/Ha{]} & 0.717 & 0.00 & 50 &
+200.388 & 4.090 & 0.079\tabularnewline
 \bottomrule
 \end{longtable}
 
@@ -406,6 +404,144 @@ y\textasciitilde{} Order+Neonic+Study Type & 0 & 0.56 & 59 & 287.329 &
 1.758 & 0.061\tabularnewline
 y\textasciitilde{} Order+Nesting Area+Neonic+Concentration {[}ppb{]} & 0
 & 0.56 & 59 & 287.366 & 1.795 & 0.060\tabularnewline
+\bottomrule
+\end{longtable}
+
+\section{Condition}\label{condition}
+
+\subsubsection{Model Comparison reproduction without
+concentration}\label{model-comparison-reproduction-without-concentration-1}
+
+\begin{longtable}[c]{@{}lrrrrrr@{}}
+\caption{Comparison of models taking into account p value, Pseudo R
+squared and AICc}\tabularnewline
+\toprule
+model & pvalue & R\_squared & n & AICc & deltaAICc &
+Weight\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+model & pvalue & R\_squared & n & AICc & deltaAICc &
+Weight\tabularnewline
+\midrule
+\endhead
+y\textasciitilde{} Study Type & 0 & 0.43 & 40 & 194.858 & 0.000 &
+0.244\tabularnewline
+y\textasciitilde{} Nesting Area+Study Type & 0 & 0.43 & 40 & 194.858 &
+0.000 & 0.244\tabularnewline
+y\textasciitilde{} Treatment Type+Study Type & 0 & 0.45 & 40 & 197.506 &
+2.648 & 0.065\tabularnewline
+y\textasciitilde{} Nesting Area+Treatment Type+Study Type & 0 & 0.45 &
+40 & 197.506 & 2.648 & 0.065\tabularnewline
+y\textasciitilde{} Functional group+Study Type & 0 & 0.42 & 40 & 197.703
+& 2.845 & 0.059\tabularnewline
+y\textasciitilde{} Functional group+Nesting Area+Study Type & 0 & 0.42 &
+40 & 197.703 & 2.845 & 0.059\tabularnewline
+y\textasciitilde{} Nesting Area+Neonic+Study Type & 0 & 0.44 & 40 &
+198.128 & 3.270 & 0.048\tabularnewline
+y\textasciitilde{} Neonic+Study Type & 0 & 0.44 & 40 & 198.128 & 3.270 &
+0.048\tabularnewline
+\bottomrule
+\end{longtable}
+
+\subsection{Condtion with concetration
+{[}ppb{]}}\label{condtion-with-concetration-ppb}
+
+\subsubsection{Model Comparison reproduction with concentration
+ppb}\label{model-comparison-reproduction-with-concentration-ppb-1}
+
+\begin{longtable}[c]{@{}lrrrrrr@{}}
+\caption{Comparison of models taking into account p value, Pseudo R
+squared and AICc}\tabularnewline
+\toprule
+model & pvalue & R\_squared & n & AICc & deltaAICc &
+Weight\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+model & pvalue & R\_squared & n & AICc & deltaAICc &
+Weight\tabularnewline
+\midrule
+\endhead
+y\textasciitilde{} Study Type & 0 & 0.46 & 34 & 167.399 & 0.000 &
+0.207\tabularnewline
+y\textasciitilde{} Nesting Area+Study Type & 0 & 0.46 & 34 & 167.399 &
+0.000 & 0.207\tabularnewline
+y\textasciitilde{} Nesting Area+Neonic & 0 & 0.44 & 34 & 169.666 & 2.267
+& 0.067\tabularnewline
+y\textasciitilde{} Nesting Area+Study Type+Concentration {[}ppb{]} & 0 &
+0.45 & 34 & 169.738 & 2.339 & 0.064\tabularnewline
+y\textasciitilde{} Study Type+Concentration {[}ppb{]} & 0 & 0.45 & 34 &
+169.738 & 2.339 & 0.064\tabularnewline
+y\textasciitilde{} Functional group+Study Type & 0 & 0.44 & 34 & 170.149
+& 2.750 & 0.052\tabularnewline
+y\textasciitilde{} Functional group+Nesting Area+Study Type & 0 & 0.44 &
+34 & 170.149 & 2.750 & 0.052\tabularnewline
+y\textasciitilde{} Neonic+Study Type & 0 & 0.46 & 34 & 170.649 & 3.250 &
+0.041\tabularnewline
+y\textasciitilde{} Nesting Area+Neonic+Study Type & 0 & 0.46 & 34 &
+170.649 & 3.250 & 0.041\tabularnewline
+y\textasciitilde{} Nesting Area+Neonic+Concentration {[}ppb{]} & 0 &
+0.43 & 34 & 172.040 & 4.641 & 0.020\tabularnewline
+\bottomrule
+\end{longtable}
+
+\section{Survival}\label{survival}
+
+\subsubsection{Model Comparison Survival without
+concentration}\label{model-comparison-survival-without-concentration}
+
+\begin{longtable}[c]{@{}lrrrrrr@{}}
+\caption{Comparison of models taking into account p value, Pseudo R
+squared and AICc}\tabularnewline
+\toprule
+model & pvalue & R\_squared & n & AICc & deltaAICc &
+Weight\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+model & pvalue & R\_squared & n & AICc & deltaAICc &
+Weight\tabularnewline
+\midrule
+\endhead
+y\textasciitilde{} Treatment Type & 0.044 & 0.37 & 28 & 219.242 & 0.000
+& 0.147\tabularnewline
+y\textasciitilde{} Nesting Area+Treatment Type & 0.044 & 0.37 & 28 &
+219.242 & 0.000 & 0.147\tabularnewline
+y\textasciitilde{} Nesting Area+Study Type & 0.055 & 0.40 & 28 & 219.251
+& 0.009 & 0.146\tabularnewline
+y\textasciitilde{} Nesting Area & 0.052 & 0.18 & 28 & 220.075 & 0.833 &
+0.097\tabularnewline
+y\textasciitilde{} Nesting Area+Neonic & 0.082 & 0.25 & 28 & 221.561 &
+2.319 & 0.046\tabularnewline
+y\textasciitilde{} Functional group+Study Type & 0.073 & 0.40 & 28 &
+222.049 & 2.806 & 0.036\tabularnewline
+y\textasciitilde{} Functional group+Nesting Area+Study Type & 0.073 &
+0.40 & 28 & 222.049 & 2.806 & 0.036\tabularnewline
+y\textasciitilde{} Functional group+Treatment Type & 0.065 & 0.36 & 28 &
+222.381 & 3.139 & 0.031\tabularnewline
+y\textasciitilde{} Functional group+Nesting Area+Treatment Type & 0.065
+& 0.36 & 28 & 222.381 & 3.139 & 0.031\tabularnewline
+y\textasciitilde{} Order & 0.152 & 0.28 & 28 & 222.418 & 3.175 &
+0.030\tabularnewline
+y\textasciitilde{} Order+Functional group & 0.114 & 0.31 & 28 & 222.868
+& 3.625 & 0.024\tabularnewline
+y\textasciitilde{} Order+Nesting Area & 0.114 & 0.31 & 28 & 222.868 &
+3.625 & 0.024\tabularnewline
+y\textasciitilde{} Order+Functional group+Nesting Area & 0.114 & 0.31 &
+28 & 222.868 & 3.625 & 0.024\tabularnewline
+y\textasciitilde{} Order+Neonic & 0.093 & 0.38 & 28 & 223.049 & 3.807 &
+0.022\tabularnewline
+y\textasciitilde{} Neonic & 0.148 & 0.14 & 28 & 223.381 & 4.138 &
+0.019\tabularnewline
+y\textasciitilde{} Functional group & 0.157 & 0.15 & 28 & 223.381 &
+4.138 & 0.019\tabularnewline
+y\textasciitilde{} Functional group+Nesting Area & 0.157 & 0.15 & 28 &
+223.381 & 4.138 & 0.019\tabularnewline
+y\textasciitilde{} Neonic+Treatment Type & 0.087 & 0.35 & 28 & 223.572 &
+4.329 & 0.017\tabularnewline
+y\textasciitilde{} Nesting Area+Neonic+Treatment Type & 0.087 & 0.35 &
+28 & 223.572 & 4.329 & 0.017\tabularnewline
 \bottomrule
 \end{longtable}
 

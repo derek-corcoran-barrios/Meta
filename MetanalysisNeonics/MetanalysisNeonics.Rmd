@@ -212,6 +212,7 @@ ModelNames <- sapply(id,function(i)
   paste("y~",paste(Cols[i],collapse="+"))
 )
 
+ModelNames<-ModelNames[grep("Conc", ModelNames)]
 
 dat1 <- escalc(measure="SMDH", m2i=Con_Mean, sd2i=Con_SE, n2i=Study.control..n., m1i=T1_Mean, sd1i=T1_SE, n1i=Study.T1..n., data=Abundance_kg_ha, vtype = "UB")
 
@@ -227,6 +228,9 @@ id <- unlist(
 Formulas <- sapply(id,function(i)
   paste("~",paste(Cols[i],collapse="+"))
 )
+
+Formulas <- Formulas[grep("AI.Rate_T1", Formulas)]
+
 
 resabund <- lapply(Formulas,function(i)
   rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =as.formula(i), slab = paste(dat1$Authors, dat1$Year))
@@ -567,6 +571,224 @@ knitr::kable(modelRepro, digits = 3, row.names = FALSE, caption = "Comparison of
 write.csv(modelRepro, "model_repro.csv")
 ```
 
+# Condition
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+### Reproduction, functional group and Order
+condition <- dplyr::filter(Meta, Fitness.measure == "condition")
+
+dat1 <- escalc(measure="SMDH", m2i=Con_Mean, sd2i=Con_SE, n2i=Study.control..n., m1i=T1_Mean, sd1i=T1_SE, n1i=Study.T1..n., data=condition, vtype = "UB")
+
+
+Cols <- c("Order", "Functional group", "Nesting Area", "Neonic", "Treatment Type", "Study Type")
+
+
+n <- length(Cols)
+
+id <- unlist(
+  lapply(1:n,
+         function(i)combn(1:n,i,simplify=FALSE)
+  )
+  ,recursive=FALSE)
+
+ModelNames <- sapply(id,function(i)
+  paste("y~",paste(Cols[i],collapse="+"))
+)
+
+
+Cols <- c("factor(Order)", "factor(Functional.group)", "factor(Nesting.Area)", "factor(Treatment.2)", "factor(TreatmentType)", "factor(Study.Type)")
+n <- length(Cols)
+
+id <- unlist(
+  lapply(1:n,
+         function(i)combn(1:n,i,simplify=FALSE)
+  )
+  ,recursive=FALSE)
+
+Formulas <- sapply(id,function(i)
+  paste("~",paste(Cols[i],collapse="+"))
+)
+
+rescondition <- lapply(Formulas,function(i)
+  rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =as.formula(i), slab = paste(dat1$Authors, dat1$Year))
+)
+
+
+modelCond <- data.frame(model = character(length(rescondition)), pvalue = numeric(length(rescondition)), R_squared = numeric(length(rescondition)), n = numeric(length(rescondition)), AICc = numeric(length(rescondition)), stringsAsFactors = FALSE)
+
+for (i in 1:length(rescondition)){
+  modelCond[i,1]<- ModelNames[i]
+  modelCond[i,2]<- rescondition[[i]]$QMp
+  modelCond[i,3]<- round(rescondition[[i]]$R2/100,2)
+  modelCond[i,4]<- NROW(dat1)
+  modelCond[i,5]<- rescondition[[i]]$fit.stats$ML[5]
+}
+
+```
+
+
+###Model Comparison reproduction without concentration
+
+```{r, echo= FALSE}
+modelCond <- dplyr::arrange(modelCond, AICc)
+
+modelCond$deltaAICc <- (modelCond$AICc - min(modelCond$AICc))
+
+SUMDELTA <- sum(exp(-0.5*modelCond$deltaAICc))
+
+modelCond$Weight <- exp(-0.5*modelCond$deltaAICc)/SUMDELTA
+
+modelCond <- dplyr::filter(modelCond, deltaAICc < 5)
+
+knitr::kable(modelCond, digits = 3, row.names = FALSE, caption = "Comparison of models taking into account p value, Pseudo R squared and AICc")
+```
+
+## Condtion with concetration [ppb]
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+### Reproduction, functional group and Order
+condition <- dplyr::filter(Meta, Fitness.measure == "condition")
+condition_ppb <- condition[!is.na(condition$T1_ppb),]
+
+
+dat1 <- escalc(measure="SMDH", m2i=Con_Mean, sd2i=Con_SE, n2i=Study.control..n., m1i=T1_Mean, sd1i=T1_SE, n1i=Study.T1..n., data=condition_ppb, vtype = "UB")
+
+
+Cols <- c("Order", "Functional group", "Nesting Area", "Neonic", "Study Type", "Concentration [ppb]")
+
+
+n <- length(Cols)
+
+id <- unlist(
+  lapply(1:n,
+         function(i)combn(1:n,i,simplify=FALSE)
+  )
+  ,recursive=FALSE)
+
+ModelNames <- sapply(id,function(i)
+  paste("y~",paste(Cols[i],collapse="+"))
+)
+
+
+Cols <- c("factor(Order)", "factor(Functional.group)", "factor(Nesting.Area)", "factor(Treatment.2)", "factor(Study.Type)", "T1_ppb")
+n <- length(Cols)
+
+id <- unlist(
+  lapply(1:n,
+         function(i)combn(1:n,i,simplify=FALSE)
+  )
+  ,recursive=FALSE)
+
+Formulas <- sapply(id,function(i)
+  paste("~",paste(Cols[i],collapse="+"))
+)
+
+rescondition <- lapply(Formulas,function(i)
+  rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =as.formula(i), slab = paste(dat1$Authors, dat1$Year))
+)
+
+
+modelCond <- data.frame(model = character(length(rescondition)), pvalue = numeric(length(rescondition)), R_squared = numeric(length(rescondition)), n = numeric(length(rescondition)), AICc = numeric(length(rescondition)), stringsAsFactors = FALSE)
+
+for (i in 1:length(rescondition)){
+  modelCond[i,1]<- ModelNames[i]
+  modelCond[i,2]<- rescondition[[i]]$QMp
+  modelCond[i,3]<- round(rescondition[[i]]$R2/100,2)
+  modelCond[i,4]<- NROW(dat1)
+  modelCond[i,5]<- rescondition[[i]]$fit.stats$ML[5]
+}
+
+```
+
+
+###Model Comparison reproduction with concentration ppb
+
+```{r, echo= FALSE, results='asis'}
+modelCond <- dplyr::arrange(modelCond, AICc)
+
+modelCond$deltaAICc <- (modelCond$AICc - min(modelCond$AICc))
+
+SUMDELTA <- sum(exp(-0.5*modelCond$deltaAICc))
+
+modelCond$Weight <- exp(-0.5*modelCond$deltaAICc)/SUMDELTA
+
+modelCond <- dplyr::filter(modelCond, deltaAICc < 5)
+
+knitr::kable(modelCond, digits = 3, row.names = FALSE, caption = "Comparison of models taking into account p value, Pseudo R squared and AICc")
+```
+
+# Survival
+
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+### Reproduction, functional group and Order
+survival <- dplyr::filter(Meta, Fitness.measure == "survival")
+
+dat1 <- escalc(measure="SMDH", m2i=Con_Mean, sd2i=Con_SE, n2i=Study.control..n., m1i=T1_Mean, sd1i=T1_SE, n1i=Study.T1..n., data=survival, vtype = "UB")
+
+
+Cols <- c("Order", "Functional group", "Nesting Area", "Neonic", "Treatment Type", "Study Type")
+
+
+n <- length(Cols)
+
+id <- unlist(
+  lapply(1:n,
+         function(i)combn(1:n,i,simplify=FALSE)
+  )
+  ,recursive=FALSE)
+
+ModelNames <- sapply(id,function(i)
+  paste("y~",paste(Cols[i],collapse="+"))
+)
+
+
+Cols <- c("factor(Order)", "factor(Functional.group)", "factor(Nesting.Area)", "factor(Treatment.2)", "factor(TreatmentType)", "factor(Study.Type)")
+n <- length(Cols)
+
+id <- unlist(
+  lapply(1:n,
+         function(i)combn(1:n,i,simplify=FALSE)
+  )
+  ,recursive=FALSE)
+
+Formulas <- sapply(id,function(i)
+  paste("~",paste(Cols[i],collapse="+"))
+)
+
+resSurvival <- lapply(Formulas,function(i)
+  rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =as.formula(i), slab = paste(dat1$Authors, dat1$Year))
+)
+
+
+ModelSurv <- data.frame(model = character(length(resSurvival)), pvalue = numeric(length(resSurvival)), R_squared = numeric(length(resSurvival)), n = numeric(length(resSurvival)), AICc = numeric(length(resSurvival)), stringsAsFactors = FALSE)
+
+for (i in 1:length(resSurvival)){
+  ModelSurv[i,1]<- ModelNames[i]
+  ModelSurv[i,2]<- resSurvival[[i]]$QMp
+  ModelSurv[i,3]<- round(resSurvival[[i]]$R2/100,2)
+  ModelSurv[i,4]<- NROW(dat1)
+  ModelSurv[i,5]<- resSurvival[[i]]$fit.stats$ML[5]
+}
+
+```
+
+
+###Model Comparison Survival without concentration
+
+```{r, echo= FALSE}
+ModelSurv <- dplyr::arrange(ModelSurv, AICc)
+
+ModelSurv$deltaAICc <- (ModelSurv$AICc - min(ModelSurv$AICc))
+
+SUMDELTA <- sum(exp(-0.5*ModelSurv$deltaAICc))
+
+ModelSurv$Weight <- exp(-0.5*ModelSurv$deltaAICc)/SUMDELTA
+
+ModelSurv <- dplyr::filter(ModelSurv, deltaAICc < 5)
+
+knitr::kable(ModelSurv, digits = 3, row.names = FALSE, caption = "Comparison of models taking into account p value, Pseudo R squared and AICc")
+```
 
 References {#references .unnumbered}
 ==========
