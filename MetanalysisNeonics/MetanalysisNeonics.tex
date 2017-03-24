@@ -288,20 +288,14 @@ model & pvalue & R\_squared & n & AICc & deltaAICc &
 Weight\tabularnewline
 \midrule
 \endhead
-y\textasciitilde{} Functional group & 0.049 & 0.09 & 53 & 180.179 &
-0.000 & 0.283\tabularnewline
-y\textasciitilde{} Functional group+Nesting Area & 0.079 & 0.10 & 53 &
-181.285 & 1.106 & 0.163\tabularnewline
 y\textasciitilde{} Concentration {[}g/Kg{]} & 0.110 & 0.09 & 53 &
-181.555 & 1.376 & 0.142\tabularnewline
+181.555 & 0.000 & 0.303\tabularnewline
 y\textasciitilde{} Functional group+Concentration {[}g/Kg{]} & 0.102 &
-0.11 & 53 & 181.685 & 1.506 & 0.133\tabularnewline
+0.11 & 53 & 181.685 & 0.131 & 0.284\tabularnewline
 y\textasciitilde{} Functional group+Nesting Area+Concentration
-{[}g/Kg{]} & 0.087 & 0.14 & 53 & 181.854 & 1.675 & 0.123\tabularnewline
+{[}g/Kg{]} & 0.087 & 0.14 & 53 & 181.854 & 0.299 & 0.261\tabularnewline
 y\textasciitilde{} Nesting Area+Concentration {[}g/Kg{]} & 0.228 & 0.08
-& 53 & 183.579 & 3.400 & 0.052\tabularnewline
-y\textasciitilde{} Nesting Area & 0.908 & 0.00 & 53 & 185.163 & 4.984 &
-0.023\tabularnewline
+& 53 & 183.579 & 2.024 & 0.110\tabularnewline
 \bottomrule
 \end{longtable}
 
@@ -397,13 +391,39 @@ Weight\tabularnewline
 \midrule
 \endhead
 y\textasciitilde{} Order+Neonic+Study Type+Concentration {[}ppb{]} & 0 &
-0.58 & 59 & 285.572 & 0.000 & 0.147\tabularnewline
+0.58 & 59 & 285.572 & 0.000 & 0.219\tabularnewline
 y\textasciitilde{} Order+Neonic+Treatment Type+Study Type+Concentration
-{[}ppb{]} & 0 & 0.60 & 59 & 286.250 & 0.679 & 0.104\tabularnewline
-y\textasciitilde{} Order+Neonic+Study Type & 0 & 0.56 & 59 & 287.329 &
-1.758 & 0.061\tabularnewline
+{[}ppb{]} & 0 & 0.60 & 59 & 286.250 & 0.679 & 0.156\tabularnewline
 y\textasciitilde{} Order+Nesting Area+Neonic+Concentration {[}ppb{]} & 0
-& 0.56 & 59 & 287.366 & 1.795 & 0.060\tabularnewline
+& 0.56 & 59 & 287.366 & 1.795 & 0.089\tabularnewline
+y\textasciitilde{} Order+Nesting Area+Neonic+Study Type+Concentration
+{[}ppb{]} & 0 & 0.58 & 59 & 288.035 & 2.463 & 0.064\tabularnewline
+y\textasciitilde{} Order+Nesting Area+Neonic+Treatment
+Type+Concentration {[}ppb{]} & 0 & 0.57 & 59 & 288.164 & 2.593 &
+0.060\tabularnewline
+y\textasciitilde{} Functional group+Neonic+Study Type+Concentration
+{[}ppb{]} & 0 & 0.58 & 59 & 288.892 & 3.321 & 0.042\tabularnewline
+y\textasciitilde{} Order+Functional group+Neonic+Study
+Type+Concentration {[}ppb{]} & 0 & 0.58 & 59 & 288.892 & 3.321 &
+0.042\tabularnewline
+y\textasciitilde{} Order+Nesting Area+Neonic+Treatment Type+Study
+Type+Concentration {[}ppb{]} & 0 & 0.59 & 59 & 288.936 & 3.364 &
+0.041\tabularnewline
+y\textasciitilde{} Order+Functional group+Nesting
+Area+Neonic+Concentration {[}ppb{]} & 0 & 0.56 & 59 & 289.362 & 3.790 &
+0.033\tabularnewline
+y\textasciitilde{} Functional group+Nesting Area+Neonic+Concentration
+{[}ppb{]} & 0 & 0.56 & 59 & 289.362 & 3.790 & 0.033\tabularnewline
+y\textasciitilde{} Order+Neonic+Concentration {[}ppb{]} & 0 & 0.54 & 59
+& 289.731 & 4.160 & 0.027\tabularnewline
+y\textasciitilde{} Order+Functional group+Neonic+Treatment Type+Study
+Type+Concentration {[}ppb{]} & 0 & 0.59 & 59 & 289.766 & 4.194 &
+0.027\tabularnewline
+y\textasciitilde{} Functional group+Neonic+Treatment Type+Study
+Type+Concentration {[}ppb{]} & 0 & 0.59 & 59 & 289.766 & 4.194 &
+0.027\tabularnewline
+y\textasciitilde{} Order+Neonic+Treatment Type+Concentration {[}ppb{]} &
+0 & 0.55 & 59 & 290.171 & 4.600 & 0.022\tabularnewline
 \bottomrule
 \end{longtable}
 
@@ -463,30 +483,65 @@ model & pvalue & R\_squared & n & AICc & deltaAICc &
 Weight\tabularnewline
 \midrule
 \endhead
-y\textasciitilde{} Study Type & 0 & 0.46 & 34 & 167.399 & 0.000 &
-0.207\tabularnewline
-y\textasciitilde{} Nesting Area+Study Type & 0 & 0.46 & 34 & 167.399 &
-0.000 & 0.207\tabularnewline
-y\textasciitilde{} Nesting Area+Neonic & 0 & 0.44 & 34 & 169.666 & 2.267
-& 0.067\tabularnewline
 y\textasciitilde{} Nesting Area+Study Type+Concentration {[}ppb{]} & 0 &
-0.45 & 34 & 169.738 & 2.339 & 0.064\tabularnewline
+0.45 & 34 & 169.738 & 0.000 & 0.289\tabularnewline
 y\textasciitilde{} Study Type+Concentration {[}ppb{]} & 0 & 0.45 & 34 &
-169.738 & 2.339 & 0.064\tabularnewline
-y\textasciitilde{} Functional group+Study Type & 0 & 0.44 & 34 & 170.149
-& 2.750 & 0.052\tabularnewline
-y\textasciitilde{} Functional group+Nesting Area+Study Type & 0 & 0.44 &
-34 & 170.149 & 2.750 & 0.052\tabularnewline
-y\textasciitilde{} Neonic+Study Type & 0 & 0.46 & 34 & 170.649 & 3.250 &
-0.041\tabularnewline
-y\textasciitilde{} Nesting Area+Neonic+Study Type & 0 & 0.46 & 34 &
-170.649 & 3.250 & 0.041\tabularnewline
+169.738 & 0.000 & 0.289\tabularnewline
 y\textasciitilde{} Nesting Area+Neonic+Concentration {[}ppb{]} & 0 &
-0.43 & 34 & 172.040 & 4.641 & 0.020\tabularnewline
+0.43 & 34 & 172.040 & 2.302 & 0.092\tabularnewline
+y\textasciitilde{} Functional group+Nesting Area+Study
+Type+Concentration {[}ppb{]} & 0 & 0.43 & 34 & 172.853 & 3.115 &
+0.061\tabularnewline
+y\textasciitilde{} Functional group+Study Type+Concentration {[}ppb{]} &
+0 & 0.43 & 34 & 172.853 & 3.115 & 0.061\tabularnewline
+y\textasciitilde{} Neonic+Study Type+Concentration {[}ppb{]} & 0 & 0.45
+& 34 & 173.679 & 3.941 & 0.040\tabularnewline
+y\textasciitilde{} Nesting Area+Neonic+Study Type+Concentration
+{[}ppb{]} & 0 & 0.45 & 34 & 173.679 & 3.941 & 0.040\tabularnewline
 \bottomrule
 \end{longtable}
 
 \section{Survival}\label{survival}
+
+\begin{verbatim}
+## 
+## Mixed-Effects Model (k = 28; tau^2 estimator: HE)
+## 
+## tau^2 (estimated amount of residual heterogeneity):     134.5259 (SE = 50.6853)
+## tau (square root of estimated tau^2 value):             11.5985
+## I^2 (residual heterogeneity / unaccounted variability): 99.42%
+## H^2 (unaccounted variability / sampling variability):   173.07
+## R^2 (amount of heterogeneity accounted for):            37.22%
+## 
+## Test for Residual Heterogeneity: 
+## QE(df = 23) = 187.9460, p-val < .0001
+## 
+## Test of Moderators (coefficient(s) 2,3,4,5): 
+## QM(df = 4) = 9.7834, p-val = 0.0442
+## 
+## Model Results:
+## 
+##                                       estimate      se     zval    pval
+## intrcpt                                -2.0569  6.7158  -0.3063  0.7594
+## factor(TreatmentType)lab compound       0.1048  7.8734   0.0133  0.9894
+## factor(TreatmentType)powder/granular  -17.3308  8.2133  -2.1101  0.0349
+## factor(TreatmentType)seed treatment     0.6825  9.4960   0.0719  0.9427
+## factor(TreatmentType)soil treatment    -7.3222  8.2416  -0.8884  0.3743
+##                                          ci.lb    ci.ub   
+## intrcpt                               -15.2197  11.1059   
+## factor(TreatmentType)lab compound     -15.3267  15.5364   
+## factor(TreatmentType)powder/granular  -33.4287  -1.2330  *
+## factor(TreatmentType)seed treatment   -17.9294  19.2944   
+## factor(TreatmentType)soil treatment   -23.4754   8.8310   
+## 
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+\end{verbatim}
+
+\begin{verbatim}
+## [1] "powder/granular" "soil treatment"  "foliar"          "lab compound"   
+## [5] "seed treatment"
+\end{verbatim}
 
 \subsubsection{Model Comparison Survival without
 concentration}\label{model-comparison-survival-without-concentration}

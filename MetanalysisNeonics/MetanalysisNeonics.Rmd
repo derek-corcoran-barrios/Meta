@@ -295,6 +295,7 @@ ModelNames <- sapply(id,function(i)
   paste("y~",paste(Cols[i],collapse="+"))
 )
 
+ModelNames<-ModelNames[grep("Conc", ModelNames)]
 
 Cols <- c("factor(Order)", "factor(Functional.group)", "factor(Nesting.Area)", "AI.Rate_T1")
 n <- length(Cols)
@@ -308,6 +309,8 @@ id <- unlist(
 Formulas <- sapply(id,function(i)
   paste("~",paste(Cols[i],collapse="+"))
 )
+
+Formulas <- Formulas[grep("AI.Rate_T1", Formulas)]
 
 resabund <- lapply(Formulas,function(i)
   rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =as.formula(i), slab = paste(dat1$Authors, dat1$Year))
@@ -521,6 +524,7 @@ ModelNames <- sapply(id,function(i)
   paste("y~",paste(Cols[i],collapse="+"))
 )
 
+ModelNames <- ModelNames[grep("Conc", ModelNames)]
 
 Cols <- c("factor(Order)", "factor(Functional.group)", "factor(Nesting.Area)", "factor(Treatment.2)", "factor(TreatmentType)", "factor(Study.Type)", "T1_ppb")
 n <- length(Cols)
@@ -534,6 +538,9 @@ id <- unlist(
 Formulas <- sapply(id,function(i)
   paste("~",paste(Cols[i],collapse="+"))
 )
+
+Formulas <- Formulas[grep("T1_ppb", Formulas)]
+
 
 resrepro <- lapply(Formulas,function(i)
   rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =as.formula(i), slab = paste(dat1$Authors, dat1$Year))
@@ -564,7 +571,7 @@ SUMDELTA <- sum(exp(-0.5*modelRepro$deltaAICc))
 
 modelRepro$Weight <- exp(-0.5*modelRepro$deltaAICc)/SUMDELTA
 
-modelRepro <- dplyr::filter(modelRepro, deltaAICc < 2)
+modelRepro <- dplyr::filter(modelRepro, deltaAICc < 5)
 
 knitr::kable(modelRepro, digits = 3, row.names = FALSE, caption = "Comparison of models taking into account p value, Pseudo R squared and AICc")
 
@@ -669,6 +676,8 @@ ModelNames <- sapply(id,function(i)
   paste("y~",paste(Cols[i],collapse="+"))
 )
 
+ModelNames <- ModelNames[grep("Conc", ModelNames)]
+
 
 Cols <- c("factor(Order)", "factor(Functional.group)", "factor(Nesting.Area)", "factor(Treatment.2)", "factor(Study.Type)", "T1_ppb")
 n <- length(Cols)
@@ -682,6 +691,9 @@ id <- unlist(
 Formulas <- sapply(id,function(i)
   paste("~",paste(Cols[i],collapse="+"))
 )
+
+Formulas <- Formulas[grep("T1_ppb", Formulas)]
+
 
 rescondition <- lapply(Formulas,function(i)
   rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =as.formula(i), slab = paste(dat1$Authors, dat1$Year))
@@ -771,6 +783,8 @@ for (i in 1:length(resSurvival)){
   ModelSurv[i,5]<- resSurvival[[i]]$fit.stats$ML[5]
 }
 
+resSurvival[[5]]
+unique(dat1$TreatmentType)
 ```
 
 
