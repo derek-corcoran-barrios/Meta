@@ -783,8 +783,7 @@ for (i in 1:length(resSurvival)){
   ModelSurv[i,5]<- resSurvival[[i]]$fit.stats$ML[5]
 }
 
-resSurvival[[5]]
-unique(dat1$TreatmentType)
+
 ```
 
 
@@ -802,6 +801,31 @@ ModelSurv$Weight <- exp(-0.5*ModelSurv$deltaAICc)/SUMDELTA
 ModelSurv <- dplyr::filter(ModelSurv, deltaAICc < 5)
 
 knitr::kable(ModelSurv, digits = 3, row.names = FALSE, caption = "Comparison of models taking into account p value, Pseudo R squared and AICc")
+```
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE, cache=FALSE}
+SurvTreatment <- data.frame(estimate = resSurvival[[5]]$b, ci.ub = resSurvival[[5]]$ci.ub, ci.lb = resSurvival[[5]]$ci.lb, group = c("foliar","lab compound", "powder/granular", "seed treatment", "soil treatment"), p = resSurvival[[5]]$pval, n = c(NROW(dplyr::filter(survival, TreatmentType == "foliar")),NROW(dplyr::filter(survival, TreatmentType == "lab compound")), NROW(dplyr::filter(survival, TreatmentType == "powder/granular")), NROW(dplyr::filter(survival, TreatmentType == "seed treatment")), NROW(dplyr::filter(survival, TreatmentType == "soil treatment"))))
+
+###NULL
+
+survival <- dplyr::filter(Meta, Fitness.measure == "survival")
+
+dat1 <- escalc(measure="SMDH", m2i=Con_Mean, sd2i=Con_SE, n2i=Study.control..n., m1i=T1_Mean, sd1i=T1_SE, n1i=Study.T1..n., data=survival, vtype = "UB")
+
+res3 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", slab = paste(dat1$Authors, dat1$Year))
+
+Surviv <- data.frame(estimate = res3$b, ci.ub = res3$ci.ub, ci.lb = res3$ci.lb, group = c("Null"), p = res3$pval, n =nrow(survival))
+
+SurvTreatment <- rbind(SurvTreatment, Surviv)
+
+knitr::kable(SurvTreatment, digits = 3, row.names = FALSE, caption = "Best model for survival")
+
+```
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE, cache=FALSE, fig.cap= "Effect of survival by Treatment type"}
+
+ggplot(SurvTreatment, aes(x = group, y = estimate)) + geom_point(aes(size = n)) + coord_flip() + geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub),width=0.0) + geom_hline(yintercept = 0, linetype=2) + ylim(c(-34, 34)) + ylab(c("Standardized Mean Difference")) + theme_classic() + xlab(c(""))
+
 ```
 
 References {#references .unnumbered}

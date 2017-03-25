@@ -503,46 +503,6 @@ y\textasciitilde{} Nesting Area+Neonic+Study Type+Concentration
 
 \section{Survival}\label{survival}
 
-\begin{verbatim}
-## 
-## Mixed-Effects Model (k = 28; tau^2 estimator: HE)
-## 
-## tau^2 (estimated amount of residual heterogeneity):     134.5259 (SE = 50.6853)
-## tau (square root of estimated tau^2 value):             11.5985
-## I^2 (residual heterogeneity / unaccounted variability): 99.42%
-## H^2 (unaccounted variability / sampling variability):   173.07
-## R^2 (amount of heterogeneity accounted for):            37.22%
-## 
-## Test for Residual Heterogeneity: 
-## QE(df = 23) = 187.9460, p-val < .0001
-## 
-## Test of Moderators (coefficient(s) 2,3,4,5): 
-## QM(df = 4) = 9.7834, p-val = 0.0442
-## 
-## Model Results:
-## 
-##                                       estimate      se     zval    pval
-## intrcpt                                -2.0569  6.7158  -0.3063  0.7594
-## factor(TreatmentType)lab compound       0.1048  7.8734   0.0133  0.9894
-## factor(TreatmentType)powder/granular  -17.3308  8.2133  -2.1101  0.0349
-## factor(TreatmentType)seed treatment     0.6825  9.4960   0.0719  0.9427
-## factor(TreatmentType)soil treatment    -7.3222  8.2416  -0.8884  0.3743
-##                                          ci.lb    ci.ub   
-## intrcpt                               -15.2197  11.1059   
-## factor(TreatmentType)lab compound     -15.3267  15.5364   
-## factor(TreatmentType)powder/granular  -33.4287  -1.2330  *
-## factor(TreatmentType)seed treatment   -17.9294  19.2944   
-## factor(TreatmentType)soil treatment   -23.4754   8.8310   
-## 
-## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-\end{verbatim}
-
-\begin{verbatim}
-## [1] "powder/granular" "soil treatment"  "foliar"          "lab compound"   
-## [5] "seed treatment"
-\end{verbatim}
-
 \subsubsection{Model Comparison Survival without
 concentration}\label{model-comparison-survival-without-concentration}
 
@@ -599,6 +559,31 @@ y\textasciitilde{} Nesting Area+Neonic+Treatment Type & 0.087 & 0.35 &
 28 & 223.572 & 4.329 & 0.017\tabularnewline
 \bottomrule
 \end{longtable}
+
+\begin{longtable}[c]{@{}rrrlrr@{}}
+\caption{Best model for survival}\tabularnewline
+\toprule
+estimate & ci.ub & ci.lb & group & p & n\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+estimate & ci.ub & ci.lb & group & p & n\tabularnewline
+\midrule
+\endhead
+-2.057 & 11.106 & -15.220 & foliar & 0.759 & 3\tabularnewline
+0.105 & 15.536 & -15.327 & lab compound & 0.989 & 8\tabularnewline
+-17.331 & -1.233 & -33.429 & powder/granular & 0.035 & 8\tabularnewline
+0.682 & 19.294 & -17.929 & seed treatment & 0.943 & 3\tabularnewline
+-7.322 & 8.831 & -23.475 & soil treatment & 0.374 & 6\tabularnewline
+-8.131 & -2.544 & -13.718 & Null & 0.004 & 28\tabularnewline
+\bottomrule
+\end{longtable}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{MetanalysisNeonics_files/figure-latex/unnamed-chunk-25-1.pdf}
+\caption{Effect of survival by Treatment type}
+\end{figure}
 
 \section*{References}\label{references}
 \addcontentsline{toc}{section}{References}
