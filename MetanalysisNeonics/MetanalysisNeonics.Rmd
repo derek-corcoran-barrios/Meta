@@ -235,6 +235,8 @@ Formulas <- Formulas[grep("AI.Rate_T1", Formulas)]
 resabund <- lapply(Formulas,function(i)
   rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =as.formula(i), slab = paste(dat1$Authors, dat1$Year))
 )
+##########################
+
 res1 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =~  factor(Functional.group), slab = paste(dat1$Authors, dat1$Year))
 
 modelAbund <- data.frame(model = character(length(resabund)), pvalue = numeric(length(resabund)), R_squared = numeric(length(resabund)), n = numeric(length(resabund)), AICc = numeric(length(resabund)), stringsAsFactors = FALSE)
@@ -246,11 +248,28 @@ for (i in 1:length(resabund)){
   modelAbund[i,4]<- NROW(dat1)
   modelAbund[i,5]<- resabund[[i]]$fit.stats$ML[5]
 }
+
+
+library(caret)
+
+
+newmods = expand.grid(AI.Rate_T1 = seq(from = min(dat1$AI.Rate_T1), to = max(dat1$AI.Rate_T1), length.out =  20), Nesting.Area = c("aboveground","both","ground"))
+
+dum <- dummyVars(~ Nesting.Area, data = newmods)
+
+NM <- cbind(newmods[,1],predict(dum, newmods))
+
+
+preds <- predict(resabund[[4]], newmods = NM[,1:3], addx = TRUE)
+
+
+preds <- data.frame(pred = preds$pred, ci.lb = preds$ci.lb, ci.ub = preds$ci.ub, X.AI.Rate_T1 = preds$X[,2], Nesting.Area = newmods$Nesting.Area)
+
 ```
 
-```{r, message=FALSE, warning=FALSE, echo=FALSE, cache=FALSE, fig.cap= "effect size of the Standardized mean difference of behavior and concentration (Kg/Ha) for powder/granular aplications"}
+```{r, message=FALSE, warning=FALSE, echo=FALSE, cache=FALSE, fig.cap= "effect size of the Standardized mean difference of abundance for Nesting Area and concentration (Kg/Ha) for powder/granular aplications"}
 
-#ggplot(dat1, aes(x = AI.Rate_T1, y = yi))  + geom_ribbon(data = preds, aes(x = X.AI.Rate_T1, y = pred, ymin = ci.lb, ymax = ci.ub), fill = "grey", alpha = 0.5) + theme_classic() + geom_line(data = preds, aes(x = X.AI.Rate_T1, y = pred)) + geom_point() + xlab("Concentration (Kg/Ha)") + ylab("Standardized mean difference") + geom_hline(yintercept = 0, lty= 2) + scale_size("Number of studies") + scale_x_continuous(labels = scales::comma)
+ggplot(dat1, aes(x = AI.Rate_T1, y = yi))  + geom_ribbon(data = preds, aes(x = X.AI.Rate_T1, y = pred, ymin = ci.lb, ymax = ci.ub, fill = Nesting.Area), alpha = 0.5) + theme_classic() + geom_line(data = preds, aes(x = X.AI.Rate_T1, y = pred, lty = Nesting.Area)) + geom_point() + xlab("Concentration [Kg/Ha]") + ylab("Standardized mean difference") + geom_hline(yintercept = 0, lty= 2) + scale_fill_grey("Nesting Area") + scale_linetype(name = "Nesting Area")
 
 ```
 
@@ -297,6 +316,7 @@ ModelNames <- sapply(id,function(i)
 
 ModelNames<-ModelNames[grep("Conc", ModelNames)]
 
+
 Cols <- c("factor(Order)", "factor(Functional.group)", "factor(Nesting.Area)", "AI.Rate_T1")
 n <- length(Cols)
 
@@ -315,6 +335,7 @@ Formulas <- Formulas[grep("AI.Rate_T1", Formulas)]
 resabund <- lapply(Formulas,function(i)
   rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =as.formula(i), slab = paste(dat1$Authors, dat1$Year))
 )
+
 res1 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =~  factor(Functional.group), slab = paste(dat1$Authors, dat1$Year))
 
 modelAbund <- data.frame(model = character(length(resabund)), pvalue = numeric(length(resabund)), R_squared = numeric(length(resabund)), n = numeric(length(resabund)), AICc = numeric(length(resabund)), stringsAsFactors = FALSE)
@@ -327,8 +348,44 @@ for (i in 1:length(resabund)){
   modelAbund[i,5]<- resabund[[i]]$fit.stats$ML[5]
 }
 
+library(caret)
+
+
+
+preds <- predict(resabund[[1]], newmods =cbind(seq(from = min(dat1$AI.Rate_T1), to = max(dat1$AI.Rate_T1), length.out =  20)), addx = TRUE)
+
+
+preds <- data.frame(pred = preds$pred, ci.lb = preds$ci.lb, ci.ub = preds$ci.ub, X.AI.Rate_T1 = preds$X[,2])
+
 ```
 
+```{r, message=FALSE, warning=FALSE, echo=FALSE, cache=FALSE, fig.cap= "effect size of the Standardized mean difference of abundance and concentration (g/Kg)"}
+
+ggplot(dat1, aes(x = AI.Rate_T1, y = yi))  + geom_ribbon(data = preds, aes(x = X.AI.Rate_T1, y = pred, ymin = ci.lb, ymax = ci.ub), fill = "grey", alpha = 0.5) + theme_classic() + geom_line(data = preds, aes(x = X.AI.Rate_T1, y = pred)) + geom_point() + xlab("Concentration (g/Kg)") + ylab("Standardized mean difference") + geom_hline(yintercept = 0, lty= 2) + scale_size("Number of studies") + scale_x_continuous(labels = scales::comma)
+
+```
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE, cache=FALSE, fig.cap= "effect size of the Standardized mean difference of abundance and functional group with concentration (g/Kg)"}
+
+library(caret)
+
+
+newmods = expand.grid(AI.Rate_T1 = seq(from = min(dat1$AI.Rate_T1), to = max(dat1$AI.Rate_T1), length.out =  20), Functional.group = c("mixed","predator"))
+
+dum <- dummyVars(~ Functional.group, data = newmods)
+
+NM <- cbind(newmods[,1],predict(dum, newmods))
+
+
+preds <- predict(resabund[[3]], newmods = NM[,1:2], addx = TRUE)
+
+
+preds <- data.frame(pred = preds$pred, ci.lb = preds$ci.lb, ci.ub = preds$ci.ub, X.AI.Rate_T1 = preds$X[,2], Functional.group = newmods$Functional.group)
+
+
+ggplot(dat1, aes(x = AI.Rate_T1, y = yi))  + geom_ribbon(data = preds, aes(x = X.AI.Rate_T1, y = pred, ymin = ci.lb, ymax = ci.ub, fill = Functional.group), alpha = 0.5) + theme_classic() + geom_line(data = preds, aes(x = X.AI.Rate_T1, y = pred, lty = Functional.group)) + geom_point() + xlab("Concentration [g/Kg]") + ylab("Standardized mean difference") + geom_hline(yintercept = 0, lty= 2) + scale_fill_grey("Functional group") + scale_linetype(name = "Functional group")
+
+```
 
 ### Comparison of models [g/Kg]
 
@@ -394,6 +451,7 @@ resbehav <- lapply(Formulas,function(i)
 )
 
 
+
 modelBehav <- data.frame(model = character(length(resbehav)), pvalue = numeric(length(resbehav)), R_squared = numeric(length(resbehav)), n = numeric(length(resbehav)), AICc = numeric(length(resbehav)), stringsAsFactors = FALSE)
 
 for (i in 1:length(resbehav)){
@@ -403,6 +461,25 @@ for (i in 1:length(resbehav)){
   modelBehav[i,4]<- NROW(dat1)
   modelBehav[i,5]<- resbehav[[i]]$fit.stats$ML[5]
 }
+
+BehavStudy <- data.frame(estimate = resbehav[[6]]$b, ci.ub = resbehav[[6]]$ci.ub, ci.lb = resbehav[[6]]$ci.lb, group = c("lab","semi-field"), p = resbehav[[6]]$pval, n = c(NROW(dplyr::filter(Behavior, Study.Type == "lab")),NROW(dplyr::filter(Behavior, Study.Type == "semi-field"))))
+
+Behavior <- dplyr::filter(Meta, Fitness.measure == "behavior")
+
+dat1 <- escalc(measure="SMDH", m2i=Con_Mean, sd2i=Con_SE, n2i=Study.control..n., m1i=T1_Mean, sd1i=T1_SE, n1i=Study.T1..n., data=Behavior, vtype = "UB")
+
+res2 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", slab = paste(dat1$Authors, dat1$Year))
+
+Behav <- data.frame(estimate = res2$b, ci.ub = res2$ci.ub, ci.lb = res2$ci.lb, group = c("Null"), p = res2$pval, n =nrow(Behavior))
+
+
+BehavStudy <- rbind(Behav, BehavStudy)
+
+```
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE, cache=FALSE, fig.cap= "Effect of behaviour by Study type"}
+
+ggplot(BehavStudy, aes(x = group, y = estimate)) + geom_point(aes(size = n)) + coord_flip() + geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub),width=0.0) + geom_hline(yintercept = 0, linetype=2) + ylim(c(-15, 15)) + ylab(c("Standardized Mean Difference")) + theme_classic() + xlab(c(""))
 
 ```
 
@@ -423,6 +500,9 @@ modelBehav <- dplyr::filter(modelBehav, deltaAICc < 5)
 knitr::kable(modelBehav, digits = 3, row.names = FALSE, caption = "Comparison of models taking into account p value, Pseudo R squared and AICc")
 ```
 
+```{r, echo=FALSE}
+knitr::kable(BehavStudy, digits = 3, row.names = FALSE, caption = "Best model for behaviour")
+```
 
 #Reproduction
 
@@ -480,8 +560,26 @@ for (i in 1:length(resrepro)){
   modelRepro[i,5]<- resrepro[[i]]$fit.stats$ML[5]
 }
 
+ReproOrder <- data.frame(estimate = resrepro[[1]]$b, ci.ub = resrepro[[1]]$ci.ub, ci.lb = resrepro[[1]]$ci.lb, group = c("Coleoptera","Haplotaxida", "Hemiptera", "Hymenoptera", "Neuroptera"), p = resrepro[[1]]$pval, n = c(NROW(dplyr::filter(Reproduction, Order == "Coleoptera")),NROW(dplyr::filter(Reproduction, Order == "Haplotaxida")), NROW(dplyr::filter(Reproduction, Order == "Hemiptera")), NROW(dplyr::filter(Reproduction, Order == "Hymenoptera")),NROW(dplyr::filter(Reproduction, Order == "Neuroptera"))))
+
+reproduction <- dplyr::filter(Meta, Fitness.measure == "reproduction")
+
+dat1 <- escalc(measure="SMDH", m2i=Con_Mean, sd2i=Con_SE, n2i=Study.control..n., m1i=T1_Mean, sd1i=T1_SE, n1i=Study.T1..n., data=reproduction, vtype = "UB")
+
+res4 <- rma(yi, vi, data=dat1, refline = 0, method = "HE", slab = paste(dat1$Authors, dat1$Year))
+
+Reprod <- data.frame(estimate = res4$b, ci.ub = res4$ci.ub, ci.lb = res4$ci.lb, group = c("Null"), p = res4$pval, n =nrow(reproduction))
+
+
+ReproOrder <- rbind(Reprod, ReproOrder)
 ```
 
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE, cache=FALSE, fig.cap= "Effect of reproduction by order"}
+
+ggplot(ReproOrder, aes(x = group, y = estimate)) + geom_point(aes(size = n)) + coord_flip() + geom_errorbar(aes(ymin=ci.lb, ymax=ci.ub),width=0.0) + geom_hline(yintercept = 0, linetype=2) + ylim(c(-140, 140)) + ylab(c("Standardized Mean Difference")) + theme_classic() + xlab(c(""))
+
+```
 
 ###Model Comparison reproduction without concentration
 
@@ -497,6 +595,10 @@ modelRepro$Weight <- exp(-0.5*modelRepro$deltaAICc)/SUMDELTA
 modelRepro <- dplyr::filter(modelRepro, deltaAICc < 5)
 
 knitr::kable(modelRepro, digits = 3, row.names = FALSE, caption = "Comparison of models taking into account p value, Pseudo R squared and AICc")
+```
+
+```{r, echo=FALSE}
+knitr::kable(ReproOrder, digits = 3, row.names = FALSE, caption = "Best model for reproduction")
 ```
 
 ###Reproduction and concentration [ppb]
@@ -695,6 +797,7 @@ Formulas <- sapply(id,function(i)
 Formulas <- Formulas[grep("T1_ppb", Formulas)]
 
 
+
 rescondition <- lapply(Formulas,function(i)
   rma(yi, vi, data=dat1, refline = 0, method = "HE", mods =as.formula(i), slab = paste(dat1$Authors, dat1$Year))
 )
@@ -728,6 +831,7 @@ modelCond <- dplyr::filter(modelCond, deltaAICc < 5)
 
 knitr::kable(modelCond, digits = 3, row.names = FALSE, caption = "Comparison of models taking into account p value, Pseudo R squared and AICc")
 ```
+
 
 # Survival
 
